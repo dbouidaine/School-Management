@@ -17,21 +17,9 @@ if(!(isset($_GET['route'])) && (isset($_SERVER['PATH_INFO']))){
 
 $app=new Application();
 
-$app->router->get("/home", function($args){
-    //
-});
+$app->router->get("/home",[HomeController::class,'index']);
 
-$app->router->get("/user", function($args){
-    //
-});
-
-$app->router->get("/user/edit/{id_user}", function($args){
-    //
-});
-
-$app->router->get("/user/profile/{id}", function($args){
-    //
-});
+$app->router->get("/user/edit/{id_user}/{name_user}",[UserController::class,'edit']);
 
 $app->router->get("/user/profile/{id}/delete/{section_name}", function($args){
     //
