@@ -1,11 +1,17 @@
 <?php
 
 namespace controllers;
+use controllers\DBController;
+use views\LayoutView;
 
 class HomeController extends Controller{
 
 
     public function index(){
-        print_r('Hello from HomeController');
+        $connection=\models\DataBase::connect();
+        $query=$connection->prepare("SELECT * FROM tests");
+        $query->execute();
+        $result=$query->fetchAll((\PDO::FETCH_ASSOC));
+        $home=new LayoutView();
     }
 }

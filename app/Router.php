@@ -2,8 +2,10 @@
 
 namespace app;
 
-class Router{
+use Exception;
 
+class Router{
+    public $found;
     public function get($pattern, $callback){
         //this function verifies, using regular expressions, if the url matches any route defined by the developper
         //It also enables him to get variables from url and re-use them later
@@ -13,9 +15,19 @@ class Router{
         $pattern_reg_exp="#^".ltrim($pattern_reg_exp,"/")."$#";
         preg_match($pattern_reg_exp,trim($_GET['route'],"/"), $matches);
         if ($matches){
+            $this->found=1;
             $name_space="controllers\\";
-            call_user_func([$name_space.$callback[0],$callback[1]],$matches);
+            try{
+                call_user_func([$name_space.$callback[0],$callback[1]],$matches);
+            }
+            catch (Exception $ex){
+                Router::redirect('404');
+            }
         }
+    }
+
+    public static function redirect($code){
+        require_once(VIEWS_PATH."/".$code.".php");
     }
 
 }
