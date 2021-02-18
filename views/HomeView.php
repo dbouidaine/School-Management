@@ -5,17 +5,16 @@ namespace views;
 use views\components\HomeBody;
 use views\components\Layout;
 use views\components\Navbar;
+use views\components\Carousel;
 
 class HomeView extends View{
     public function __construct()
     {
-        //expects [title,navbar,body,layout]
         $args=[];
         $args['title']="new title";
-        $navbar = new Navbar($args);
-        $args['navbar']= $navbar->get();
-        $body = new HomeBody($args);
-        $args['body']= $body->get();
+        $components=['Navbar','Carousel','HomeBody'];
+        $args=$this->load($components,$args);
+        //expects [title,navbar,body,layout]   
         $layout = new Layout($args);
         $this->view = $layout->get();
     }

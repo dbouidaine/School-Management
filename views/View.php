@@ -22,6 +22,17 @@ class View{
     public function get(){
         return $this->view;
     }
+
+    public function load($components,$args)
+    {
+        foreach($components as $component){
+            $namespace="views\components\\";
+            $classname=$namespace.$component;
+            $item=new $classname($args);
+            $args[$component]=$item->get();
+        }
+        return $args;
+    }
     
 
 }
