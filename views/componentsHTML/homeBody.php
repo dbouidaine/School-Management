@@ -1,0 +1,1 @@
+<?php if(isset($args['navbar'])) echo $args['navbar'] ?>

@@ -1,14 +1,16 @@
-<?php 
+<?php
 
 namespace views\components;
-class Layout extends Component{
+
+
+class HomeBody extends Component{
+
     public function __construct($args)
     {
-        // Require [asdasdasd]
+        // expects[navbar,]
         $this->content=ob_start();
-        $this->require_html("layout",$args);
+        $this->require_html("homeBody",$args);
         $this->content=ob_get_clean();
     }
-
 
 }

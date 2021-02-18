@@ -2,6 +2,7 @@
 
 namespace controllers;
 use controllers\DBController;
+use views\HomeView;
 use views\LayoutView;
 
 class HomeController extends Controller{
@@ -12,6 +13,7 @@ class HomeController extends Controller{
         $query=$connection->prepare("SELECT * FROM tests");
         $query->execute();
         $result=$query->fetchAll((\PDO::FETCH_ASSOC));
-        $home=new LayoutView();
+        $home=new HomeView();
+        $home->view();
     }
 }
