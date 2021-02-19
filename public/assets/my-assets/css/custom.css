@@ -71,3 +71,16 @@ a.card-link:hover{
     color: #3f3d56;
     transition: 0.3s ease;
 }
+
+.card:hover img{
+    transform: scale(1.5);
+    opacity: 0.8;
+    transition: 0.4s ease;
+}
+.card img{
+    transition: 0.4s ease;
+}
+
+.to-zoom{
+    overflow: hidden;
+}
