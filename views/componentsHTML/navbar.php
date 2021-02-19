@@ -1,27 +1,43 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark menu">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-        <img src="assets/my-assets/img/logo.png" alt="" width="100">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse float-right justify-content-end" id="navbarToggler">
-      <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item">
-            <a class="nav-link" target="_blanc" href="https://www.facebook.com" class="text-light"><i class="fab fa-facebook"></i></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" target="_blanc" href="https://www.facebook.com" class="text-light"><i class="fab fa-instagram"></i></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" target="_blanc" href="https://www.facebook.com" class="text-light"><i class="fab fa-instagram"></i></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" target="_blanc" href="https://www.facebook.com" class="text-light"><i class="fab fa-instagram"></i></a>
-        </li>
-      </ul>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <div class="d-flex col-12 justify-content-between">
+        <div>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ecole/presentation">Présentation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ecole/cycle-primaire">Cycle Primaire</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ecole/cycle-moyen">Cycle Moyen</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ecole/cycle-secondaire">Cycle Secondaire</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/espace-eleves">Espace Elèves</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/espace-parents">Espace Parents</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    
   </div>
 </nav>

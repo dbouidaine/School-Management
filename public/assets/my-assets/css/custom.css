@@ -1,3 +1,7 @@
+body{
+    background-color: #fafafa;
+}
+
 .bg-light{
     background-color: #f5f3f5!important;
 }
@@ -51,4 +55,19 @@ nav li a{
 }
 li a:hover{
     color: #868fac;
+}
+
+.my-container{
+    padding-block: 4%;
+    padding-inline: 2%;
+}
+
+a.card-link{
+    text-decoration: none;
+    color: #00b0ff;
+}
+a.card-link:hover{
+    text-decoration: none;
+    color: #3f3d56;
+    transition: 0.3s ease;
 }

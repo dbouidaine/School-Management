@@ -12,7 +12,7 @@ class HomeView extends View{
     {
         $args=[];
         $args['title']="new title";
-        $components=['Navbar','Carousel','HomeBody'];
+        $components=['TopNavbar','Carousel','Footer','Navbar','Card','Pagination','HomeBody'];
         $args=$this->load($components,$args);
         //expects [title,navbar,body,layout]   
         $layout = new Layout($args);
