@@ -17,5 +17,8 @@ class DataBase{
             }
             return DataBase::$connection;
         }
+        else{
+            return DataBase::$connection;
+        } 
     }
 }

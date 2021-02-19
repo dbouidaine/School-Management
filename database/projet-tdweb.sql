@@ -32,6 +32,32 @@ CREATE TABLE IF NOT EXISTS `article` (
 
 -- Dumping data for table tdweb-projet.article: ~0 rows (approximately)
 /*!40000 ALTER TABLE `article` DISABLE KEYS */;
+INSERT INTO `article` (`id`, `author`, `title`, `description`, `image`, `created_at`) VALUES
+	(1, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:25'),
+	(2, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:31'),
+	(3, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:32'),
+	(4, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:32'),
+	(5, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:33'),
+	(6, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:33'),
+	(7, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:33'),
+	(8, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:34'),
+	(9, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:34'),
+	(10, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:34'),
+	(11, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:35'),
+	(12, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:35'),
+	(13, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:43'),
+	(14, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:43'),
+	(15, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:44'),
+	(16, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:44'),
+	(17, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:44'),
+	(18, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:45'),
+	(19, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:45'),
+	(20, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:46'),
+	(21, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:46'),
+	(22, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:51'),
+	(23, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:51'),
+	(24, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:51'),
+	(25, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel1.jpg', '2021-02-19 21:42:52');
 /*!40000 ALTER TABLE `article` ENABLE KEYS */;
 
 -- Dumping structure for table tdweb-projet.permission
@@ -69,6 +95,8 @@ CREATE TABLE IF NOT EXISTS `role` (
 
 -- Dumping data for table tdweb-projet.role: ~0 rows (approximately)
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
+INSERT INTO `role` (`id`, `name`) VALUES
+	(1, 'admin');
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 
 -- Dumping structure for table tdweb-projet.role_has_permission
@@ -92,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `tests` (
   PRIMARY KEY (`id_test`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdweb-projet.tests: ~1 rows (approximately)
+-- Dumping data for table tdweb-projet.tests: ~2 rows (approximately)
 /*!40000 ALTER TABLE `tests` DISABLE KEYS */;
 INSERT INTO `tests` (`id_test`, `type`) VALUES
 	(4, 'one'),
@@ -116,6 +144,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 -- Dumping data for table tdweb-projet.user: ~0 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` (`id`, `email`, `role`, `first_name`, `last_name`, `password`, `created_at`) VALUES
+	(1, 'admin@admin.com', 1, NULL, NULL, 'admin', '2021-02-19 21:40:25'),
+	(2, 'admin2@admin.com', 1, NULL, NULL, 'admin', '2021-02-19 21:40:08');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

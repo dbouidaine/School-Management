@@ -10,14 +10,7 @@
     <center>
     <div class="row">
         <?php 
-        foreach($args as $arg){
-            if(isset($args['Card'])) echo $args['Card'];
-        } 
-        ?>
-        <?php 
-        foreach($args as $arg){
-            if(isset($args['Card'])) echo $args['Card'];
-        } 
+        if(isset($args['Articles'])) echo $args['Articles'];
         ?>
     </div>
     <div class="justify-content-center pt-5">

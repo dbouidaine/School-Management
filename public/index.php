@@ -26,6 +26,8 @@ $app->router->get("/",[HomeController::class,'index']);
 
 $app->router->get("/home/{page}",[HomeController::class,'index']);
 
+$app->router->get("/article/show/{id_article}",[ArticleController::class,'show']);
+
 $app->router->get("/ecole/presentation",[PresentationController::class,'index']);
 
 $app->router->get("/ecole/{cycle}",[CycleController::class,'index']);
