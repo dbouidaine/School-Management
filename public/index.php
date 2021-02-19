@@ -24,7 +24,13 @@ $app->router->found=0;
 
 $app->router->get("/",[HomeController::class,'index']);
 
-$app->router->get("/home",[HomeController::class,'index']);
+$app->router->get("/home/{page}",[HomeController::class,'index']);
+
+$app->router->get("/ecole/presentation",[PresentationController::class,'index']);
+
+$app->router->get("/ecole/{cycle}",[CycleController::class,'index']);
+
+$app->router->get("/contact",[CycleController::class,'index']);
 
 $app->router->get("/user/edit/{id_user}/{name_user}",[UserController::class,'edit']);
 

@@ -2,20 +2,20 @@
 
 namespace views;
 
-use views\components\HomeBody;
+use views\components\PresentationBody;
 use views\components\Layout;
 
-class HomeView extends View{
+class PresentationView extends View{
     public function __construct()
     {
-        //expects [title,navbar,footer,card,pagination,body,layout]  
+        //expects [title,navbar,footer,body,layout]  
         $args=[];
-        $args['title']="new title";
-        $components=['TopNavbar','Carousel','Footer','Navbar','Card','Pagination'];
+        $args['title']="Presentation";
+        $components=['TopNavbar','Navbar','Footer'];
         $args=$this->load($components,$args);
         // HomeBody component defines how the other components are grouped in the home page
         // Every page must have it's body component
-        $body=new HomeBody($args);
+        $body=new PresentationBody($args);
         $args['Body']=$body->get();
         $layout = new Layout($args);
         $this->view = $layout->get();

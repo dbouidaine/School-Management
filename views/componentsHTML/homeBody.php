@@ -14,6 +14,11 @@
             if(isset($args['Card'])) echo $args['Card'];
         } 
         ?>
+        <?php 
+        foreach($args as $arg){
+            if(isset($args['Card'])) echo $args['Card'];
+        } 
+        ?>
     </div>
     <div class="justify-content-center pt-5">
         <?php if(isset($args['Pagination'])) echo $args['Pagination'];?>

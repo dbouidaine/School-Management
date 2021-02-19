@@ -11,6 +11,7 @@ class Router{
         //It also enables him to get variables from url and re-use them later
         //In the route, anything found between brackets '{}' is considered as a variable
         if (!isset($_GET['route'])) return;
+        if($this->found) return;
         $pattern_reg_exp = preg_replace("/\{(.*?)\}/" , "(?P<$1>[\w-]+)", $pattern);
         $pattern_reg_exp="#^".ltrim($pattern_reg_exp,"/")."$#";
         preg_match($pattern_reg_exp,trim($_GET['route'],"/"), $matches);
