@@ -1,9 +1,11 @@
 body{
-    background-color: #fafafa;
+    background-color: #ffffff!important;
 }
-
+.bg-white{
+    background-color: #ffffff!important;
+}
 .bg-light{
-    background-color: #f5f3f5!important;
+    background-color: #fafafa!important;
 }
 .bg-dark{
     background-color: #323643!important;
@@ -15,14 +17,17 @@ body{
     background-color: #ffcb00!important;
 }
 .bg-night-blue{
-    background-color: #3f3d56!important;
+    background-color: #0A122A!important;
 }
 .bg-blue{
     background-color: #00b0ff!important;
 }
 
+.text-white{
+    color: #ffffff!important;
+}
 .text-light{
-    color: #f5f3f5!important;
+    color: #fafafa!important;
 }
 .text-dark{
     color: #323643!important;
@@ -34,7 +39,7 @@ body{
     color: #ffcb00!important;
 }
 .text-night-blue{
-    color: #3f3d56!important;
+    color: #0A122A!important;
 }
 .text-blue{
     color: #00b0ff!important;
@@ -80,6 +85,9 @@ a.card-link:hover{
 .card img{
     transition: 0.4s ease;
 }
+.card-footer{
+    background-color: white!important;
+}
 
 .to-zoom{
     overflow: hidden;
@@ -92,4 +100,73 @@ a.card-link:hover{
 .article .card:hover img{
     transform: none;
     opacity: 1;
+}
+
+.page-item>a{
+    border: #f5f3f5 solid 1pt!important;
+}
+.page-item:not(.active)>a{
+    color:#00b0ff;
+}
+.menu a.nav-link{
+    color: #f5f3f5!important;
+}
+.menu a.nav-link:hover{
+    opacity: 0.8;
+    transition: 0.3s ease;
+}
+.navbar{
+    opacity: 0.99;
+}
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+.side-navbar{
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+}
+.sidebar.active {
+    margin-left: -250px;
+}
+.sidenav-header{
+    width:100%;
+    padding:3%;
+}
+.side-navbar a{
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+.side-navbar li{
+    padding: 5%;
+    
+}
+.side-navbar li:hover{
+    background-color: #f5f3f5;
+    transition: 0.2s ease;
+}
+.side-navbar li:hover a{
+    color: #3f3d56;
+    transition: 0.2s ease;
+
+}
+#sidenav_toggle{
+    min-height: 100vh;
+}
+#sidenav_toggle:hover{
+    color: #323643!important;
+    transition: 0.2s ease;
+}
+.content
+{
+    width: 100%;
+}
+@media only screen and (max-width: 800px) {
+    .side-navbar{
+        z-index: 1000;
+        position: absolute;
+    }
 }

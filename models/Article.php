@@ -30,4 +30,14 @@ class Article extends Model{
         $query->execute();
         return $query->fetchAll((\PDO::FETCH_ASSOC));
     }
+
+    static function new($title,$image,$description,$author){
+        $connection=DataBase::connect();
+        $query=$connection->prepare('INSERT INTO article (title,description,image,author,created_at) VALUES (?,?,?,?,NOW());');
+        $query->execute([$title,$description,$image,$author]);
+    }
+
+    static function delete($id){
+        parent::destroy($id,"article");
+    }
 }

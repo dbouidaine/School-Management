@@ -34,6 +34,14 @@ $app->router->get("/ecole/{cycle}",[CycleController::class,'index']);
 
 $app->router->get("/contact",[CycleController::class,'index']);
 
+$app->router->get("/admin",[AdminController::class,'index']);
+
+$app->router->get("/articles",[AdminController::class,'index']);
+
+$app->router->get("/article/delete/{article_id}",[ArticleController::class,'delete']);
+
+$app->router->get("/article/add",[ArticleController::class,'add']);
+
 $app->router->get("/user/edit/{id_user}/{name_user}",[UserController::class,'edit']);
 
 if(!$app->router->found)

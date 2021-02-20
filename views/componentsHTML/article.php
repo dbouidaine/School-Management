@@ -4,7 +4,7 @@
             <img src="<?= $args['article']['image'] ; ?>" class="card-img-top" alt="...">
         </div>
         <div class="card-body">
-            <h3><?= $args['article']['title'] ?></h3>
+            <h4><?= $args['article']['title'] ?></h4>
             <p class="card-text"><?= $args['article']['description'] ?></p>
         </div>
     </div>

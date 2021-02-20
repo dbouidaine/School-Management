@@ -7,7 +7,7 @@
     <?php } ?>
     <?php for($i=1;$i<=$args['page_count'];$i++){ 
       if($i==$args['page']) {?>
-    <li class="page-item active"><a class="page-link" href="home/<?=$i?>"><?= $i;?></a></li>
+    <li class="page-item active"><a class="page-link bg-blue" href="home/<?=$i?>"><?= $i;?></a></li>
     <?php } else {?>
     <li class="page-item"><a class="page-link" href="/home/<?=$i?>"><?=$i;?></a></li>
     <?php } ?>

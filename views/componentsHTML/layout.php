@@ -19,6 +19,7 @@
     <script type="text/JavaScript" src="/assets/extern/js/jquery.min.js"></script>
     <script type="text/JavaScript" src="/assets/extern/js/bootstrap.bundle.min.js"></script>
     <script type="text/JavaScript" src="/assets/extern/js/fontawesome.min.js"></script>
+    <script type="text/JavaScript" src="/assets/my-assets/js/custom.js"></script>
     
 </body>
 </html>

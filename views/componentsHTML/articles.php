@@ -2,11 +2,13 @@
 <div class="p-2 col-sm-6 col-md-4 col-xl-3 mb-3">
     <div class="card">
         <div class="card-img-top to-zoom">
-            <img src="/assets/my-assets/img/carousel2.jpg" class="card-img-top" alt="...">
+            <img src="<?= $arg['image'];?>" class="card-img-top" alt="...">
         </div>
         <div class="card-body">
-            <h3><?= $arg['title']; ?></h3>
+            <h4><?= $arg['title']; ?></h4>
             <p class="card-text"><?= $arg['description'];?> ... </p>
+        </div>
+        <div class="card-footer">
             <a href="/article/show/<?= $arg['id'];?>" class="card-link">Afficher la suite</a>
         </div>
     </div>

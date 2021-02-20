@@ -5,17 +5,17 @@ use views\HomeView;
 use models\Article;
 
 class HomeController extends Controller{
-    public function index($matches){
+    public function index($url_data){
         $args=[];
         $n_pages=Article::count();
         $args['page_count']=ceil($n_pages/8);
-        if(!isset($matches['page'])){
+        if(!isset($url_data['page'])){
             $data=Article::getMany(0,8);
             $args['page']=1;
         }
         else{
-            $args['page']=$matches['page'];
-            $page=$matches['page'];
+            $args['page']=$url_data['page'];
+            $page=$url_data['page'];
             $from = ($page-1)*8;
             $data=Article::getMany($from,8);
         }
