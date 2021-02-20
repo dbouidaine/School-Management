@@ -2,6 +2,7 @@
 
 namespace controllers;
 use models\Article;
+use views\ArticleView;
 
 class ArticleController extends Controller{
     public function show($matches){
@@ -11,7 +12,8 @@ class ArticleController extends Controller{
             \app\Router::redirect('errors/404');
             exit();
         }
-        $args['articles']=$data;
-        print_r($args['articles']);
+        $args['article']=$data;
+        $article=new ArticleView($args);
+        $article->view();
     }
 }

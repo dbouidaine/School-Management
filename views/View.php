@@ -8,12 +8,7 @@ class View{
     // I create the class for whole view, which will extend the super class 'View', then in the page's class,
     // I contstruct the page with calling different components and specifying data to show
 
-    protected $view="new message";
-
-    public function __construct()
-    {
-        ;
-    }
+    protected $view;
 
     public function view(){
         print_r($this->view);

@@ -6,7 +6,7 @@
         </div>
         <div class="card-body">
             <h3><?= $arg['title']; ?></h3>
-            <p class="card-text"><?= $arg['description'];?></p>
+            <p class="card-text"><?= $arg['description'];?> ... </p>
             <a href="/article/show/<?= $arg['id'];?>" class="card-link">Afficher la suite</a>
         </div>
     </div>

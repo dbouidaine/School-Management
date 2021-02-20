@@ -4,6 +4,5 @@ namespace controllers;
 
 
 class Controller{
-
     
 }
