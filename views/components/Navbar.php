@@ -7,7 +7,7 @@ class Navbar extends Component{
 
     public function __construct($args)
     {
-        // Require [asdasdasd]
+        // Expects []
         $this->content=ob_start();
         $this->require_html("navbar",$args);
         $this->content=ob_get_clean();

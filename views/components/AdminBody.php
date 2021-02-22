@@ -2,12 +2,11 @@
 
 namespace views\components;
 
-
 class AdminBody extends Component{
 
     public function __construct($args)
     {
-        // Require [asdasdasd]
+        // Expects []
         $this->content=ob_start();
         $this->require_html("adminBody",$args);
         $this->content=ob_get_clean();
