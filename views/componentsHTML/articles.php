@@ -9,7 +9,7 @@
             <p class="card-text"><?= $arg['description'];?> ... </p>
         </div>
         <div class="card-footer">
-            <a href="/article/show/<?= $arg['id'];?>" class="card-link">Afficher la suite</a>
+            <a href="<?=url('article/show/').$arg['id'];?>" class="card-link">Afficher la suite</a>
         </div>
     </div>
 </div>

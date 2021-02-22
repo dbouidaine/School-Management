@@ -11,3 +11,14 @@ define('DB_USER','root');
 define('DB_PASSWORD','');
 define('DB_HOST','127.0.0.1');
 define('DB_NAME','tdw');
+
+
+function url($url){
+    if(isset($_GET['base_url'])) {return $_GET['base_url'].'/'.$url;}
+    else {return '/'.$url; }
+}
+
+function asset($str){
+    if(isset($_GET['base_url'])) {return url('public/assets/').$str;}
+    return '/assets/'.$str;
+}

@@ -8,32 +8,32 @@
         <div>
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="/">Accueil</a>
+              <a class="nav-link active" href="<?=url('');?>">Accueil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/ecole/presentation">Présentation</a>
+              <a class="nav-link" href="<?=url('ecole/presentation');?>">Présentation</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/ecole/cycle-primaire">Cycle Primaire</a>
+              <a class="nav-link" href="<?=url('ecole/cycle-primaire');?>">Cycle Primaire</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/ecole/cycle-moyen">Cycle Moyen</a>
+              <a class="nav-link" href="<?=url('ecole/cycle-moyen');?>">Cycle Moyen</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/ecole/cycle-secondaire">Cycle Secondaire</a>
+              <a class="nav-link" href="<?=url('ecole/cycle-secondaire');?>">Cycle Secondaire</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/espace-eleves">Espace Elèves</a>
+              <a class="nav-link" href="<?=url('espace-eleves');?>">Espace Elèves</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/espace-parents">Espace Parents</a>
+              <a class="nav-link" href="<?=url('espace-parents');?>">Espace Parents</a>
             </li>
           </ul>
         </div>
         <div>
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="/contact">Contact</a>
+              <a class="nav-link" href="<?=url('contact');?>">Contact</a>
             </li>
           </ul>
         </div>
