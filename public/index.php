@@ -13,6 +13,8 @@ spl_autoload_register(function ($class_name) {
 
 if(!(isset($_GET['route'])) && (isset($_SERVER['PATH_INFO']))){
     $_GET['route']=ltrim($_SERVER['REQUEST_URI'],"/");
+    $var=explode("?",$_GET['route'],2);
+    $_GET['route']=$var;
 }
 if(!(isset($_GET['route'])) && !(isset($_SERVER['PATH_INFO']))){
     $_GET['route']="/";
