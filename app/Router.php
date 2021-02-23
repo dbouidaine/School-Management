@@ -17,7 +17,7 @@ class Router{
                 call_user_func([$name_space.$callback[0],$callback[1]],$matches);
             }
             catch (Exception $ex){
-                Router::redirect('404');
+                Router::redirect('errors/404');
             }
         }
     }
@@ -34,22 +34,20 @@ class Router{
                 call_user_func([$name_space.$callback[0],$callback[1]],$post);
             }
             catch (Exception $ex){
-                Router::redirect('404');
+                Router::redirect('errors/404');
             }
         }
     }
 
     public function matches($pattern){
-        if (!isset($_GET['route'])) {return;}
-        if($this->found) {return;}
+        if (!isset($_GET['route']) || $this->found) {return NULL;}
         $pattern_reg_exp = preg_replace("/\{(.*?)\}/" , "(?P<$1>[\w-]+)", $pattern);
         $pattern_reg_exp="#^".ltrim($pattern_reg_exp,"/")."$#";
         preg_match($pattern_reg_exp,trim($_GET['route'],"/"), $matches);
         if ($matches){
             $this->found=1;
-            return $matches;
         }
-        return;
+        return $matches;
     }
 
     public static function redirect($code){

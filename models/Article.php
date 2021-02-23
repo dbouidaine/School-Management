@@ -2,23 +2,16 @@
 
 namespace models;
 
+use app\Router;
+use models\Access;
 class Article extends Model{
 
     static function count(){
-        $connection=DataBase::connect();
-        $query=$connection->prepare('SELECT COUNT(*) AS count FROM article;');
-        $query->execute();
-        $query=$query->fetch((\PDO::FETCH_ASSOC));
-        return $query['count'];
+        return Model::countM('article');
     }
 
     static function get($id){
-        // get an article by id
-        $connection=DataBase::connect();
-        $query=$connection->prepare('SELECT * FROM article WHERE id=?;');
-        $query->bindParam(1,$id);
-        $query->execute();
-        return $query->fetch((\PDO::FETCH_ASSOC));
+        return parent::getM($id,'article');
     }
     
     static function getMany($from,$count){
@@ -33,11 +26,12 @@ class Article extends Model{
 
     static function new($title,$image,$description,$author){
         $connection=DataBase::connect();
-        $query=$connection->prepare('INSERT INTO article (title,description,image,author,created_at) VALUES (?,?,?,?,NOW());');
+        $query=$connection->prepare('INSERT INTO article (title,description,image,author) VALUES (?,?,?,?);');
         $query->execute([$title,$description,$image,$author]);
+        print_r("this");
     }
 
-    static function delete($id){
-        parent::destroy($id,"article");
+    static function destroy($id){
+        parent::destroyM($id,"article");
     }
 }

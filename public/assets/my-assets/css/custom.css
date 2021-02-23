@@ -43,9 +43,16 @@ body{
 }
 .text-blue{
     color: #00b0ff!important;
-
 }
-
+table.table{
+    color: #4d5572;
+}
+thead{
+    border-bottom: #dee2e6 solid 3px;
+}
+tr{
+    border-bottom: #dee2e6 solid 2px;
+}
 .carousel{
     height: 50vh;
     width: 70vw;
@@ -54,7 +61,24 @@ body{
     height: 50vh;
 
 }
-
+.table-img-rounded{
+    overflow: hidden;
+    height: 8vh;
+    width: 8vh;
+    border-radius: 50%;
+    border-width: 1px;
+}
+.table-img-rounded img{
+    height: 10vh;
+}
+.table-img-rounded:hover{
+    opacity: 0.8;
+    transition: 0.3s ease;
+}
+.div-dropdown:hover{
+    background-color: #f5f3f5;
+    transition: 0.3s ease;
+}
 nav li a{
     padding: 10px;
 }
@@ -77,7 +101,7 @@ a.card-link:hover{
     transition: 0.3s ease;
 }
 
-.card:hover img{
+.card:hover .card-img-top>img{
     transform: scale(1.5);
     opacity: 0.8;
     transition: 0.4s ease;

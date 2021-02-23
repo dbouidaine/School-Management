@@ -7,7 +7,7 @@
           <img class="card-img-top" alt="">
           <div class="card-body">
             <h4 class="card-title">Title</h4>
-            <form class="php-add-formation" action="<?= url('article/add')?> method="POST">
+            <form class="php-add-formation" action="<?=url('article/add')?>" method="POST">
                 <input name="author" type="text" placeholder="author" required>
                 <input name="title" type="text" placeholder="title" required>
                 <input name="description" type="text" placeholder="description" required>

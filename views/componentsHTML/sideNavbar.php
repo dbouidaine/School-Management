@@ -1,5 +1,5 @@
 <nav class="side-navbar bg-blue align-items-center">
-    <h3 class="bg-night-blue text-white sidenav-header p-4 text-center zindex-1000">Ecotech school</h3>
+    <h3 class="bg-dark text-white sidenav-header p-4 text-center zindex-1000">Ecotech school</h3>
     <ul class="list-unstyled align-items-center">
         <li class="nav-item">
             <a ckas href="<?=url('articles');?>">Articles</a>
