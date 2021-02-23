@@ -2,8 +2,6 @@
 
 namespace models;
 
-use app\Router;
-use models\Access;
 class Article extends Model{
 
     static function count(){
@@ -28,7 +26,6 @@ class Article extends Model{
         $connection=DataBase::connect();
         $query=$connection->prepare('INSERT INTO article (title,description,image,author) VALUES (?,?,?,?);');
         $query->execute([$title,$description,$image,$author]);
-        print_r("this");
     }
 
     static function destroy($id){

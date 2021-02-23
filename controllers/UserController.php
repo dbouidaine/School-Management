@@ -2,11 +2,21 @@
 
 namespace controllers;
 
+use models\User;
+
 class UserController extends Controller{
     public function edit($url_data){
-        //print_r($args);
-        $id=$url_data['id_user'];
-        $name_user=$url_data['name_user'];
-        //print_r("\nEditing user number: ".$id." named ".$name_user);
+        ;
+    }
+
+    public function add(){
+        User::new($_POST);
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+    }
+
+    public function delete($url_data){
+        $id=$url_data['user_id'];
+        User::destroy($id);
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }

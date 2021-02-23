@@ -3,7 +3,10 @@
 namespace controllers;
 use views\AdminView;
 use views\AdminArticlesView;
+use views\AdminUsersView;
+use views\AdminNewUserView;
 use models\Article;
+use models\User;
 
 class AdminController extends Controller{
 
@@ -12,19 +15,20 @@ class AdminController extends Controller{
         $admin=new AdminView($url_data);
         $admin->view();
     }
-    public function articles($url_data){
+
+    public function indexArticles($url_data){
         $args=[];
         $n_pages=Article::count();
-        $args['page_count']=ceil($n_pages/8);
+        $args['page_count']=ceil($n_pages/15);
         if(!isset($url_data['page'])){
-            $data=Article::getMany(0,8);
+            $data=Article::getMany(0,15);
             $args['page']=1;
         }
         else{
             $args['page']=$url_data['page'];
             $page=$url_data['page'];
-            $from = ($page-1)*8;
-            $data=Article::getMany($from,8);
+            $from = ($page-1)*15;
+            $data=Article::getMany($from,15);
         }
         if(empty($data)){
             \app\Router::redirect('errors/404');
@@ -33,5 +37,33 @@ class AdminController extends Controller{
         $args['articles']=$data;
         $home=new AdminArticlesView($args);
         $home->view();
+    }
+
+    public function indexUsers($url_data){
+        $args=[];
+        $n_pages=User::count();
+        $args['page_count']=ceil($n_pages/15);
+        if(!isset($url_data['page'])){
+            $data=User::getMany(0,15);
+            $args['page']=1;
+        }
+        else{
+            $args['page']=$url_data['page'];
+            $page=$url_data['page'];
+            $from = ($page-1)*15;
+            $data=User::getMany($from,15);
+        }
+        if(empty($data)){
+            \app\Router::redirect('errors/404');
+            exit();
+        }
+        $args['users']=$data;
+        $home=new AdminUsersView($args);
+        $home->view();
+    }
+
+    public function newUser($url_data){
+        $view=new AdminNewUserView();
+        $view->view();
     }
 }

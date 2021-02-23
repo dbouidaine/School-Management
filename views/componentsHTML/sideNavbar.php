@@ -1,4 +1,4 @@
-<nav class="side-navbar bg-blue align-items-center">
+<nav class="side-navbar bg-blue align-items-center" style="display:none;">
     <h3 class="bg-dark text-white sidenav-header p-4 text-center zindex-1000">Ecotech school</h3>
     <ul class="list-unstyled align-items-center">
         <li class="nav-item">
@@ -28,4 +28,4 @@
 
     </ul>
 </nav>
-<a href="#" id="sidenav_toggle" class="text-light bg-blue p-4"><i class="fa fa-2x fa-bars to-rotate" aria-hidden="true"></i></a>
+<a href="##" id="sidenav_toggle" class="text-light bg-blue p-4"><i class="fa fa-2x fa-bars to-rotate" aria-hidden="true"></i></a>

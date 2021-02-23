@@ -14,7 +14,7 @@ $('.content').click(function(){
         $('.side-navbar').hide();
     }
 });
-if (window.matchMedia('(max-width: 900px)').matches)
-{
-        $('.side-navbar').hide();
-}
+
+$(document).ready(function(){
+    $('.side-navbar').hide();
+});

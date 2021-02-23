@@ -25,6 +25,8 @@ $app=new Application();
 
 $app->router->found=0;
 
+/******************** Home ************************/
+
 $app->router->get("/",[HomeController::class,'index']);
 
 $app->router->get("/home/{page}",[HomeController::class,'index']);
@@ -37,14 +39,32 @@ $app->router->get("/ecole/{cycle}",[CycleController::class,'index']);
 
 $app->router->get("/contact",[CycleController::class,'index']);
 
+/******************** Admin ************************/
+
 $app->router->get("/admin",[AdminController::class,'index']);
 
-$app->router->get("/admin/articles",[AdminController::class,'articles']);
-$app->router->get("/admin/articles/{page}",[AdminController::class,'articles']);
+/******************** Articles ************************/
+
+$app->router->get("/admin/articles",[AdminController::class,'indexArticles']);
+
+$app->router->get("/admin/articles/{page}",[AdminController::class,'indexArticles']);
 
 $app->router->get("/article/delete/{article_id}",[ArticleController::class,'delete']);
 
 $app->router->get("/article/add",[ArticleController::class,'add']);
+
+/******************** Users ************************/
+
+$app->router->get("/admin/users",[AdminController::class,'indexUsers']);
+
+$app->router->get("/admin/users/{page}",[AdminController::class,'indexUsers']);
+
+$app->router->get("/user/delete/{user_id}",[UserController::class,'delete']);
+
+$app->router->get("/user/new",[AdminController::class,'newUser']);
+
+$app->router->get("/user/add",[UserController::class,'add']);
+
 
 if(!$app->router->found)
 {

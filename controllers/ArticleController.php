@@ -28,11 +28,11 @@ class ArticleController extends Controller{
     public function delete($url_data){
         $id=$url_data['article_id'];
         Article::destroy($id);
-        header('location:/home/2');
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 
     public function add(){
         Article::new($_POST['title'],$_POST['image'],$_POST['description'],$_POST['author']);
-        header('location:'.url('articles'));
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }

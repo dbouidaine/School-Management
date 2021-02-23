@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `article` (
   PRIMARY KEY (`id`),
   KEY `author` (`author`),
   CONSTRAINT `author` FOREIGN KEY (`author`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table tdw.article: ~31 rows (approximately)
 /*!40000 ALTER TABLE `article` DISABLE KEYS */;
@@ -40,16 +40,13 @@ INSERT INTO `article` (`id`, `author`, `title`, `description`, `image`, `created
 	(6, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:33'),
 	(7, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:33'),
 	(8, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:34'),
-	(9, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:34'),
 	(10, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:34'),
-	(11, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:35'),
 	(12, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:35'),
 	(13, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:43'),
 	(14, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:43'),
 	(15, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:44'),
 	(16, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:44'),
 	(17, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:44'),
-	(18, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:45'),
 	(19, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:45'),
 	(20, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:46'),
 	(21, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:46'),
@@ -63,7 +60,8 @@ INSERT INTO `article` (`id`, `author`, `title`, `description`, `image`, `created
 	(31, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', '/assets/my-assets/img/carousel2.jpg', '2021-02-20 20:35:48'),
 	(32, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', '/assets/my-assets/img/carousel1.jpg', '2021-02-20 20:36:35'),
 	(36, 2, 'New paragraphe', 'this is a new paragraphe', '/assets/my-assets/img/carousel1.jpg', '2021-02-20 20:40:13'),
-	(37, 2, 'Palette', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', '/assets/my-assets/img/carousel3.jpg', '2021-02-20 20:42:43');
+	(37, 2, 'Palette', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', '/assets/my-assets/img/carousel3.jpg', '2021-02-20 20:42:43'),
+	(41, 2, 'What is the first paragraphe in the world', 'If a class name is included as a parameter, then only that class will be removed from the set of matched elements. If no classes are specified in the parameter, all classes will be removed.  Before jQuery version 1.12/2.2, the .removeClass() method manipulated the className property of the selected elements, not the class attribute. Once the property was changed, it was the browser that updated the attribute accordingly. This means that when the class attribute was updated and the last class name was removed, the browser might have set the attribute\'s value to an empty string instead of removing the attribute completely. An implication of this behavior was that this method only worked for documents with HTML DOM semantics (e.g., not pure XML documents).  As of jQuery 1.12/2.2, this behavior is changed to improve the support for XML documents, including SVG. Starting from this version, the class attribute is used instead. So, .removeClass() can be used on XML or SVG documents.  More than one class may be removed at a time, separated by a space, from the set of matched elements, like so:  1 $( "p" ).removeClass( "myClass yourClass" ) This method is often used with .addClass() to switch elements\' classes from one to another, like so:  1 $( "p" ).removeClass( "myClass noClass" ).addClass( "yourClass" ); Here, the myClass and noClass classes are removed from all paragraphs, while yourClass is added.  To replace all existing classes with another class, we can use .attr( "class", "newClass" ) instead.  As of jQuery 1.4, the .removeClass() method allows us to indicate the class to be removed by passing in a function.  1 2 3 $( "li" ).last().removeClass(function() {   return $( this ).prev().attr( "class" ); }); This example removes the class name of the penultimate <li> from the last <li>.', '/assets/my-assets/img/carousel3.jpg', '2021-02-23 22:19:27');
 /*!40000 ALTER TABLE `article` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.permission
@@ -72,10 +70,19 @@ CREATE TABLE IF NOT EXISTS `permission` (
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table tdw.permission: ~0 rows (approximately)
 /*!40000 ALTER TABLE `permission` DISABLE KEYS */;
+INSERT INTO `permission` (`id`, `name`) VALUES
+	(5, 'addArticle'),
+	(1, 'addUser'),
+	(6, 'deleteArticle'),
+	(2, 'deleteUser'),
+	(8, 'editArticle'),
+	(4, 'editUser'),
+	(7, 'showArticle'),
+	(3, 'showUser');
 /*!40000 ALTER TABLE `permission` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.presentation
@@ -110,17 +117,20 @@ INSERT INTO `role` (`id`, `name`) VALUES
 
 -- Dumping structure for table tdw.role_has_permission
 CREATE TABLE IF NOT EXISTS `role_has_permission` (
-  `id_role` int(11) NOT NULL,
-  `id_permission` int(11) NOT NULL,
-  PRIMARY KEY (`id_role`,`id_permission`),
-  KEY `id_permission` (`id_permission`),
-  KEY `id_role` (`id_role`),
-  CONSTRAINT `id_permission` FOREIGN KEY (`id_permission`) REFERENCES `permission` (`id`),
-  CONSTRAINT `id_role` FOREIGN KEY (`id_role`) REFERENCES `role` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `role_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `permission_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `role_name_permission_name` (`role_name`,`permission_name`),
+  KEY `permission_name` (`permission_name`),
+  CONSTRAINT `permission_name` FOREIGN KEY (`permission_name`) REFERENCES `permission` (`name`),
+  CONSTRAINT `role_name` FOREIGN KEY (`role_name`) REFERENCES `role` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table tdw.role_has_permission: ~0 rows (approximately)
 /*!40000 ALTER TABLE `role_has_permission` DISABLE KEYS */;
+INSERT INTO `role_has_permission` (`id`, `role_name`, `permission_name`) VALUES
+	(1, 'admin', 'addUser');
 /*!40000 ALTER TABLE `role_has_permission` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.user
@@ -136,13 +146,15 @@ CREATE TABLE IF NOT EXISTS `user` (
   UNIQUE KEY `email` (`email`) USING BTREE,
   KEY `role` (`role`),
   CONSTRAINT `role` FOREIGN KEY (`role`) REFERENCES `role` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table tdw.user: ~2 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `email`, `role`, `first_name`, `last_name`, `password`, `created_at`) VALUES
-	(1, 'admin@admin.com', 1, NULL, NULL, 'admin', '2021-02-19 21:40:25'),
-	(2, 'admin2@admin.com', 1, NULL, NULL, 'admin', '2021-02-22 02:24:42');
+	(1, 'admin@admin.com', 1, 'Diaeddin', 'BOUIDAINE', 'admin', '2021-02-23 21:56:26'),
+	(2, 'admin2@admin.com', 1, 'Zineddine', 'BOUCHERIR', 'admin', '2021-02-23 21:56:34'),
+	(3, 'hd_bouidaine@esi.dz', 1, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-23 22:53:47'),
+	(5, 'hd_bouidaine1@esi.dz', 1, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-23 22:55:32');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
