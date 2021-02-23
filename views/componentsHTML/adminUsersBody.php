@@ -5,7 +5,7 @@
         <h2 class="p-3">Gestion des utilisateurs</h2>
         <div class="card text-left p-5">
             <div class="pb-3">
-                <a href="<?=url('user/add')?>" class="btn bg-dark text-light float-end">Ajouter Utilisateur</a>
+                <a href="<?=url('user/new')?>" class="btn bg-dark text-light float-end">Ajouter Utilisateur</a>
             </div>
             <table class="table">
                 <thead>
@@ -14,7 +14,8 @@
                         <th>Email</th>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th class="text-right">Role</th>
+                        <th>Role</th>
+                        <th class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
