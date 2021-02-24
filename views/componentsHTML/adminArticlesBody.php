@@ -1,9 +1,13 @@
 <div class="wrapper">
     <?php if(isset($args['SideNavbar'])) {echo $args['SideNavbar'];} ?>
     <div class="content p-5">
-        
-        <h2 class="p-3">Gestion des articles</h2>
+        <div>
+            <h2 class="p-3">Gestion des articles</h2>
+        </div>
         <div class="card text-left p-5">
+            <div class="new-article">
+                <a href="<?=url('article/new')?>" class="text-light no-decoration my-btn btn">Ajouter Article</a>
+            </div>
             <table class="table">
                 <thead>
                     <tr>

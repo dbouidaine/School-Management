@@ -49,9 +49,13 @@ $app->router->get("/admin/articles",[AdminController::class,'indexArticles']);
 
 $app->router->get("/admin/articles/{page}",[AdminController::class,'indexArticles']);
 
+$app->router->get("/article/new",[AdminController::class,'newArticle']);
+
 $app->router->get("/article/delete/{article_id}",[ArticleController::class,'delete']);
 
 $app->router->get("/article/add",[ArticleController::class,'add']);
+
+
 
 /******************** Users ************************/
 

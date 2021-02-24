@@ -1,10 +1,10 @@
 <?php
 
 namespace controllers;
+
 use views\AdminView;
 use views\AdminArticlesView;
 use views\AdminUsersView;
-use views\AdminNewUserView;
 use models\Article;
 use models\User;
 
@@ -35,7 +35,8 @@ class AdminController extends Controller{
             exit();
         }
         $args['articles']=$data;
-        $home=new AdminArticlesView($args);
+        $home=new AdminArticlesView();
+        $home->showTable($args);
         $home->view();
     }
 
@@ -58,12 +59,20 @@ class AdminController extends Controller{
             exit();
         }
         $args['users']=$data;
-        $home=new AdminUsersView($args);
+        $home=new AdminUsersView();
+        $home->showTable($args);
         $home->view();
     }
 
     public function newUser($url_data){
-        $view=new AdminNewUserView();
+        $view=new AdminUsersView();
+        $view->newUser();
+        $view->view();
+    }
+
+    public function newArticle($url_data){
+        $view=new AdminArticlesView();
+        $view->newArticle();
         $view->view();
     }
 }

@@ -1,13 +1,15 @@
-<?php 
+<?php
 
 namespace views\components;
 
-class Articles extends Component{
+class AdminNewArticleBody extends Component{
+
     public function __construct($args)
     {
         // Expects []
         $this->content=ob_start();
-        $this->require_html("articles",$args);
+        $this->require_html("adminNewArticleBody",$args);
         $this->content=ob_get_clean();
     }
+
 }

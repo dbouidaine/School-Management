@@ -2,7 +2,7 @@
 
 namespace views;
 
-use views\components\ArticleBody;
+use views\components\HomeArticleBody;
 use views\components\Layout;
 
 class ArticleView extends View{
@@ -14,7 +14,7 @@ class ArticleView extends View{
         $args=$this->load($components,$args);
         // HomeBody component defines how the other components are grouped in the home page
         // Every page must have it's body component
-        $body=new ArticleBody($args);
+        $body=new HomeArticleBody($args);
         $args['Body']=$body->get();
         $layout = new Layout($args);
         $this->view = $layout->get();
