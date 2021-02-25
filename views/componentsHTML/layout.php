@@ -19,6 +19,7 @@
     <script type="text/JavaScript" src="<?=asset('extern/js/jquery.min.js');?>"></script>
     <script type="text/JavaScript" src="<?=asset('extern/js/bootstrap.bundle.min.js');?>"></script>
     <script type="text/JavaScript" src="<?=asset('extern/js/fontawesome.min.js');?>"></script>
+    <script type="text/JavaScript" src="<?=asset('extern/js/Sortable.min.js');?>"></script>
     <script type="text/JavaScript" src="<?=asset('my-assets/js/custom.js');?>"></script>
     
 </body>

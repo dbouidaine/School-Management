@@ -63,12 +63,17 @@ $app->router->get("/admin/users",[AdminController::class,'indexUsers']);
 
 $app->router->get("/admin/users/{page}",[AdminController::class,'indexUsers']);
 
-$app->router->get("/user/delete/{user_id}",[UserController::class,'delete']);
+$app->router->get("/user/edit/{user_id}",[AdminController::class,'editUser']);
 
-$app->router->get("/user/new",[AdminController::class,'newUser']);
+$app->router->get("/user/delete/{user_id}",[UserController::class,'delete']);
 
 $app->router->get("/user/add",[UserController::class,'add']);
 
+$app->router->get("/user/update",[UserController::class,'update']);
+
+/******************** Presentation ************************/
+
+$app->router->get("/admin/presentation",[AdminController::class,'indexPresentation']);
 
 if(!$app->router->found)
 {

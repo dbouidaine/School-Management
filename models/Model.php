@@ -21,9 +21,16 @@ class Model{
         return $query->fetch((\PDO::FETCH_ASSOC));
     }
 
+    static function getAllM($table){
+        $connection=DataBase::connect();
+        $query=$connection->prepare('SELECT * FROM '.$table.';');
+        $query->execute();
+        return $query->fetchAll((\PDO::FETCH_ASSOC));
+    }
+
     static function destroyM($id,$table){
         $connection=DataBase::connect();
-        $query=$connection->prepare('DELETE FROM '.$table.' WHERE id=?;');
+        $query=$connection->prepare('DELETE FROM '.$table.' WHERE id=? ;');
         $query->bindParam(1,$id);
         $query->execute();
     }

@@ -13,6 +13,11 @@ class UserController extends Controller{
         User::new($_POST);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
+    
+    public function update(){
+        User::update($_POST);
+        header('Location: ' . url('admin/users'));
+    }
 
     public function delete($url_data){
         $id=$url_data['user_id'];

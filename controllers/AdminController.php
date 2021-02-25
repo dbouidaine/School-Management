@@ -4,9 +4,11 @@ namespace controllers;
 
 use views\AdminView;
 use views\AdminArticlesView;
+use views\AdminPresentationView;
 use views\AdminUsersView;
 use models\Article;
 use models\User;
+use models\Role;
 
 class AdminController extends Controller{
 
@@ -40,6 +42,12 @@ class AdminController extends Controller{
         $home->view();
     }
 
+    public function indexPresentation(){
+        $presentation=new AdminPresentationView();
+        $presentation->showParagraphs();
+        $presentation->view();
+    }
+
     public function indexUsers($url_data){
         $args=[];
         $n_pages=User::count();
@@ -54,19 +62,24 @@ class AdminController extends Controller{
             $from = ($page-1)*15;
             $data=User::getMany($from,15);
         }
-        if(empty($data)){
+        $roles=Role::getAll();
+        if(empty($data) || empty($roles)){
             \app\Router::redirect('errors/404');
             exit();
         }
         $args['users']=$data;
+        $args['roles']=$roles;
         $home=new AdminUsersView();
         $home->showTable($args);
         $home->view();
     }
 
-    public function newUser($url_data){
+    public function editUser($url_data){
+        $args['roles']=Role::getAll();
+        $args['user']=User::get($url_data['user_id']);
+        $args['user']['password']=NULL;
         $view=new AdminUsersView();
-        $view->newUser();
+        $view->editUser($args);
         $view->view();
     }
 

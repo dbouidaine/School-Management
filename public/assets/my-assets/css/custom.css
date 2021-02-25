@@ -226,7 +226,20 @@ form.new-user button:hover,form.new-article button:hover{
     background-color:#868fac ;
     transition: 0.3s ease;
 }
-
+form.new-user select{
+    border: 2px solid  #f5f3f5;
+    padding: 1%;
+    margin-top:1%;
+}
+form.new-user select option{
+    border: 0pt;
+    padding: 2%;
+}
+form.new-user select option:hover{
+    border: 0pt;
+    background-color: #323643;
+    padding: 2%;
+}
 .my-btn{
     border: none;
     margin: 1%;
@@ -237,6 +250,15 @@ form.new-user button:hover,form.new-article button:hover{
 .my-btn:hover{
     cursor:pointer;
     background-color:#868fac ;
+    transition: 0.3s ease;
+}
+.drag-btn{
+    color: #323643;
+    background-color: #f5f3f5;
+}
+
+.drag-btn:hover{
+    opacity: 0.7;
     transition: 0.3s ease;
 }
 

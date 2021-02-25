@@ -1,13 +1,14 @@
 <?php
 
 namespace controllers;
-use views\PresentationView;
+use views\AdminPresentationView;
 
 class PresentationController extends Controller{
 
 
     public function index(){
-        $presentation=new PresentationView();
+        $presentation=new AdminPresentationView();
+        $presentation->showParagraphs();
         $presentation->view();
     }
 }

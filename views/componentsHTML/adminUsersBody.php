@@ -7,11 +7,18 @@
             <div class="card-body">
                 <h4 class="card-title">Ajouter Utilisateur</h4>
                 <form class="new-user form" action="<?=url('user/add')?>" method="POST">
-                    <input name="email" type="email" placeholder="email" required>
-                    <input name="first_name" type="text" placeholder="first_name" required>
-                    <input name="last_name" type="text" placeholder="last_name" required>
+                    <input name="email" type="email" placeholder="email" autocomplete="off" autofocus="false" required>
+                    <input pattern="[a-zA-z ]*" name="first_name" type="text" placeholder="first_name" required>
+                    <input pattern="[a-zA-z ]*" name="last_name" type="text" placeholder="last_name" required>
                     <input name="password" type="password" placeholder="password" required>
-                    <input name="role" type="number" placeholder="role" required>
+                    <select name="role" id="" placeholde="role" required>
+                        <option value="" selected disabled hidden>Role</option>
+                        <?php
+                            foreach($args['roles'] as $role){
+                                echo "<option value=\"". $role['id']."\">" . $role['name'] . "</option>";
+                            }
+                        ?>
+                    </select>
                     <button type="submit" name="add_formation" id="form-btn">New User</button>
                 </form>
             </div>
@@ -28,7 +35,7 @@
                 </thead>
                 <tbody>
                     <?php foreach($args['users'] as $arg){?>
-                    <tr class="align-middle">
+                    <tr draggable="true" class="align-middle">
                         <td class="text-center"><?=$arg['id'];?></td>
                         <!--<td>
                             <div class="m-2 table-img-rounded justify-content-center">
@@ -45,9 +52,9 @@
                                     <i class="fas fa-ellipsis-v" id="dropdownActions" aria-expanded="false"></i>
                                 </div>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownActions">
-                                    <li><a class="dropdown-item" href="<?=url('article/show/'.$arg['id']);?>">Show</a></li>
-                                    <li><a class="dropdown-item">Edit</a></li>
-                                    <li><a class="dropdown-item text-danger" href="<?=url('article/delete/'.$arg['id']);?>">Delete</a></li>
+                                    <li><a class="dropdown-item" href="<?=url('user/show/'.$arg['id']);?>">Show</a></li>
+                                    <li><a class="dropdown-item" href="<?=url('user/edit/'.$arg['id']);?>">Edit</a></li>
+                                    <li><a class="dropdown-item text-danger" href="<?=url('user/delete/'.$arg['id']);?>">Delete</a></li>
                                 </ul>
                             </div>
                         </td>

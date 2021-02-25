@@ -23,13 +23,25 @@ class User extends Model{
     }
 
     static function new($data){
-        print_r('here');
-        $connection=DataBase::connect($data);
+        $connection=DataBase::connect();
         $query=$connection->prepare('INSERT INTO user (email,role,first_name,last_name,password) VALUES (?,?,?,?,?);');
         $query->execute([$data['email'],$data['role'],$data['first_name'],$data['last_name'],md5($data['password'])]);
     }
 
+    static function update($data){
+        $connection=DataBase::connect();
+        if (empty($data['password'])){
+            $query=$connection->prepare('UPDATE user SET email=?,first_name=?,last_name=?,role=? WHERE id=?;');
+            $query->execute([$data['email'],$data['first_name'],$data['last_name'],$data['role'],$data['id']]);
+        }
+        else{
+            $query=$connection->prepare('UPDATE user SET email=?,first_name=?,last_name=?,password=?,role=? WHERE id=?;');
+            $query->execute([$data['email'],$data['first_name'],$data['last_name'],md5($data['password']),$data['role'],$data['id']]);
+        }
+        
+    }
+
     static function destroy($id){
-        parent::destroyM($id,"users");
+        parent::destroyM($id,'user');
     }
 }
