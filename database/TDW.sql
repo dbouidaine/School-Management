@@ -27,10 +27,10 @@ CREATE TABLE IF NOT EXISTS `article` (
   `created_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`),
   KEY `author` (`author`),
-  CONSTRAINT `author` FOREIGN KEY (`author`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  CONSTRAINT `author` FOREIGN KEY (`author`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.article: ~31 rows (approximately)
+-- Dumping data for table tdw.article: ~29 rows (approximately)
 /*!40000 ALTER TABLE `article` DISABLE KEYS */;
 INSERT INTO `article` (`id`, `author`, `title`, `description`, `image`, `created_at`) VALUES
 	(1, 1, 'Biden tells Munich Security Conference America is here', 'In his first big appearance on the global stage, President Joe Biden promised the Group of Seven (G7) leaders during the virtual Munich Security Conference that the United States was recommitted to multilateral engagement.Biden told US allies that they must stand firm against the challenges posed by China, Russia and Iran, saying Russia was seeking to weaken the transatlantic alliance and calling for a united front to counter what he called China’s abusive economic practices.', '/assets/my-assets/img/carousel2.jpg', '2021-02-21 22:42:25'),
@@ -44,7 +44,6 @@ INSERT INTO `article` (`id`, `author`, `title`, `description`, `image`, `created
 	(12, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:35'),
 	(13, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:43'),
 	(14, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:43'),
-	(15, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:44'),
 	(16, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:44'),
 	(17, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:44'),
 	(19, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:45'),
@@ -61,8 +60,64 @@ INSERT INTO `article` (`id`, `author`, `title`, `description`, `image`, `created
 	(32, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', '/assets/my-assets/img/carousel1.jpg', '2021-02-20 20:36:35'),
 	(36, 2, 'New paragraphe', 'this is a new paragraphe', '/assets/my-assets/img/carousel1.jpg', '2021-02-20 20:40:13'),
 	(37, 2, 'Palette', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', '/assets/my-assets/img/carousel3.jpg', '2021-02-20 20:42:43'),
-	(41, 2, 'What is the first paragraphe in the world', 'If a class name is included as a parameter, then only that class will be removed from the set of matched elements. If no classes are specified in the parameter, all classes will be removed.  Before jQuery version 1.12/2.2, the .removeClass() method manipulated the className property of the selected elements, not the class attribute. Once the property was changed, it was the browser that updated the attribute accordingly. This means that when the class attribute was updated and the last class name was removed, the browser might have set the attribute\'s value to an empty string instead of removing the attribute completely. An implication of this behavior was that this method only worked for documents with HTML DOM semantics (e.g., not pure XML documents).  As of jQuery 1.12/2.2, this behavior is changed to improve the support for XML documents, including SVG. Starting from this version, the class attribute is used instead. So, .removeClass() can be used on XML or SVG documents.  More than one class may be removed at a time, separated by a space, from the set of matched elements, like so:  1 $( "p" ).removeClass( "myClass yourClass" ) This method is often used with .addClass() to switch elements\' classes from one to another, like so:  1 $( "p" ).removeClass( "myClass noClass" ).addClass( "yourClass" ); Here, the myClass and noClass classes are removed from all paragraphs, while yourClass is added.  To replace all existing classes with another class, we can use .attr( "class", "newClass" ) instead.  As of jQuery 1.4, the .removeClass() method allows us to indicate the class to be removed by passing in a function.  1 2 3 $( "li" ).last().removeClass(function() {   return $( this ).prev().attr( "class" ); }); This example removes the class name of the penultimate <li> from the last <li>.', '/assets/my-assets/img/carousel3.jpg', '2021-02-23 22:19:27');
+	(41, 2, 'What is the first paragraphe in the world', 'If a class name is included as a parameter, then only that class will be removed from the set of matched elements. If no classes are specified in the parameter, all classes will be removed.  Before jQuery version 1.12/2.2, the .removeClass() method manipulated the className property of the selected elements, not the class attribute. Once the property was changed, it was the browser that updated the attribute accordingly. This means that when the class attribute was updated and the last class name was removed, the browser might have set the attribute\'s value to an empty string instead of removing the attribute completely. An implication of this behavior was that this method only worked for documents with HTML DOM semantics (e.g., not pure XML documents).  As of jQuery 1.12/2.2, this behavior is changed to improve the support for XML documents, including SVG. Starting from this version, the class attribute is used instead. So, .removeClass() can be used on XML or SVG documents.  More than one class may be removed at a time, separated by a space, from the set of matched elements, like so:  1 $( "p" ).removeClass( "myClass yourClass" ) This method is often used with .addClass() to switch elements\' classes from one to another, like so:  1 $( "p" ).removeClass( "myClass noClass" ).addClass( "yourClass" ); Here, the myClass and noClass classes are removed from all paragraphs, while yourClass is added.  To replace all existing classes with another class, we can use .attr( "class", "newClass" ) instead.  As of jQuery 1.4, the .removeClass() method allows us to indicate the class to be removed by passing in a function.  1 2 3 $( "li" ).last().removeClass(function() {   return $( this ).prev().attr( "class" ); }); This example removes the class name of the penultimate <li> from the last <li>.', '/assets/my-assets/img/carousel3.jpg', '2021-02-23 22:19:27'),
+	(43, 1, 'A new post', 'another encryption method', 'Visitor-Design-Pattern-Diagram.png', '2021-02-25 00:41:01');
 /*!40000 ALTER TABLE `article` ENABLE KEYS */;
+
+-- Dumping structure for table tdw.article_for_category
+CREATE TABLE IF NOT EXISTS `article_for_category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `article` int(11) NOT NULL,
+  `category` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `article_category` (`article`,`category`),
+  KEY `category` (`category`),
+  CONSTRAINT `article` FOREIGN KEY (`article`) REFERENCES `article` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `category` FOREIGN KEY (`category`) REFERENCES `category` (`name`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tdw.article_for_category: ~0 rows (approximately)
+/*!40000 ALTER TABLE `article_for_category` DISABLE KEYS */;
+/*!40000 ALTER TABLE `article_for_category` ENABLE KEYS */;
+
+-- Dumping structure for table tdw.category
+CREATE TABLE IF NOT EXISTS `category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tdw.category: ~0 rows (approximately)
+/*!40000 ALTER TABLE `category` DISABLE KEYS */;
+/*!40000 ALTER TABLE `category` ENABLE KEYS */;
+
+-- Dumping structure for table tdw.class
+CREATE TABLE IF NOT EXISTS `class` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `year` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`),
+  KEY `year` (`year`),
+  CONSTRAINT `year` FOREIGN KEY (`year`) REFERENCES `year` (`cycle`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tdw.class: ~0 rows (approximately)
+/*!40000 ALTER TABLE `class` DISABLE KEYS */;
+/*!40000 ALTER TABLE `class` ENABLE KEYS */;
+
+-- Dumping structure for table tdw.cycle
+CREATE TABLE IF NOT EXISTS `cycle` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tdw.cycle: ~0 rows (approximately)
+/*!40000 ALTER TABLE `cycle` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cycle` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.permission
 CREATE TABLE IF NOT EXISTS `permission` (
@@ -72,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `permission` (
   UNIQUE KEY `name` (`name`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.permission: ~0 rows (approximately)
+-- Dumping data for table tdw.permission: ~7 rows (approximately)
 /*!40000 ALTER TABLE `permission` DISABLE KEYS */;
 INSERT INTO `permission` (`id`, `name`) VALUES
 	(5, 'addArticle'),
@@ -93,12 +148,16 @@ CREATE TABLE IF NOT EXISTS `presentation` (
   `order` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.presentation: ~0 rows (approximately)
+-- Dumping data for table tdw.presentation: ~5 rows (approximately)
 /*!40000 ALTER TABLE `presentation` DISABLE KEYS */;
 INSERT INTO `presentation` (`id`, `paragraph`, `image`, `order`, `created_at`) VALUES
-	(1, '2', '2', 1, '2021-02-22 02:18:20');
+	(1, 'ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 2, '2021-02-25 21:11:50'),
+	(2, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 1, '2021-02-25 21:11:50'),
+	(3, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 4, '2021-02-25 21:11:50'),
+	(4, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 3, '2021-02-25 21:11:50'),
+	(5, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 5, '2021-02-25 20:26:20');
 /*!40000 ALTER TABLE `presentation` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.role
@@ -107,12 +166,15 @@ CREATE TABLE IF NOT EXISTS `role` (
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.role: ~0 rows (approximately)
+-- Dumping data for table tdw.role: ~4 rows (approximately)
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
 INSERT INTO `role` (`id`, `name`) VALUES
-	(1, 'admin');
+	(1, 'admin'),
+	(4, 'parent'),
+	(3, 'student'),
+	(2, 'teacher');
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.role_has_permission
@@ -133,6 +195,21 @@ INSERT INTO `role_has_permission` (`id`, `role_name`, `permission_name`) VALUES
 	(1, 'admin', 'addUser');
 /*!40000 ALTER TABLE `role_has_permission` ENABLE KEYS */;
 
+-- Dumping structure for table tdw.subject
+CREATE TABLE IF NOT EXISTS `subject` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `class` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`),
+  KEY `class` (`class`),
+  CONSTRAINT `class` FOREIGN KEY (`class`) REFERENCES `class` (`name`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tdw.subject: ~0 rows (approximately)
+/*!40000 ALTER TABLE `subject` DISABLE KEYS */;
+/*!40000 ALTER TABLE `subject` ENABLE KEYS */;
+
 -- Dumping structure for table tdw.user
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -141,21 +218,41 @@ CREATE TABLE IF NOT EXISTS `user` (
   `first_name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`) USING BTREE,
   KEY `role` (`role`),
   CONSTRAINT `role` FOREIGN KEY (`role`) REFERENCES `role` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.user: ~2 rows (approximately)
+-- Dumping data for table tdw.user: ~9 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `email`, `role`, `first_name`, `last_name`, `password`, `created_at`) VALUES
-	(1, 'admin@admin.com', 1, 'Diaeddin', 'BOUIDAINE', 'admin', '2021-02-23 21:56:26'),
-	(2, 'admin2@admin.com', 1, 'Zineddine', 'BOUCHERIR', 'admin', '2021-02-23 21:56:34'),
-	(3, 'hd_bouidaine@esi.dz', 1, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-23 22:53:47'),
-	(5, 'hd_bouidaine1@esi.dz', 1, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-23 22:55:32');
+	(1, 'admin@admin.com', 1, 'Diaeddin', 'BOUIDAINE', '21232f297a57a5a743894a0e4a801fc3', '2021-02-23 21:56:26'),
+	(2, 'admin2@admin.com', 1, 'Zineddine', 'BOUCHERIR', '21232f297a57a5a743894a0e4a801fc3', '2021-02-23 23:10:04'),
+	(3, 'hd_bouidaine@esi.dz', 3, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-23 23:13:03'),
+	(4, 'hd_bouidaine1@esi.dz', 2, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-23 23:17:00'),
+	(5, 'admin@argon.com', 3, 'Manuel', 'Nuer', 'dcddb75469b4b4875094e14561e573d8', '2021-02-23 23:17:02'),
+	(6, 'diaeddin@esi.dz', 1, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-24 20:50:42'),
+	(7, 'dbouidaine2@esi.dz', 2, 'Diaeddin', 'BOUIDAINE', '202cb962ac59075b964b07152d234b70', '2021-02-24 20:51:02'),
+	(8, 'hd_bouidaine3@esi.dz', 1, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-25 11:36:53'),
+	(14, 'hd_bouidaine111@esi.dz', 1, 'Diaeddin9', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-25 12:11:08');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
+
+-- Dumping structure for table tdw.year
+CREATE TABLE IF NOT EXISTS `year` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cycle` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`),
+  KEY `cycle` (`cycle`),
+  CONSTRAINT `cycle` FOREIGN KEY (`cycle`) REFERENCES `cycle` (`name`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tdw.year: ~0 rows (approximately)
+/*!40000 ALTER TABLE `year` DISABLE KEYS */;
+/*!40000 ALTER TABLE `year` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
