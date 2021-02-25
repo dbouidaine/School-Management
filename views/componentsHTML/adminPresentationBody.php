@@ -3,73 +3,37 @@
     <div class="content p-5">
         
         <h2 class="p-3">Presentation</h2>
-        <form action="" id="p">
-            <input class="order-input" type="text" name="1" value="1">
-            <input class="order-input" type="text" name="2" value="2">
-            <input class="order-input" type="text" name="3" value="3">
-            <input class="order-input" type="text" name="4" value="4">
-        </form>
-        <div class="card text-left p-5" id="paragraphs">
-            <div class="card-body to-drag">
-                <div class="card d-flex flex-row align-items-stretch align-items-center">
-                    <div id-paragraph="1" class="p-4 drag-btn d-flex align-items-center"><i class="fa fa-2x fa-bars"></i></div>
-                    <div class="paragraph">
-                        <div class="content" >
-                            <div class="p-5">
-                                <h1>Titre</h1>
-                                <p>
-                                </p>
-                            </div>
+        <div class="card p-5">
+            <form action="<?=url('presentation/updateOrder');?>" method="POST">
+                <?php foreach($args['presentation'] as $arg){?>
+                <input class="order-input" type="text" name="<?=$arg['id'];?>" value="<?=$arg['order'];?>" hidden>
+                <?php }?>
+                <button class="float-end"> Save Order</button>
+            </form>
+            <div id="paragraphs">
+                <?php foreach($args['presentation'] as $arg){?>
+                <div id-paragraph="<?=$arg['id'];?>"  class="card-body to-drag">
+                    <div class="d-flex flex-fill text-break">
+                        <div class="p-4 drag-btn d-flex align-items-center"><i class="fa fa-2x fa-bars"></i></div>
+                        <div class="paragraph p-5 w-100">
+                            <p>
+                                <?=$arg['paragraph'];?>
+                            </p>
+                        </div>
+                        <div class="dropdown">
+                                <div class="div-dropdown text-center p-2" data-bs-toggle="dropdown">
+                                    <i class="fas fa-ellipsis-v" id="dropdownActions" aria-expanded="false"></i>
+                                </div>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownActions">
+                                    <li><a class="dropdown-item" href="<?=url('presentation/edit/'.$arg['id']);?>">Show</a></li>
+                                    <li><a class="dropdown-item" href="<?=url('presentation/edit/'.$arg['id']);?>">Edit</a></li>
+                                    <li><a class="dropdown-item text-danger" href="<?=url('presentation/delete/'.$arg['id']);?>">Delete</a></li>
+                                </ul>
                         </div>
                     </div>
                 </div>
+                <?php }?>
             </div>
-
-            <div class="card-body to-drag">
-                <div class="card d-flex flex-row align-items-stretch align-items-center">
-                    <div id-paragraph="2" class="p-4 drag-btn d-flex align-items-center"><i class="fa fa-2x fa-bars"></i></div>
-                    <div class="paragraph">
-                        <div class="content" >
-                            <div class="p-5">
-                                <h1>Titre</h1>
-                                <p>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-body to-drag">
-                <div class="card d-flex flex-row align-items-stretch align-items-center">
-                    <div id-paragraph="3" class="p-4 drag-btn d-flex align-items-center"><i class="fa fa-2x fa-bars"></i></div>
-                    <div class="paragraph">
-                        <div class="content" >
-                            <div class="p-5">
-                                <h1>Titre</h1>
-                                <p>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-body to-drag">
-                <div class="card d-flex flex-row align-items-stretch align-items-center">
-                    <div id-paragraph="4" class="p-4 drag-btn d-flex align-items-center"><i class="fa fa-2x fa-bars"></i></div>
-                    <div class="paragraph">
-                        <div class="content" >
-                            <div class="p-5">
-                                <h1>Titre</h1>
-                                <p>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
         
     </div>

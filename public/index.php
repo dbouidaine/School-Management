@@ -75,6 +75,9 @@ $app->router->get("/user/update",[UserController::class,'update']);
 
 $app->router->get("/admin/presentation",[AdminController::class,'indexPresentation']);
 
+$app->router->get("/presentation/updateOrder",[PresentationController::class,'updateOrder']);
+
+
 if(!$app->router->found)
 {
     $app->router->redirect('errors/404');

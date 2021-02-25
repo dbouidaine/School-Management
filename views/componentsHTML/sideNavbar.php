@@ -5,7 +5,7 @@
             <a ckas href="<?=url('admin/articles');?>">Articles</a>
         </li>
         <li class="nav-item">
-            <a ckas href="nav-link">Presentation</a>
+            <a ckas href="<?=url('admin/presentation');?>">Presentation</a>
         </li>
         <li class="nav-item">
             <a ckas href="#">Emplois du temps</a>

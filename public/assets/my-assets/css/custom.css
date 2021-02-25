@@ -23,6 +23,35 @@ body{
     background-color: #00b0ff!important;
 }
 
+.bg-h-white:hover{
+    background-color: #ffffff!important;
+    transition: 0.3s ease;
+}
+.bg-h-light:hover{
+    background-color: #fafafa!important;
+    transition: 0.3s ease;
+}
+.bg-h-dark:hover{
+    background-color: #323643!important;
+    transition: 0.3s ease;
+}
+.bg-h-gray:hover{
+    background-color: #868fac!important;
+    transition: 0.3s ease;
+}
+.bg-h-yellow:hover{
+    background-color: #ffcb00!important;
+    transition: 0.3s ease;
+}
+.bg-h-night-blue:hover{
+    background-color: #0A122A!important;
+    transition: 0.3s ease;
+}
+.bg-h-blue:hover{
+    background-color: #00b0ff!important;
+    transition: 0.3s ease;
+}
+
 .text-white{
     color: #ffffff!important;
 }
@@ -214,14 +243,14 @@ form.new-user textarea,form.new-article textarea{
     opacity: 0.7;
     transition: 0.3s ease;
 }
-form.new-user button,form.new-article button{
+form button{
     border: none;
     margin: 1%;
     padding:1%;
     color:#f5f3f5 ;
     background-color: #323643;
 }
-form.new-user button:hover,form.new-article button:hover{
+form button:hover{
     cursor:pointer;
     background-color:#868fac ;
     transition: 0.3s ease;
@@ -261,7 +290,10 @@ form.new-user select option:hover{
     opacity: 0.7;
     transition: 0.3s ease;
 }
-
+.paragraph{
+    word-wrap: break-word;
+    border: #f5f3f5 2px solid;
+}
 @media only screen and (max-width: 800px) {
     .side-navbar{
         z-index: 1000;

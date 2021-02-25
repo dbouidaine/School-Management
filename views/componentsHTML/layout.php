@@ -15,12 +15,13 @@
     
     <?php if(isset($args['Body'])) {echo $args['Body'];}?>
     
-    <?php if(isset($args['Script'])) {echo $args['Script'];} ?>
     <script type="text/JavaScript" src="<?=asset('extern/js/jquery.min.js');?>"></script>
     <script type="text/JavaScript" src="<?=asset('extern/js/bootstrap.bundle.min.js');?>"></script>
     <script type="text/JavaScript" src="<?=asset('extern/js/fontawesome.min.js');?>"></script>
     <script type="text/JavaScript" src="<?=asset('extern/js/Sortable.min.js');?>"></script>
     <script type="text/JavaScript" src="<?=asset('my-assets/js/custom.js');?>"></script>
+    <?php if($args['title']=="Presentation") {echo '<script type="text/JavaScript" src="'.asset("my-assets/js/presentation.js").'"></script>';}?>
+    <?php if(isset($args['Script'])) {echo $args['Script'];} ?>
     
 </body>
 </html>

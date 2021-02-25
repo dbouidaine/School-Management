@@ -11,10 +11,10 @@ class AdminPresentationView extends View{
     {
         ;
     }
-    public function showParagraphs()
+    public function showParagraphs($args)
     {
         //expects [title,navbar,footer,card,pagination,body,layout]  
-        $args['title']="Gestion des utilisateurs";
+        $args['title']="Presentation";
         $args['page_url']='admin/presentation/';
         $components=['SideNavbar','Footer'];
         $args=$this->load($components,$args);

@@ -7,6 +7,7 @@ use views\AdminArticlesView;
 use views\AdminPresentationView;
 use views\AdminUsersView;
 use models\Article;
+use models\Presentation;
 use models\User;
 use models\Role;
 
@@ -43,8 +44,10 @@ class AdminController extends Controller{
     }
 
     public function indexPresentation(){
+        $args=[];
+        $args['presentation']=Presentation::getAll();
         $presentation=new AdminPresentationView();
-        $presentation->showParagraphs();
+        $presentation->showParagraphs($args);
         $presentation->view();
     }
 

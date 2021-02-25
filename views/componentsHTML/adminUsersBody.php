@@ -22,7 +22,7 @@
                     <button type="submit" name="add_formation" id="form-btn">New User</button>
                 </form>
             </div>
-            <table class="table">
+            <table class="table text-break">
                 <thead>
                     <tr>
                         <th class="text-center">#</th>
@@ -35,7 +35,7 @@
                 </thead>
                 <tbody>
                     <?php foreach($args['users'] as $arg){?>
-                    <tr draggable="true" class="align-middle">
+                    <tr class="align-middle">
                         <td class="text-center"><?=$arg['id'];?></td>
                         <!--<td>
                             <div class="m-2 table-img-rounded justify-content-center">
