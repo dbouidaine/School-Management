@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `article` (
   CONSTRAINT `author` FOREIGN KEY (`author`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.article: ~29 rows (approximately)
+-- Dumping data for table tdw.article: ~28 rows (approximately)
 /*!40000 ALTER TABLE `article` DISABLE KEYS */;
 INSERT INTO `article` (`id`, `author`, `title`, `description`, `image`, `created_at`) VALUES
 	(1, 1, 'Biden tells Munich Security Conference America is here', 'In his first big appearance on the global stage, President Joe Biden promised the Group of Seven (G7) leaders during the virtual Munich Security Conference that the United States was recommitted to multilateral engagement.Biden told US allies that they must stand firm against the challenges posed by China, Russia and Iran, saying Russia was seeking to weaken the transatlantic alliance and calling for a united front to counter what he called China’s abusive economic practices.', '/assets/my-assets/img/carousel2.jpg', '2021-02-21 22:42:25'),
@@ -59,9 +59,7 @@ INSERT INTO `article` (`id`, `author`, `title`, `description`, `image`, `created
 	(31, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', '/assets/my-assets/img/carousel2.jpg', '2021-02-20 20:35:48'),
 	(32, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', '/assets/my-assets/img/carousel1.jpg', '2021-02-20 20:36:35'),
 	(36, 2, 'New paragraphe', 'this is a new paragraphe', '/assets/my-assets/img/carousel1.jpg', '2021-02-20 20:40:13'),
-	(37, 2, 'Palette', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', '/assets/my-assets/img/carousel3.jpg', '2021-02-20 20:42:43'),
-	(41, 2, 'What is the first paragraphe in the world', 'If a class name is included as a parameter, then only that class will be removed from the set of matched elements. If no classes are specified in the parameter, all classes will be removed.  Before jQuery version 1.12/2.2, the .removeClass() method manipulated the className property of the selected elements, not the class attribute. Once the property was changed, it was the browser that updated the attribute accordingly. This means that when the class attribute was updated and the last class name was removed, the browser might have set the attribute\'s value to an empty string instead of removing the attribute completely. An implication of this behavior was that this method only worked for documents with HTML DOM semantics (e.g., not pure XML documents).  As of jQuery 1.12/2.2, this behavior is changed to improve the support for XML documents, including SVG. Starting from this version, the class attribute is used instead. So, .removeClass() can be used on XML or SVG documents.  More than one class may be removed at a time, separated by a space, from the set of matched elements, like so:  1 $( "p" ).removeClass( "myClass yourClass" ) This method is often used with .addClass() to switch elements\' classes from one to another, like so:  1 $( "p" ).removeClass( "myClass noClass" ).addClass( "yourClass" ); Here, the myClass and noClass classes are removed from all paragraphs, while yourClass is added.  To replace all existing classes with another class, we can use .attr( "class", "newClass" ) instead.  As of jQuery 1.4, the .removeClass() method allows us to indicate the class to be removed by passing in a function.  1 2 3 $( "li" ).last().removeClass(function() {   return $( this ).prev().attr( "class" ); }); This example removes the class name of the penultimate <li> from the last <li>.', '/assets/my-assets/img/carousel3.jpg', '2021-02-23 22:19:27'),
-	(43, 1, 'A new post', 'another encryption method', 'Visitor-Design-Pattern-Diagram.png', '2021-02-25 00:41:01');
+	(37, 2, 'Palette', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', '/assets/my-assets/img/carousel3.jpg', '2021-02-20 20:42:43');
 /*!40000 ALTER TABLE `article` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.article_for_category
@@ -145,19 +143,22 @@ CREATE TABLE IF NOT EXISTS `presentation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `paragraph` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `order` int(11) DEFAULT NULL,
+  `order` int(11) DEFAULT 1,
   `created_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table tdw.presentation: ~5 rows (approximately)
 /*!40000 ALTER TABLE `presentation` DISABLE KEYS */;
 INSERT INTO `presentation` (`id`, `paragraph`, `image`, `order`, `created_at`) VALUES
-	(1, 'ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 2, '2021-02-25 21:11:50'),
-	(2, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 1, '2021-02-25 21:11:50'),
-	(3, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 4, '2021-02-25 21:11:50'),
-	(4, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 3, '2021-02-25 21:11:50'),
-	(5, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 5, '2021-02-25 20:26:20');
+	(1, 'ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 4, '2021-02-28 00:20:29'),
+	(2, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 5, '2021-02-28 00:20:29'),
+	(3, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 6, '2021-02-28 00:20:29'),
+	(4, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 7, '2021-02-28 00:20:29'),
+	(5, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 8, '2021-02-28 00:20:29'),
+	(6, 'asdfasdsdf', '', 3, '2021-02-28 00:20:29'),
+	(7, 'asdfasdsdf', '', 2, '2021-02-28 00:20:32'),
+	(8, 'I added a new paragraph to the presentation', '', 1, '2021-02-28 00:20:32');
 /*!40000 ALTER TABLE `presentation` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.role
@@ -168,7 +169,7 @@ CREATE TABLE IF NOT EXISTS `role` (
   UNIQUE KEY `name` (`name`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.role: ~4 rows (approximately)
+-- Dumping data for table tdw.role: ~3 rows (approximately)
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
 INSERT INTO `role` (`id`, `name`) VALUES
 	(1, 'admin'),
@@ -225,7 +226,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   CONSTRAINT `role` FOREIGN KEY (`role`) REFERENCES `role` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.user: ~9 rows (approximately)
+-- Dumping data for table tdw.user: ~10 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `email`, `role`, `first_name`, `last_name`, `password`, `created_at`) VALUES
 	(1, 'admin@admin.com', 1, 'Diaeddin', 'BOUIDAINE', '21232f297a57a5a743894a0e4a801fc3', '2021-02-23 21:56:26'),

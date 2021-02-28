@@ -51,6 +51,8 @@ $app->router->get("/admin/articles/{page}",[AdminController::class,'indexArticle
 
 $app->router->get("/article/new",[AdminController::class,'newArticle']);
 
+$app->router->get("/article/edit/{article_id}",[AdminController::class,'editArticle']);
+
 $app->router->get("/article/delete/{article_id}",[ArticleController::class,'delete']);
 
 $app->router->get("/article/add",[ArticleController::class,'add']);
@@ -74,6 +76,12 @@ $app->router->get("/user/update",[UserController::class,'update']);
 /******************** Presentation ************************/
 
 $app->router->get("/admin/presentation",[AdminController::class,'indexPresentation']);
+
+$app->router->get("/presentation/edit/{presentation_id}",[AdminController::class,'editPresentation']);
+
+$app->router->get("/presentation/new",[AdminController::class,'newPresentation']);
+
+$app->router->get("/presentation/add",[PresentationController::class,'add']);
 
 $app->router->get("/presentation/updateOrder",[PresentationController::class,'updateOrder']);
 

@@ -5,8 +5,8 @@
             <h2 class="p-3">Gestion des articles</h2>
         </div>
         <div class="card text-left p-5">
-            <div class="new-article">
-                <a href="<?=url('article/new')?>" class="text-light no-decoration my-btn btn">Ajouter Article</a>
+            <div class="new-article m-1">
+                <a href="<?=url('article/new')?>" class="float-end text-light no-decoration my-btn my-btn-blue">Ajouter Article</a>
             </div>
             <table class="table">
                 <thead>

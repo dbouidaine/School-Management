@@ -2,6 +2,7 @@
 
 namespace views;
 use views\components\AdminNewArticleBody;
+use views\components\AdminEditArticleBody;
 use views\components\AdminArticlesBody;
 use views\components\Layout;
 
@@ -35,6 +36,21 @@ class AdminArticlesView extends View{
         // HomeBody component defines how the other components are grouped in the home page
         // Every page must have it's body component
         $body=new AdminNewArticleBody($args);
+        $args['Body']=$body->get();
+        $layout = new Layout($args);
+        $this->view = $layout->get();
+    }
+
+    public function editArticle($args)
+    {
+        //expects [title,navbar,footer,card,pagination,body,layout]  
+        $args['title']="Gestion des articles";
+        $args['page_url']='article/edit/';
+        $components=['SideNavbar','Footer','Pagination'];
+        $args=$this->load($components,$args);
+        // HomeBody component defines how the other components are grouped in the home page
+        // Every page must have it's body component
+        $body=new AdminEditArticleBody($args);
         $args['Body']=$body->get();
         $layout = new Layout($args);
         $this->view = $layout->get();

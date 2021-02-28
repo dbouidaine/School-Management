@@ -5,10 +5,13 @@
         <h2 class="p-3">Presentation</h2>
         <div class="card p-5">
             <form action="<?=url('presentation/updateOrder');?>" method="POST">
+                <?php $i=1;?>
                 <?php foreach($args['presentation'] as $arg){?>
-                <input class="order-input" type="text" name="<?=$arg['id'];?>" value="<?=$arg['order'];?>" hidden>
+                <input class="order-input" type="text" name="<?=$arg['id'];?>" value="<?=$i;?>" hidden>
+                <?php $i++;?>
                 <?php }?>
-                <button class="float-end"> Save Order</button>
+                <a href="<?=url('presentation/new');?>" class="bg-blue my-btn my-btn-blue text-light float-end no-decoration">Ajouter Paragraph</a>
+                <button type="submit" class="my-btn my-btn-black float-end"> Save Order</button>
             </form>
             <div id="paragraphs">
                 <?php foreach($args['presentation'] as $arg){?>

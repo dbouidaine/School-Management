@@ -18,7 +18,7 @@
                         <?php } ?>
                     ?>
                 </select>
-                <button type="submit" name="add_formation" id="form-btn">Update</button>
+                <button class="my-btn my-btn-blue" type="submit" name="add_formation" id="form-btn">Update</button>
             </form>
           </div>
         </div>

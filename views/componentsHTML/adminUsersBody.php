@@ -19,7 +19,7 @@
                             }
                         ?>
                     </select>
-                    <button type="submit" name="add_formation" id="form-btn">New User</button>
+                    <button class="my-btn my-btn-dark" type="submit" name="add_formation" id="form-btn">New User</button>
                 </form>
             </div>
             <table class="table text-break">

@@ -51,6 +51,22 @@ class AdminController extends Controller{
         $presentation->view();
     }
 
+    public function newPresentation(){
+        $args=[];
+        $args['presentation']=Presentation::getAll();
+        $presentation=new AdminPresentationView();
+        $presentation->newParagraph($args);
+        $presentation->view();
+    }
+
+    public function editPresentation($url_data){
+        $args=[];
+        $args['presentation']=Presentation::get($url_data['presentation_id']);
+        $presentation=new AdminPresentationView();
+        $presentation->editParagraph($args);
+        $presentation->view();
+    }
+
     public function indexUsers($url_data){
         $args=[];
         $n_pages=User::count();
@@ -89,6 +105,13 @@ class AdminController extends Controller{
     public function newArticle($url_data){
         $view=new AdminArticlesView();
         $view->newArticle();
+        $view->view();
+    }
+
+    public function editArticle($url_data){
+        $args['article']=Article::get($url_data['article_id']);
+        $view=new AdminArticlesView();
+        $view->editArticle($args);
         $view->view();
     }
 }

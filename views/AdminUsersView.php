@@ -29,8 +29,7 @@ class AdminUsersView extends View{
     public function editUser($args)
     {
         //expects [title,navbar,footer,card,pagination,body,layout]  
-        $args['title']="Nouveau Utilisateur";
-        $args['page_url']='admin/user/new';
+        $args['title']="Modifier Utilisateur";
         $components=['SideNavbar','Footer'];
         $args=$this->load($components,$args);
         // HomeBody component defines how the other components are grouped in the home page

@@ -2,19 +2,15 @@
 
 namespace controllers;
 
+use Exception;
 use models\Presentation;
 use views\AdminPresentationView;
 
 class PresentationController extends Controller{
 
-
-    public function index(){
-        $args=[];
-        $args['presentation']=Presentation::getAll();
-        print_r($args['presentation']);
-        $presentation=new AdminPresentationView();
-        $presentation->showParagraphs();
-        $presentation->view();
+    public function add(){
+        Presentation::new($_POST);
+        header('Location: ' . url('admin/presentation'));
     }
 
     public function updateOrder(){

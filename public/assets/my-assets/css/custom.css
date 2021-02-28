@@ -25,31 +25,31 @@ body{
 
 .bg-h-white:hover{
     background-color: #ffffff!important;
-    transition: 0.3s ease;
+    transition: 0.3s ease!important;
 }
 .bg-h-light:hover{
     background-color: #fafafa!important;
-    transition: 0.3s ease;
+    transition: 0.3s ease!important;
 }
 .bg-h-dark:hover{
     background-color: #323643!important;
-    transition: 0.3s ease;
+    transition: 0.3s ease!important;
 }
 .bg-h-gray:hover{
     background-color: #868fac!important;
-    transition: 0.3s ease;
+    transition: 0.3s ease!important;
 }
 .bg-h-yellow:hover{
     background-color: #ffcb00!important;
-    transition: 0.3s ease;
+    transition: 0.3s ease!important;
 }
 .bg-h-night-blue:hover{
     background-color: #0A122A!important;
-    transition: 0.3s ease;
+    transition: 0.3s ease!important;
 }
 .bg-h-blue:hover{
     background-color: #00b0ff!important;
-    transition: 0.3s ease;
+    transition: 0.3s ease!important;
 }
 
 .text-white{
@@ -243,18 +243,6 @@ form.new-user textarea,form.new-article textarea{
     opacity: 0.7;
     transition: 0.3s ease;
 }
-form button{
-    border: none;
-    margin: 1%;
-    padding:1%;
-    color:#f5f3f5 ;
-    background-color: #323643;
-}
-form button:hover{
-    cursor:pointer;
-    background-color:#868fac ;
-    transition: 0.3s ease;
-}
 form.new-user select{
     border: 2px solid  #f5f3f5;
     padding: 1%;
@@ -270,15 +258,21 @@ form.new-user select option:hover{
     padding: 2%;
 }
 .my-btn{
-    border: none;
+    border: none!important;
     margin: 1%;
     padding:1%;
-    color:#f5f3f5 ;
+}
+.my-btn-dark{
     background-color: #323643;
+    color: #f5f3f5;
+}
+.my-btn-blue{
+    background-color: #00b0ff;
+    color: #f5f3f5;
 }
 .my-btn:hover{
     cursor:pointer;
-    background-color:#868fac ;
+    opacity: 0.7;
     transition: 0.3s ease;
 }
 .drag-btn{
