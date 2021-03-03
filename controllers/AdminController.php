@@ -16,11 +16,13 @@ class AdminController extends Controller{
 
 
     public function index($url_data){
+        Access::hasAccess($_SESSION['user']['role'],'indexAdmin');
         $admin=new AdminView($url_data);
         $admin->view();
     }
 
     public function indexArticles($url_data){
+        Access::hasAccess($_SESSION['user']['role'],'indexArticles');
         $args=[];
         $n_pages=Article::count();
         $args['page_count']=ceil($n_pages/15);
@@ -45,6 +47,7 @@ class AdminController extends Controller{
     }
 
     public function indexPresentation(){
+        Access::hasAccess($_SESSION['user']['role'],'indexPresentation');
         $args=[];
         $args['presentation']=Presentation::getAll();
         $presentation=new AdminPresentationView();
@@ -71,6 +74,7 @@ class AdminController extends Controller{
     }
 
     public function indexUsers($url_data){
+        Access::hasAccess($_SESSION['user']['role'],'indexUsers');
         $args=[];
         $n_pages=User::count();
         $args['page_count']=ceil($n_pages/15);
@@ -98,7 +102,6 @@ class AdminController extends Controller{
 
     public function editUser($url_data){
         Access::hasAccess($_SESSION['user']['role'],'editUser');
-        Access::hasAccess($_SESSION['user']['role'],'editUser');
         $args['roles']=Role::getAll();
         $args['user']=User::get($url_data['user_id']);
         $args['user']['password']=NULL;
@@ -108,12 +111,14 @@ class AdminController extends Controller{
     }
 
     public function newArticle($url_data){
+        Access::hasAccess($_SESSION['user']['role'],'addArticle');
         $view=new AdminArticlesView();
         $view->newArticle();
         $view->view();
     }
 
     public function editArticle($url_data){
+        Access::hasAccess($_SESSION['user']['role'],'editArticle');
         $args['article']=Article::get($url_data['article_id']);
         $view=new AdminArticlesView();
         $view->editArticle($args);

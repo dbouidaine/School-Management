@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="<?=asset('my-assets/css/custom.css');?>">
     <?php if(isset($args['Head'])) {echo $args['Head'];} ?>
 </head>
-<body>
+<body class=" d-block h-100 ">
     
     <?php if(isset($args['Body'])) {echo $args['Body'];}?>
     

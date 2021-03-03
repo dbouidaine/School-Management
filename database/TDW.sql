@@ -28,9 +28,9 @@ CREATE TABLE IF NOT EXISTS `article` (
   PRIMARY KEY (`id`),
   KEY `author` (`author`),
   CONSTRAINT `author` FOREIGN KEY (`author`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.article: ~28 rows (approximately)
+-- Dumping data for table tdw.article: ~29 rows (approximately)
 /*!40000 ALTER TABLE `article` DISABLE KEYS */;
 INSERT INTO `article` (`id`, `author`, `title`, `description`, `image`, `created_at`) VALUES
 	(1, 1, 'Biden tells Munich Security Conference America is here', 'In his first big appearance on the global stage, President Joe Biden promised the Group of Seven (G7) leaders during the virtual Munich Security Conference that the United States was recommitted to multilateral engagement.Biden told US allies that they must stand firm against the challenges posed by China, Russia and Iran, saying Russia was seeking to weaken the transatlantic alliance and calling for a united front to counter what he called China’s abusive economic practices.', '/assets/my-assets/img/carousel2.jpg', '2021-02-21 22:42:25'),
@@ -59,7 +59,7 @@ INSERT INTO `article` (`id`, `author`, `title`, `description`, `image`, `created
 	(31, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', '/assets/my-assets/img/carousel2.jpg', '2021-02-20 20:35:48'),
 	(32, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', '/assets/my-assets/img/carousel1.jpg', '2021-02-20 20:36:35'),
 	(36, 2, 'New paragraphe', 'this is a new paragraphe', '/assets/my-assets/img/carousel1.jpg', '2021-02-20 20:40:13'),
-	(37, 2, 'Palette', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', '/assets/my-assets/img/carousel3.jpg', '2021-02-20 20:42:43');
+	(37, 2, 'Palette', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel3.jpg', '2021-03-03 11:14:22');
 /*!40000 ALTER TABLE `article` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.article_for_category
@@ -123,9 +123,9 @@ CREATE TABLE IF NOT EXISTS `permission` (
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.permission: ~7 rows (approximately)
+-- Dumping data for table tdw.permission: ~14 rows (approximately)
 /*!40000 ALTER TABLE `permission` DISABLE KEYS */;
 INSERT INTO `permission` (`id`, `name`) VALUES
 	(5, 'addArticle'),
@@ -133,7 +133,13 @@ INSERT INTO `permission` (`id`, `name`) VALUES
 	(6, 'deleteArticle'),
 	(2, 'deleteUser'),
 	(8, 'editArticle'),
+	(12, 'editPresentation'),
 	(4, 'editUser'),
+	(9, 'indexAdmin'),
+	(10, 'indexArticles'),
+	(14, 'indexPresentation'),
+	(11, 'indexUsers'),
+	(13, 'newPresentation'),
 	(7, 'showArticle'),
 	(3, 'showUser');
 /*!40000 ALTER TABLE `permission` ENABLE KEYS */;
@@ -148,17 +154,17 @@ CREATE TABLE IF NOT EXISTS `presentation` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.presentation: ~5 rows (approximately)
+-- Dumping data for table tdw.presentation: ~7 rows (approximately)
 /*!40000 ALTER TABLE `presentation` DISABLE KEYS */;
 INSERT INTO `presentation` (`id`, `paragraph`, `image`, `order`, `created_at`) VALUES
-	(1, 'ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 4, '2021-02-28 00:20:29'),
-	(2, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 5, '2021-02-28 00:20:29'),
+	(1, 'ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 1, '2021-03-03 11:28:30'),
+	(2, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 2, '2021-03-03 11:29:00'),
 	(3, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 6, '2021-02-28 00:20:29'),
 	(4, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 7, '2021-02-28 00:20:29'),
 	(5, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 8, '2021-02-28 00:20:29'),
-	(6, 'asdfasdsdf', '', 3, '2021-02-28 00:20:29'),
-	(7, 'asdfasdsdf', '', 2, '2021-02-28 00:20:32'),
-	(8, 'I added a new paragraph to the presentation', '', 1, '2021-02-28 00:20:32');
+	(6, 'asdfasdsdf', '', 5, '2021-03-03 11:28:30'),
+	(7, 'asdfasdsdf', '', 3, '2021-03-03 11:29:00'),
+	(8, 'I added a new paragraph to the presentation', '', 4, '2021-03-03 11:28:30');
 /*!40000 ALTER TABLE `presentation` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.role
@@ -186,14 +192,24 @@ CREATE TABLE IF NOT EXISTS `role_has_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `role_name_permission_name` (`role_name`,`permission_name`),
   KEY `permission_name` (`permission_name`),
-  CONSTRAINT `permission_name` FOREIGN KEY (`permission_name`) REFERENCES `permission` (`name`),
-  CONSTRAINT `role_name` FOREIGN KEY (`role_name`) REFERENCES `role` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  CONSTRAINT `permission_name` FOREIGN KEY (`permission_name`) REFERENCES `permission` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `role_name` FOREIGN KEY (`role_name`) REFERENCES `role` (`name`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.role_has_permission: ~0 rows (approximately)
+-- Dumping data for table tdw.role_has_permission: ~8 rows (approximately)
 /*!40000 ALTER TABLE `role_has_permission` DISABLE KEYS */;
 INSERT INTO `role_has_permission` (`id`, `role_name`, `permission_name`) VALUES
-	(1, 'admin', 'addUser');
+	(1, 'admin', 'addArticle'),
+	(4, 'admin', 'addUser'),
+	(3, 'admin', 'deleteArticle'),
+	(5, 'admin', 'deleteUser'),
+	(2, 'admin', 'editArticle'),
+	(6, 'admin', 'editUser'),
+	(9, 'admin', 'indexAdmin'),
+	(10, 'admin', 'indexArticles'),
+	(11, 'admin', 'indexPresentation'),
+	(12, 'admin', 'indexUsers'),
+	(13, 'admin', 'newPresentation');
 /*!40000 ALTER TABLE `role_has_permission` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.subject
@@ -215,7 +231,7 @@ CREATE TABLE IF NOT EXISTS `subject` (
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role` int(11) NOT NULL,
+  `role` int(11) DEFAULT NULL,
   `first_name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -223,21 +239,22 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`) USING BTREE,
   KEY `role` (`role`),
-  CONSTRAINT `role` FOREIGN KEY (`role`) REFERENCES `role` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  CONSTRAINT `role` FOREIGN KEY (`role`) REFERENCES `role` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table tdw.user: ~10 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `email`, `role`, `first_name`, `last_name`, `password`, `created_at`) VALUES
 	(1, 'admin@admin.com', 1, 'Diaeddin', 'BOUIDAINE', '21232f297a57a5a743894a0e4a801fc3', '2021-02-23 21:56:26'),
 	(2, 'admin2@admin.com', 1, 'Zineddine', 'BOUCHERIR', '21232f297a57a5a743894a0e4a801fc3', '2021-02-23 23:10:04'),
-	(3, 'hd_bouidaine@esi.dz', 3, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-23 23:13:03'),
-	(4, 'hd_bouidaine1@esi.dz', 2, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-23 23:17:00'),
-	(5, 'admin@argon.com', 3, 'Manuel', 'Nuer', 'dcddb75469b4b4875094e14561e573d8', '2021-02-23 23:17:02'),
-	(6, 'diaeddin@esi.dz', 1, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-24 20:50:42'),
+	(3, 'hd_bouidaine@esi.dz', 3, 'Ali Baba', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-23 23:13:03'),
+	(4, 'hd_bouidaine1@esi.dz', 3, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-23 23:17:00'),
+	(5, 'admin@argon.com', 1, 'Manuel', 'Nuer', 'dcddb75469b4b4875094e14561e573d8', '2021-02-23 23:17:02'),
+	(6, 'diaeddin@esi.dz', 2, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-24 20:50:42'),
 	(7, 'dbouidaine2@esi.dz', 2, 'Diaeddin', 'BOUIDAINE', '202cb962ac59075b964b07152d234b70', '2021-02-24 20:51:02'),
-	(8, 'hd_bouidaine3@esi.dz', 1, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-25 11:36:53'),
-	(14, 'hd_bouidaine111@esi.dz', 1, 'Diaeddin9', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-25 12:11:08');
+	(8, 'hd_bouidaine3@esi.dz', 3, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-25 11:36:53'),
+	(14, 'hd_bouidaine111@esi.dz', 3, 'Diaeddin9', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-25 12:11:08'),
+	(17, 'diaa@esi.dz', 1, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-03-03 14:14:57');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.year

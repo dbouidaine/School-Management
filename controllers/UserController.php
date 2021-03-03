@@ -4,7 +4,6 @@ namespace controllers;
 
 use models\Access;
 use models\User;
-use app\Router;
 
 
 class UserController extends Controller{

@@ -34,6 +34,5 @@ class HomeController extends Controller{
         $loginPage=new HomeView();
         $loginPage->showLogin($args);
         $loginPage->view();
-        if(isset($_SESSION['user'])) {print_r($_SESSION['user']);}
     }
 }

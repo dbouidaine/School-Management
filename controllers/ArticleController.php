@@ -26,12 +26,14 @@ class ArticleController extends Controller{
     }
 
     public function delete($url_data){
+        Access::hasAccess($_SESSION['user']['role'],'deleteArticle');
         $id=$url_data['article_id'];
         Article::destroy($id);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 
     public function add(){
+        Access::hasAccess($_SESSION['user']['role'],'addArticle');
         Article::new($_POST['title'],$_POST['image'],$_POST['description'],$_POST['author']);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
