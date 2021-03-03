@@ -1,6 +1,9 @@
 <?php
 
 use app\Application;
+if(session_status()==1){
+    session_start();
+};
 
 $ROOT_DIR=dirname(__DIR__);
 require_once ($ROOT_DIR.'/config.php');
@@ -38,6 +41,8 @@ $app->router->get("/ecole/presentation",[PresentationController::class,'index'])
 $app->router->get("/ecole/{cycle}",[CycleController::class,'index']);
 
 $app->router->get("/contact",[CycleController::class,'index']);
+
+$app->router->get("/login",[HomeController::class,'indexLogin']);
 
 /******************** Admin ************************/
 
@@ -84,6 +89,13 @@ $app->router->get("/presentation/new",[AdminController::class,'newPresentation']
 $app->router->get("/presentation/add",[PresentationController::class,'add']);
 
 $app->router->get("/presentation/updateOrder",[PresentationController::class,'updateOrder']);
+
+/******************** Authentication ************************/
+
+$app->router->get("/user/login",[AuthController::class,'login']);
+
+$app->router->get("/user/logout",[AuthController::class,'logout']);
+
 
 
 if(!$app->router->found)

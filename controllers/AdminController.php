@@ -10,6 +10,7 @@ use models\Article;
 use models\Presentation;
 use models\User;
 use models\Role;
+use models\Access;
 
 class AdminController extends Controller{
 
@@ -52,6 +53,7 @@ class AdminController extends Controller{
     }
 
     public function newPresentation(){
+        Access::hasAccess($_SESSION['user']['role'],'newPresentation');
         $args=[];
         $args['presentation']=Presentation::getAll();
         $presentation=new AdminPresentationView();
@@ -60,6 +62,7 @@ class AdminController extends Controller{
     }
 
     public function editPresentation($url_data){
+        Access::hasAccess($_SESSION['user']['role'],'editPresentation');
         $args=[];
         $args['presentation']=Presentation::get($url_data['presentation_id']);
         $presentation=new AdminPresentationView();
@@ -94,6 +97,8 @@ class AdminController extends Controller{
     }
 
     public function editUser($url_data){
+        Access::hasAccess($_SESSION['user']['role'],'editUser');
+        Access::hasAccess($_SESSION['user']['role'],'editUser');
         $args['roles']=Role::getAll();
         $args['user']=User::get($url_data['user_id']);
         $args['user']['password']=NULL;

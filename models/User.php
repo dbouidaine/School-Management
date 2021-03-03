@@ -12,6 +12,14 @@ class User extends Model{
         return parent::getM($id,'user');
     }
     
+    static function getByEmail($email){
+        $connection=DataBase::connect();
+        $query=$connection->prepare('SELECT user.id,user.email,role.name AS role,user.first_name,user.last_name,user.password FROM user,role WHERE user.role=role.id && email=? ;');
+        $query->bindParam(1,$email);
+        $query->execute();
+        return $query->fetch((\PDO::FETCH_ASSOC));
+    }
+    
     static function getMany($from,$count){
         // get $count articles from the $from -th article
         $connection=DataBase::connect();

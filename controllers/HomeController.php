@@ -24,7 +24,16 @@ class HomeController extends Controller{
             exit();
         }
         $args['articles']=$data;
-        $home=new HomeView($args);
+        $home=new HomeView();
+        $home->showHome($args);
         $home->view();
+    }
+
+    public function indexLogin($url_data){
+        $args=[];
+        $loginPage=new HomeView();
+        $loginPage->showLogin($args);
+        $loginPage->view();
+        if(isset($_SESSION['user'])) {print_r($_SESSION['user']);}
     }
 }

@@ -2,7 +2,6 @@
 
 namespace controllers;
 
-
 class Controller{
     
 }

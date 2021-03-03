@@ -1,6 +1,7 @@
 <?php 
 
 namespace models;
+use app\Router;
 
 class Access extends Model{
 
@@ -20,9 +21,11 @@ class Access extends Model{
         $query->bindParam(1,$role);
         $query->bindParam(2,$permission);
         $query->execute();
-        if (!empty($query->fetch(\PDO::FETCH_ASSOC))) {return true;}
-        return false;
-        
+        if (empty($query->fetch(\PDO::FETCH_ASSOC))) {
+            Router::redirect("errors/403");
+            die();
+        }
+        else {return true;}
     }
 
     static function delete($id){
