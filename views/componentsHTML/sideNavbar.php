@@ -2,30 +2,34 @@
     <h3 class="bg-dark text-white sidenav-header p-4 text-center zindex-1000">Ecotech school</h3>
     <ul class="list-unstyled align-items-center">
         <li class="nav-item">
-            <a ckas href="<?=url('admin/articles');?>">Articles</a>
+            <a href="<?=url('admin/articles');?>">Articles</a>
         </li>
         <li class="nav-item">
-            <a ckas href="<?=url('admin/presentation');?>">Presentation</a>
+            <a href="<?=url('admin/presentation');?>">Presentation</a>
         </li>
         <li class="nav-item">
-            <a ckas href="#">Emplois du temps</a>
+            <a href="#">Emplois du temps</a>
         </li>
         <li class="nav-item">
-            <a ckas href="nav-link">Enseignants</a>
+            <a href="nav-link">Enseignants</a>
         </li>
         <li class="nav-item">
-            <a ckas href="<?=url('admin/users');?>">Utilisateurs</a>
+            <a href="<?=url('admin/users');?>">Utilisateurs</a>
         </li>
         <li class="nav-item">
-            <a ckas href="nav-link">Restauration</a>
+            <a href="nav-link">Restauration</a>
         </li>
         <li class="nav-item">
-            <a ckas href="nav-link">Contact</a>
+            <a href="nav-link">Contact</a>
         </li>
         <li class="nav-item">
-            <a ckas href="nav-link">Parametres</a>
+            <a href="nav-link">Parametres</a>
         </li>
-
+        <?php if(isset($_SESSION['user'])){?>
+            <li class="nav-item bg-h-dark">
+              <a class="nav-link bg-dark text-light" href="/user/logout">Logout</a>
+            </li>
+        <?php } ?>
     </ul>
 </nav>
 <a href="##" id="sidenav_toggle" class="text-light bg-blue p-4"><i class="fa fa-2x fa-bars to-rotate" aria-hidden="true"></i></a>

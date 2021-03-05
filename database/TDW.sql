@@ -123,14 +123,16 @@ CREATE TABLE IF NOT EXISTS `permission` (
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table tdw.permission: ~14 rows (approximately)
 /*!40000 ALTER TABLE `permission` DISABLE KEYS */;
 INSERT INTO `permission` (`id`, `name`) VALUES
 	(5, 'addArticle'),
+	(15, 'addPresentation'),
 	(1, 'addUser'),
 	(6, 'deleteArticle'),
+	(16, 'deletePresentation'),
 	(2, 'deleteUser'),
 	(8, 'editArticle'),
 	(12, 'editPresentation'),
@@ -141,7 +143,8 @@ INSERT INTO `permission` (`id`, `name`) VALUES
 	(11, 'indexUsers'),
 	(13, 'newPresentation'),
 	(7, 'showArticle'),
-	(3, 'showUser');
+	(3, 'showUser'),
+	(18, 'updateOrderPresentation');
 /*!40000 ALTER TABLE `permission` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.presentation
@@ -152,19 +155,16 @@ CREATE TABLE IF NOT EXISTS `presentation` (
   `order` int(11) DEFAULT 1,
   `created_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table tdw.presentation: ~7 rows (approximately)
 /*!40000 ALTER TABLE `presentation` DISABLE KEYS */;
 INSERT INTO `presentation` (`id`, `paragraph`, `image`, `order`, `created_at`) VALUES
-	(1, 'ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 1, '2021-03-03 11:28:30'),
-	(2, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 2, '2021-03-03 11:29:00'),
-	(3, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 6, '2021-02-28 00:20:29'),
-	(4, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 7, '2021-02-28 00:20:29'),
-	(5, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 8, '2021-02-28 00:20:29'),
-	(6, 'asdfasdsdf', '', 5, '2021-03-03 11:28:30'),
-	(7, 'asdfasdsdf', '', 3, '2021-03-03 11:29:00'),
-	(8, 'I added a new paragraph to the presentation', '', 4, '2021-03-03 11:28:30');
+	(3, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 8, '2021-03-05 02:25:51'),
+	(4, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 9, '2021-03-05 02:25:51'),
+	(5, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 10, '2021-03-05 02:25:51'),
+	(6, 'asdfasdsdf', '', 7, '2021-03-05 02:25:51'),
+	(9, 'this is a very new paragraph', '', 3, '2021-03-05 02:25:51');
 /*!40000 ALTER TABLE `presentation` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.role
@@ -194,14 +194,16 @@ CREATE TABLE IF NOT EXISTS `role_has_permission` (
   KEY `permission_name` (`permission_name`),
   CONSTRAINT `permission_name` FOREIGN KEY (`permission_name`) REFERENCES `permission` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `role_name` FOREIGN KEY (`role_name`) REFERENCES `role` (`name`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.role_has_permission: ~8 rows (approximately)
+-- Dumping data for table tdw.role_has_permission: ~11 rows (approximately)
 /*!40000 ALTER TABLE `role_has_permission` DISABLE KEYS */;
 INSERT INTO `role_has_permission` (`id`, `role_name`, `permission_name`) VALUES
 	(1, 'admin', 'addArticle'),
+	(14, 'admin', 'addPresentation'),
 	(4, 'admin', 'addUser'),
 	(3, 'admin', 'deleteArticle'),
+	(16, 'admin', 'deletePresentation'),
 	(5, 'admin', 'deleteUser'),
 	(2, 'admin', 'editArticle'),
 	(6, 'admin', 'editUser'),
@@ -209,7 +211,8 @@ INSERT INTO `role_has_permission` (`id`, `role_name`, `permission_name`) VALUES
 	(10, 'admin', 'indexArticles'),
 	(11, 'admin', 'indexPresentation'),
 	(12, 'admin', 'indexUsers'),
-	(13, 'admin', 'newPresentation');
+	(13, 'admin', 'newPresentation'),
+	(17, 'admin', 'updateOrderPresentation');
 /*!40000 ALTER TABLE `role_has_permission` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.subject

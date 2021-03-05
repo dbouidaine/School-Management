@@ -24,9 +24,12 @@ class Presentation extends Model{
     }
 
     static function new($data){
-        print_r("I am here");
         $connection=DataBase::connect();
         $query=$connection->prepare('INSERT INTO presentation (paragraph,image) VALUES (?,?);');
         $query->execute([$data['paragraph'],$data['image']]);
+    }
+
+    static function delete($id){
+        parent::destroyM($id,'presentation');
     }
 }

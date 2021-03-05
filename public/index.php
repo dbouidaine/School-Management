@@ -90,6 +90,8 @@ $app->router->get("/presentation/add",[PresentationController::class,'add']);
 
 $app->router->get("/presentation/updateOrder",[PresentationController::class,'updateOrder']);
 
+$app->router->get("/presentation/delete/{presentation_id}",[PresentationController::class,'delete']);
+
 /******************** Authentication ************************/
 
 $app->router->get("/user/login",[AuthController::class,'login']);

@@ -5,7 +5,7 @@
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <div class="carousel-inner bg-dark">
+    <div class="carousel-inner bg-night-blue">
         <div class="carousel-item active">
             <img src="<?= asset('my-assets/img/carousel1.jpg');?>" alt="...">
         </div>

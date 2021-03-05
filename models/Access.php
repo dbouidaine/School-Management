@@ -15,7 +15,12 @@ class Access extends Model{
         return $query->fetch((\PDO::FETCH_ASSOC));
     }
 
-    static function hasAccess($role,$permission){
+    static function hasAccess($permission){
+        if(!isset($_SESSION['user'])) {
+            header('Location: /login ');
+            die();
+        }
+        $role=$_SESSION['user']['role'];
         $connection=DataBase::connect();
         $query=$connection->prepare("SELECT * FROM role_has_permission WHERE (role_name=? && permission_name=?) ;");
         $query->bindParam(1,$role);

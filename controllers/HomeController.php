@@ -30,6 +30,9 @@ class HomeController extends Controller{
     }
 
     public function indexLogin($url_data){
+        if(isset($_SESSION['user'])){
+            header('Location: / ');
+        }
         $args=[];
         $loginPage=new HomeView();
         $loginPage->showLogin($args);

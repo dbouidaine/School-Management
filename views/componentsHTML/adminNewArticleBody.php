@@ -7,7 +7,6 @@
         </div>
 
         <div class="card text-left">
-          <img class="card-img-top" alt="">
           <div class="card-body">
             <form class="new-article" action="<?=url('article/add')?>" method="POST">
               <input class="w-100" name="title" type="text" placeholder="title" required>

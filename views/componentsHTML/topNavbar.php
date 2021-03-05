@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light bg-blue shadow-sm">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
         <img src="<?=asset('my-assets/img/logo.png');?>" alt="" width="100">
@@ -9,16 +9,16 @@
     <div class="collapse navbar-collapse float-right justify-content-end" id="navbarToggler">
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-            <a class="nav-link" target="_blanc" href="https://www.facebook.com" class="text-light"><i class="fab fa-facebook"></i></a>
+            <a class="nav-link text-light my-btn" target="_blanc" href="https://www.facebook.com" class="text-light"><i class="fab fa-facebook"></i></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" target="_blanc" href="https://www.facebook.com" class="text-light"><i class="fab fa-instagram"></i></a>
+            <a class="nav-link text-light my-btn" target="_blanc" href="https://www.facebook.com" class="text-light"><i class="fab fa-instagram"></i></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" target="_blanc" href="https://www.facebook.com" class="text-light"><i class="fab fa-instagram"></i></a>
+            <a class="nav-link text-light my-btn" target="_blanc" href="https://www.facebook.com" class="text-light"><i class="fab fa-instagram"></i></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" target="_blanc" href="https://www.facebook.com" class="text-light"><i class="fab fa-instagram"></i></a>
+            <a class="nav-link text-light my-btn" target="_blanc" href="https://www.facebook.com" class="text-light"><i class="fab fa-instagram"></i></a>
         </li>
       </ul>
     </div>

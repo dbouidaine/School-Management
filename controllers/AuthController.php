@@ -16,6 +16,7 @@ class AuthController extends Controller{
         }
         else{
             if ($password == $user['password']){
+                session_start();
                 $_SESSION['user']['id']=$user['id'];
                 $_SESSION['user']['email']=$user['email'];
                 $_SESSION['user']['role']=$user['role'];
@@ -23,7 +24,15 @@ class AuthController extends Controller{
                 $_SESSION['user']['last_name']=$user['last_name'];
             }
         }
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        switch ($_SESSION['user']['role']) {
+            case 'admin':
+                header('Location: /admin ' );
+                break;
+            
+            default:
+                header('Location: / ' );
+                break;
+        }
     }
 
     public function logout($url_data){
