@@ -10,7 +10,7 @@ class Article extends Model{
 
     static function countByCategory($category){
         $connection=DataBase::connect();
-        $query=$connection->prepare('SELECT COUNT(*) AS count FROM article_concern_category WHERE category=?;');
+        $query=$connection->prepare('SELECT COUNT(*) AS count FROM article_concern_category WHERE (category=? OR category="all")  ;');
         $query->bindParam(1,$category);
         $query->execute();
         $query=$query->fetch((\PDO::FETCH_ASSOC));
@@ -26,7 +26,7 @@ class Article extends Model{
         $connection=DataBase::connect();
         $query=$connection->prepare('SELECT id, SUBSTRING(title,1,50) AS title,image,SUBSTRING(description,1,50) AS
         description FROM article JOIN
-        article_concern_category ON article.id=article_concern_category.article WHERE category=? ORDER BY created_at DESC LIMIT ?,?;');
+        article_concern_category ON article.id=article_concern_category.article WHERE (category=? OR category="all") ORDER BY created_at DESC LIMIT ?,?;');
         $query->bindParam(1,$category);
         $query->bindParam(2,$from);
         $query->bindParam(3,$count);

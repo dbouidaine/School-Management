@@ -21,6 +21,11 @@ class AuthController extends Controller{
                 $_SESSION['user']['role']=$user['role'];
                 $_SESSION['user']['first_name']=$user['first_name'];
                 $_SESSION['user']['last_name']=$user['last_name'];
+                $_SESSION['user']['last_name']=$user['last_name'];
+                $_SESSION['user']['last_name']=$user['last_name'];
+                $_SESSION['user']['last_name']=$user['last_name'];
+                $_SESSION['user']['last_name']=$user['last_name'];
+                $_SESSION['user']['last_name']=$user['last_name'];
             }
         }
         switch ($_SESSION['user']['role']) {

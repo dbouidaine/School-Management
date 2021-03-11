@@ -4,6 +4,7 @@ namespace controllers;
 
 use models\Access;
 use models\Article;
+use models\User;
 use views\SpaceView;
 
 class SpaceController extends Controller{
@@ -12,23 +13,26 @@ class SpaceController extends Controller{
     public function indexStudentSpace($url_data){
         Access::hasAccess('indexStudentSpace');
         $args=[];
-        $n_pages=Article::countByCategory("all");
+        $args['user']=User::get($_SESSION['user']['id']);
+        unset($args['user']['password']);
+        $n_pages=Article::countByCategory($args['user']['category']);
         $args['page_count']=ceil($n_pages/8);
         if(!isset($url_data['page'])){
-            $data=Article::getMany(0,8,"all");
+            $data=Article::getMany(0,8,$args['user']['category']);
             $args['page']=1;
         }
         else{
             $args['page']=$url_data['page'];
             $page=$url_data['page'];
             $from = ($page-1)*8;
-            $data=Article::getMany($from,8,"all");
+            $data=Article::getMany($from,8,$args['user']['category']);
         }
         if(empty($data)){
             \app\Router::redirect('errors/404');
             exit();
         }
         $args['articles']=$data;
+        print_r($args['user']);
         $cycle=new SpaceView();
         $cycle->studentSpace($args);
         $cycle->view();

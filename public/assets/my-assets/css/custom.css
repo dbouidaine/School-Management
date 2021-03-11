@@ -333,6 +333,19 @@ p.card-paragraph{
     margin: 2%;
     white-space: pre-line;
 }
+hr{
+    border: 1px solid #868fac;
+    color: #868fac;
+}
+.card hr{
+    border: 4px solid #868fac;
+    color: #868fac;
+
+}
+
+.card-profile{
+    box-shadow: 10px 10px 5px #f5f3f5;
+}
 /*::-webkit-scrollbar {
     background-color: #f8f9fa;
     width: 1vw;
