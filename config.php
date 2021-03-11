@@ -22,3 +22,15 @@ function asset($str){
     if(isset($_GET['base_url'])) {return url('public/assets/').$str;}
     return '/assets/'.$str;
 }
+
+function img($str){
+    return asset('my-assets/img/storage/'.$str);
+}
+
+function storage($str){
+    return 'assets/my-assets/img/storage/'.$str;
+}
+
+function uploadImage($str){
+    move_uploaded_file($_FILES[$str]['tmp_name'],storage($_FILES[$str]['name']));
+}

@@ -7,13 +7,13 @@
     </div>
     <div class="carousel-inner bg-night-blue">
         <div class="carousel-item active">
-            <img src="<?= asset('my-assets/img/carousel1.jpg');?>" alt="...">
+            <img src="<?= img('carousel1.jpg');?>" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="<?= asset('my-assets/img/carousel2.jpg');?>" alt="...">
+            <img src="<?= img('carousel2.jpg');?>" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="<?= asset('my-assets/img/carousel3.jpg');?>" alt="...">
+            <img src="<?= img('carousel3.jpg');?>" alt="...">
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">

@@ -24,8 +24,9 @@ class Article extends Model{
 
     static function new($title,$image,$description,$author){
         $connection=DataBase::connect();
+        //print_r($_POST);
         $query=$connection->prepare('INSERT INTO article (title,description,image,author) VALUES (?,?,?,?);');
-        $query->execute([$title,$description,$image,$author]);
+        $query->execute([htmlspecialchars($title),htmlspecialchars($description),$image,$author]);
     }
 
     static function destroy($id){

@@ -24,7 +24,7 @@
                         <td class="text-center"><?=$arg['id'];?></td>
                         <td>
                             <div class="m-2 table-img-rounded justify-content-center">
-                                <img src="<?=$arg['image'];?>" height="100" alt="">
+                                <img src="<?=img($arg['image']);?>" height="100" alt="">
                             </div>
                         </td>
                         <td><?= $arg['title'] ;?></td>

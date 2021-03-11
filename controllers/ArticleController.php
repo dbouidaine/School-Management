@@ -2,7 +2,6 @@
 
 namespace controllers;
 
-use app\Router;
 use models\Article;
 use models\Access;
 use views\ArticleView;
@@ -29,7 +28,8 @@ class ArticleController extends Controller{
 
     public function add(){
         Access::hasAccess('addArticle');
-        Article::new($_POST['title'],$_POST['image'],$_POST['description'],$_POST['author']);
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        uploadImage('image');
+        Article::new($_POST['title'],$_FILES['image']['name'],$_POST['description'],$_SESSION['user']['id']);
+        header('Location: ' . url('admin/articles'));
     }
 }

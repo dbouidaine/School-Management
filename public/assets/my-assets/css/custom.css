@@ -89,7 +89,7 @@ tr{
     margin: 0;
 }
 .carousel .carousel-item img{
-    height: 50vh;
+    height: 60vh;
 
 }
 .table-img-rounded{
@@ -130,6 +130,30 @@ a.card-link:hover{
     text-decoration: none;
     color: #3f3d56;
     transition: 0.3s ease;
+}
+
+.article .card-img-top{
+    align-items: center;
+    max-height: 500px;
+    overflow: hidden;
+}
+.article .card-img-top>img{
+    height: auto!important;
+    width: auto!important;
+}
+
+.home-articles .card-img-top{
+    height: 200px;
+    overflow: hidden;
+}
+
+.home-articles .card{
+    height: 400px;
+}
+
+.card-img-top>img{
+    width: 100%!important;
+    height: auto!important;
 }
 
 .card:hover .card-img-top>img{
@@ -304,7 +328,11 @@ footer.footer{
     display: block;
 
 }
-
+p.card-paragraph{
+    text-align: left;
+    margin: 2%;
+    white-space: pre-line;
+}
 /*::-webkit-scrollbar {
     background-color: #f8f9fa;
     width: 1vw;

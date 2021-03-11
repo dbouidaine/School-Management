@@ -26,11 +26,11 @@ class AuthController extends Controller{
         }
         switch ($_SESSION['user']['role']) {
             case 'admin':
-                header('Location: /admin ' );
+                header('Location: '. url('admin'));
                 break;
             
             default:
-                header('Location: / ' );
+                header('Location: '.url('') );
                 break;
         }
     }

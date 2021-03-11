@@ -17,7 +17,7 @@ class Access extends Model{
 
     static function hasAccess($permission){
         if(!isset($_SESSION['user'])) {
-            header('Location: /login ');
+            header('Location: '.url('login'));
             die();
         }
         $role=$_SESSION['user']['role'];

@@ -34,11 +34,11 @@
           <ul class="navbar-nav">
             <?php if(isset($_SESSION['user'])){ ?>
             <li class="nav-item">
-              <a class="nav-link text-light" href="/user/logout">Logout</a>
+              <a class="nav-link text-light" href="<?=url('user/logout');?>">Logout</a>
             </li>
             <?php } else {?>
             <li class="nav-item">
-              <a class="nav-link text-light" href="/login">Login</a>
+              <a class="nav-link text-light" href="<?=url('login');?>">Login</a>
             </li>
             <?php } ?>
             <li class="nav-item">

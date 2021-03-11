@@ -14,6 +14,7 @@ class DataBase{
             }
             catch (\PDOException $ex){
                 \app\Router::redirect('errors/404');
+                die();
             }
             return DataBase::$connection;
         }

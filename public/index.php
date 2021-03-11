@@ -63,7 +63,6 @@ $app->router->get("/article/delete/{article_id}",[ArticleController::class,'dele
 $app->router->get("/article/add",[ArticleController::class,'add']);
 
 
-
 /******************** Users ************************/
 
 $app->router->get("/admin/users",[AdminController::class,'indexUsers']);
@@ -97,8 +96,6 @@ $app->router->get("/presentation/delete/{presentation_id}",[PresentationControll
 $app->router->get("/user/login",[AuthController::class,'login']);
 
 $app->router->get("/user/logout",[AuthController::class,'logout']);
-
-
 
 if(!$app->router->found)
 {
