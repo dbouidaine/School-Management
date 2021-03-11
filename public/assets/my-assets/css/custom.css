@@ -346,6 +346,9 @@ hr{
 .card-profile{
     box-shadow: 10px 10px 5px #f5f3f5;
 }
+.space-table tr{
+    padding: 3%!important;
+}
 /*::-webkit-scrollbar {
     background-color: #f8f9fa;
     width: 1vw;

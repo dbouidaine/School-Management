@@ -5,6 +5,7 @@ namespace controllers;
 use models\Access;
 use models\Article;
 use models\User;
+use models\Calendar;
 use views\SpaceView;
 
 class SpaceController extends Controller{
@@ -15,6 +16,10 @@ class SpaceController extends Controller{
         $args=[];
         $args['user']=User::get($_SESSION['user']['id']);
         unset($args['user']['password']);
+        $args['user']['class']=User::getCycle($args['user']['class']);
+        $args['user']['calendar']['events']=Calendar::get($args['user']['class']['calendar_id']);
+        $args['user']['calendar']['hours']=Calendar::countHours($args['user']['class']['calendar_id']);
+        print_r($args['user']);
         $n_pages=Article::countByCategory($args['user']['category']);
         $args['page_count']=ceil($n_pages/8);
         if(!isset($url_data['page'])){
@@ -32,7 +37,6 @@ class SpaceController extends Controller{
             exit();
         }
         $args['articles']=$data;
-        print_r($args['user']);
         $cycle=new SpaceView();
         $cycle->studentSpace($args);
         $cycle->view();

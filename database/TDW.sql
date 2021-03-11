@@ -22,61 +22,83 @@ CREATE TABLE IF NOT EXISTS `article` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `author` int(11) NOT NULL,
   `title` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Un titre',
-  `description` varchar(2000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`),
   KEY `author` (`author`),
   CONSTRAINT `author` FOREIGN KEY (`author`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.article: ~29 rows (approximately)
+-- Dumping data for table tdw.article: ~27 rows (approximately)
 /*!40000 ALTER TABLE `article` DISABLE KEYS */;
 INSERT INTO `article` (`id`, `author`, `title`, `description`, `image`, `created_at`) VALUES
-	(1, 1, 'Biden tells Munich Security Conference America is here', 'In his first big appearance on the global stage, President Joe Biden promised the Group of Seven (G7) leaders during the virtual Munich Security Conference that the United States was recommitted to multilateral engagement.Biden told US allies that they must stand firm against the challenges posed by China, Russia and Iran, saying Russia was seeking to weaken the transatlantic alliance and calling for a united front to counter what he called China’s abusive economic practices.', '/assets/my-assets/img/carousel2.jpg', '2021-02-21 22:42:25'),
-	(3, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:32'),
-	(4, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:32'),
-	(5, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:33'),
-	(6, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:33'),
-	(7, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:33'),
-	(8, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:34'),
-	(10, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:34'),
-	(12, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:35'),
-	(13, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:43'),
-	(14, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:43'),
-	(16, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:44'),
-	(17, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:44'),
-	(19, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:45'),
-	(20, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:46'),
-	(21, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:46'),
-	(22, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:51'),
-	(23, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:51'),
-	(24, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:51'),
-	(25, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel2.jpg', '2021-02-19 21:42:52'),
-	(28, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', '/assets/my-assets/img/carousel3.jpg', '2021-02-20 20:34:54'),
-	(29, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', '/assets/my-assets/img/carousel3.jpg', '2021-02-20 20:35:02'),
-	(30, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', '/assets/my-assets/img/carousel3.jpg', '2021-02-20 20:35:14'),
-	(31, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', '/assets/my-assets/img/carousel2.jpg', '2021-02-20 20:35:48'),
-	(32, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', '/assets/my-assets/img/carousel1.jpg', '2021-02-20 20:36:35'),
-	(36, 2, 'New paragraphe', 'this is a new paragraphe', '/assets/my-assets/img/carousel1.jpg', '2021-02-20 20:40:13'),
-	(37, 2, 'Palette', 'new article new article new article new article new article new article new article new article new article new article new article new article ', '/assets/my-assets/img/carousel3.jpg', '2021-03-03 11:14:22');
+	(1, 1, 'Biden tells Munich Security Conference America is here', 'In his first big appearance on the global stage, President Joe Biden promised the Group of Seven (G7) leaders during the virtual Munich Security Conference that the United States was recommitted to multilateral engagement.Biden told US allies that they must stand firm against the challenges posed by China, Russia and Iran, saying Russia was seeking to weaken the transatlantic alliance and calling for a united front to counter what he called China’s abusive economic practices.', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(3, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(4, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(5, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(6, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(7, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(8, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(10, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(12, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(13, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(14, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(16, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(17, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(19, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(20, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(21, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(22, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(23, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(24, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(25, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(28, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(29, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(30, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(31, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(32, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(36, 2, 'New paragraphe', 'this is a new paragraphe', 'carousel2.jpg', '2021-03-10 21:47:26'),
+	(37, 2, 'Palette', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 21:47:26');
 /*!40000 ALTER TABLE `article` ENABLE KEYS */;
 
--- Dumping structure for table tdw.article_for_category
-CREATE TABLE IF NOT EXISTS `article_for_category` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+-- Dumping structure for table tdw.article_concern_category
+CREATE TABLE IF NOT EXISTS `article_concern_category` (
   `article` int(11) NOT NULL,
   `category` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `article_category` (`article`,`category`),
+  PRIMARY KEY (`article`,`category`) USING BTREE,
   KEY `category` (`category`),
   CONSTRAINT `article` FOREIGN KEY (`article`) REFERENCES `article` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `category` FOREIGN KEY (`category`) REFERENCES `category` (`name`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.article_for_category: ~0 rows (approximately)
-/*!40000 ALTER TABLE `article_for_category` DISABLE KEYS */;
-/*!40000 ALTER TABLE `article_for_category` ENABLE KEYS */;
+-- Dumping data for table tdw.article_concern_category: ~10 rows (approximately)
+/*!40000 ALTER TABLE `article_concern_category` DISABLE KEYS */;
+INSERT INTO `article_concern_category` (`article`, `category`) VALUES
+	(1, 'all'),
+	(4, 'all'),
+	(8, 'all'),
+	(10, 'secondaire'),
+	(12, 'all'),
+	(13, 'all'),
+	(28, 'all'),
+	(29, 'all'),
+	(30, 'all'),
+	(31, 'all');
+/*!40000 ALTER TABLE `article_concern_category` ENABLE KEYS */;
+
+-- Dumping structure for table tdw.calendar
+CREATE TABLE IF NOT EXISTS `calendar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `class` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `calendar_class` (`class`),
+  CONSTRAINT `calendar_class` FOREIGN KEY (`class`) REFERENCES `class` (`name`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tdw.calendar: ~0 rows (approximately)
+/*!40000 ALTER TABLE `calendar` DISABLE KEYS */;
+/*!40000 ALTER TABLE `calendar` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.category
 CREATE TABLE IF NOT EXISTS `category` (
@@ -84,10 +106,17 @@ CREATE TABLE IF NOT EXISTS `category` (
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.category: ~0 rows (approximately)
+-- Dumping data for table tdw.category: ~6 rows (approximately)
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
+INSERT INTO `category` (`id`, `name`) VALUES
+	(1, 'all'),
+	(5, 'moyen'),
+	(3, 'parent'),
+	(4, 'primaire'),
+	(6, 'secondaire'),
+	(2, 'teacher');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.class
@@ -98,12 +127,59 @@ CREATE TABLE IF NOT EXISTS `class` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
   KEY `year` (`year`),
-  CONSTRAINT `year` FOREIGN KEY (`year`) REFERENCES `year` (`cycle`) ON UPDATE CASCADE
+  CONSTRAINT `year` FOREIGN KEY (`year`) REFERENCES `year` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tdw.class: ~24 rows (approximately)
+/*!40000 ALTER TABLE `class` DISABLE KEYS */;
+INSERT INTO `class` (`id`, `name`, `year`) VALUES
+	(1, '1p1', '1p'),
+	(2, '1p2', '1p'),
+	(3, '2p1', '2p'),
+	(4, '2p2', '2p'),
+	(5, '3p1', '3p'),
+	(6, '3p2', '3p'),
+	(7, '4p1', '4p'),
+	(8, '4p2', '4p'),
+	(9, '5p1', '5p'),
+	(10, '5p2', '5p'),
+	(11, '1m1', '1m'),
+	(12, '1m2', '1m'),
+	(13, '2m1', '2m'),
+	(14, '2m2', '2m'),
+	(15, '3m1', '3m'),
+	(16, '3m2', '3m'),
+	(17, '4m1', '4m'),
+	(18, '4m2', '4m'),
+	(19, '1s1', '1s'),
+	(20, '1s2', '1s'),
+	(21, '2s1', '2s'),
+	(22, '2s2', '2s'),
+	(23, '3s1', '3s'),
+	(24, '3s2', '3s');
+/*!40000 ALTER TABLE `class` ENABLE KEYS */;
+
+-- Dumping structure for table tdw.class_has_module
+CREATE TABLE IF NOT EXISTS `class_has_module` (
+  `class` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `module` int(11) NOT NULL,
+  PRIMARY KEY (`class`,`module`),
+  KEY `class_has_module_module` (`module`),
+  CONSTRAINT `class_has_module_class` FOREIGN KEY (`class`) REFERENCES `class` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `class_has_module_module` FOREIGN KEY (`module`) REFERENCES `module` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.class: ~0 rows (approximately)
-/*!40000 ALTER TABLE `class` DISABLE KEYS */;
-/*!40000 ALTER TABLE `class` ENABLE KEYS */;
+-- Dumping data for table tdw.class_has_module: ~7 rows (approximately)
+/*!40000 ALTER TABLE `class_has_module` DISABLE KEYS */;
+INSERT INTO `class_has_module` (`class`, `module`) VALUES
+	('3s2', 1),
+	('3s2', 2),
+	('3s2', 3),
+	('3s2', 4),
+	('3s2', 5),
+	('3s2', 6),
+	('3s2', 7);
+/*!40000 ALTER TABLE `class_has_module` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.cycle
 CREATE TABLE IF NOT EXISTS `cycle` (
@@ -111,11 +187,37 @@ CREATE TABLE IF NOT EXISTS `cycle` (
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.cycle: ~0 rows (approximately)
+-- Dumping data for table tdw.cycle: ~3 rows (approximately)
 /*!40000 ALTER TABLE `cycle` DISABLE KEYS */;
+INSERT INTO `cycle` (`id`, `name`) VALUES
+	(2, 'moyen'),
+	(1, 'primaire'),
+	(3, 'secondaire');
 /*!40000 ALTER TABLE `cycle` ENABLE KEYS */;
+
+-- Dumping structure for table tdw.module
+CREATE TABLE IF NOT EXISTS `module` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `year` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `module_year` (`year`),
+  CONSTRAINT `module_year` FOREIGN KEY (`year`) REFERENCES `year` (`name`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tdw.module: ~7 rows (approximately)
+/*!40000 ALTER TABLE `module` DISABLE KEYS */;
+INSERT INTO `module` (`id`, `name`, `year`) VALUES
+	(1, 'Algebre', '3s'),
+	(2, 'Analyse', '3s'),
+	(3, 'Archi', '3s'),
+	(4, 'Mecanique', '3s'),
+	(5, 'Compilation', '3s'),
+	(6, 'ANAD', '3s'),
+	(7, 'TPGO', '3s');
+/*!40000 ALTER TABLE `module` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.permission
 CREATE TABLE IF NOT EXISTS `permission` (
@@ -123,9 +225,9 @@ CREATE TABLE IF NOT EXISTS `permission` (
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.permission: ~14 rows (approximately)
+-- Dumping data for table tdw.permission: ~19 rows (approximately)
 /*!40000 ALTER TABLE `permission` DISABLE KEYS */;
 INSERT INTO `permission` (`id`, `name`) VALUES
 	(5, 'addArticle'),
@@ -139,7 +241,9 @@ INSERT INTO `permission` (`id`, `name`) VALUES
 	(4, 'editUser'),
 	(9, 'indexAdmin'),
 	(10, 'indexArticles'),
+	(20, 'indexParentSpace'),
 	(14, 'indexPresentation'),
+	(19, 'indexStudentSpace'),
 	(11, 'indexUsers'),
 	(13, 'newPresentation'),
 	(7, 'showArticle'),
@@ -157,14 +261,14 @@ CREATE TABLE IF NOT EXISTS `presentation` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.presentation: ~7 rows (approximately)
+-- Dumping data for table tdw.presentation: ~5 rows (approximately)
 /*!40000 ALTER TABLE `presentation` DISABLE KEYS */;
 INSERT INTO `presentation` (`id`, `paragraph`, `image`, `order`, `created_at`) VALUES
-	(3, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 8, '2021-03-05 02:25:51'),
-	(4, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 9, '2021-03-05 02:25:51'),
-	(5, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 10, '2021-03-05 02:25:51'),
-	(6, 'asdfasdsdf', '', 7, '2021-03-05 02:25:51'),
-	(9, 'this is a very new paragraph', '', 3, '2021-03-05 02:25:51');
+	(3, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 2, '2021-03-11 00:58:20'),
+	(4, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 3, '2021-03-11 00:58:20'),
+	(5, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 5, '2021-03-06 14:56:49'),
+	(6, 'asdfasdsdf', '', 1, '2021-03-11 00:58:20'),
+	(9, 'this is a very new paragraph', '', 4, '2021-03-11 00:58:20');
 /*!40000 ALTER TABLE `presentation` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.role
@@ -194,9 +298,9 @@ CREATE TABLE IF NOT EXISTS `role_has_permission` (
   KEY `permission_name` (`permission_name`),
   CONSTRAINT `permission_name` FOREIGN KEY (`permission_name`) REFERENCES `permission` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `role_name` FOREIGN KEY (`role_name`) REFERENCES `role` (`name`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.role_has_permission: ~11 rows (approximately)
+-- Dumping data for table tdw.role_has_permission: ~17 rows (approximately)
 /*!40000 ALTER TABLE `role_has_permission` DISABLE KEYS */;
 INSERT INTO `role_has_permission` (`id`, `role_name`, `permission_name`) VALUES
 	(1, 'admin', 'addArticle'),
@@ -206,13 +310,16 @@ INSERT INTO `role_has_permission` (`id`, `role_name`, `permission_name`) VALUES
 	(16, 'admin', 'deletePresentation'),
 	(5, 'admin', 'deleteUser'),
 	(2, 'admin', 'editArticle'),
+	(18, 'admin', 'editPresentation'),
 	(6, 'admin', 'editUser'),
 	(9, 'admin', 'indexAdmin'),
 	(10, 'admin', 'indexArticles'),
 	(11, 'admin', 'indexPresentation'),
 	(12, 'admin', 'indexUsers'),
 	(13, 'admin', 'newPresentation'),
-	(17, 'admin', 'updateOrderPresentation');
+	(17, 'admin', 'updateOrderPresentation'),
+	(21, 'parent', 'indexParentSpace'),
+	(20, 'student', 'indexStudentSpace');
 /*!40000 ALTER TABLE `role_has_permission` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.subject
@@ -234,30 +341,41 @@ CREATE TABLE IF NOT EXISTS `subject` (
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `role` int(11) DEFAULT NULL,
   `first_name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `birth` date DEFAULT NULL,
+  `class` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `category` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT 'all',
+  `address` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone_1` smallint(10) DEFAULT NULL,
+  `phone_2` smallint(10) DEFAULT NULL,
+  `phone_3` smallint(10) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`) USING BTREE,
   KEY `role` (`role`),
-  CONSTRAINT `role` FOREIGN KEY (`role`) REFERENCES `role` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+  KEY `class_name` (`class`) USING BTREE,
+  KEY `user_category` (`category`),
+  CONSTRAINT `class_name` FOREIGN KEY (`class`) REFERENCES `class` (`name`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `role` FOREIGN KEY (`role`) REFERENCES `role` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `user_category` FOREIGN KEY (`category`) REFERENCES `category` (`name`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table tdw.user: ~10 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` (`id`, `email`, `role`, `first_name`, `last_name`, `password`, `created_at`) VALUES
-	(1, 'admin@admin.com', 1, 'Diaeddin', 'BOUIDAINE', '21232f297a57a5a743894a0e4a801fc3', '2021-02-23 21:56:26'),
-	(2, 'admin2@admin.com', 1, 'Zineddine', 'BOUCHERIR', '21232f297a57a5a743894a0e4a801fc3', '2021-02-23 23:10:04'),
-	(3, 'hd_bouidaine@esi.dz', 3, 'Ali Baba', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-23 23:13:03'),
-	(4, 'hd_bouidaine1@esi.dz', 3, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-23 23:17:00'),
-	(5, 'admin@argon.com', 1, 'Manuel', 'Nuer', 'dcddb75469b4b4875094e14561e573d8', '2021-02-23 23:17:02'),
-	(6, 'diaeddin@esi.dz', 2, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-24 20:50:42'),
-	(7, 'dbouidaine2@esi.dz', 2, 'Diaeddin', 'BOUIDAINE', '202cb962ac59075b964b07152d234b70', '2021-02-24 20:51:02'),
-	(8, 'hd_bouidaine3@esi.dz', 3, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-25 11:36:53'),
-	(14, 'hd_bouidaine111@esi.dz', 3, 'Diaeddin9', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-02-25 12:11:08'),
-	(17, 'diaa@esi.dz', 1, 'Diaeddin', 'BOUIDAINE', 'e10adc3949ba59abbe56e057f20f883e', '2021-03-03 14:14:57');
+INSERT INTO `user` (`id`, `email`, `password`, `role`, `first_name`, `last_name`, `birth`, `class`, `category`, `address`, `phone_1`, `phone_2`, `phone_3`, `created_at`) VALUES
+	(1, 'admin@esi.dz', 'e10adc3949ba59abbe56e057f20f883e', 1, 'Diaeddin', 'BOUIDAINE', '2021-03-11', NULL, 'all', NULL, NULL, NULL, NULL, '2021-02-23 20:56:26'),
+	(2, 'teacher@esi.dz', 'e10adc3949ba59abbe56e057f20f883e', 1, 'Zineddine', 'BOUCHERIR', NULL, NULL, 'all', NULL, NULL, NULL, NULL, '2021-02-23 22:10:04'),
+	(3, 'student@esi.dz', 'e10adc3949ba59abbe56e057f20f883e', 3, 'Diaeddin', 'BOUIDAINE', '2021-03-11', '3s2', 'secondaire', NULL, NULL, NULL, NULL, '2021-02-23 22:13:03'),
+	(4, 'hd_bouidaine1@esi.dz', 'e10adc3949ba59abbe56e057f20f883e', 3, 'Diaeddin', 'BOUIDAINE', NULL, NULL, 'all', NULL, NULL, NULL, NULL, '2021-02-23 22:17:00'),
+	(5, 'admin@argon.com', 'dcddb75469b4b4875094e14561e573d8', 1, 'Manuel', 'Nuer', NULL, NULL, 'all', NULL, NULL, NULL, NULL, '2021-02-23 22:17:02'),
+	(6, 'parent@esi.dz', 'e10adc3949ba59abbe56e057f20f883e', 4, 'Diaeddin', 'BOUIDAINE', NULL, NULL, 'all', NULL, NULL, NULL, NULL, '2021-02-24 19:50:42'),
+	(7, 'dbouidaine2@esi.dz', '202cb962ac59075b964b07152d234b70', 2, 'Diaeddin', 'BOUIDAINE', NULL, NULL, 'all', NULL, NULL, NULL, NULL, '2021-02-24 19:51:02'),
+	(8, 'hd_bouidaine3@esi.dz', 'e10adc3949ba59abbe56e057f20f883e', 3, 'Diaeddin', 'BOUIDAINE', NULL, NULL, 'all', NULL, NULL, NULL, NULL, '2021-02-25 10:36:53'),
+	(14, 'hd_bouidaine111@esi.dz', 'e10adc3949ba59abbe56e057f20f883e', 3, 'Diaeddin9', 'BOUIDAINE', NULL, NULL, 'all', NULL, NULL, NULL, NULL, '2021-02-25 11:11:08'),
+	(17, 'diaa@esi.dz', 'e10adc3949ba59abbe56e057f20f883e', 1, 'Diaeddin', 'BOUIDAINE', NULL, NULL, 'all', NULL, NULL, NULL, NULL, '2021-03-03 13:14:57');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.year
@@ -269,10 +387,23 @@ CREATE TABLE IF NOT EXISTS `year` (
   UNIQUE KEY `name` (`name`),
   KEY `cycle` (`cycle`),
   CONSTRAINT `cycle` FOREIGN KEY (`cycle`) REFERENCES `cycle` (`name`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.year: ~0 rows (approximately)
+-- Dumping data for table tdw.year: ~12 rows (approximately)
 /*!40000 ALTER TABLE `year` DISABLE KEYS */;
+INSERT INTO `year` (`id`, `name`, `cycle`) VALUES
+	(1, '1p', 'primaire'),
+	(2, '2p', 'primaire'),
+	(3, '3p', 'primaire'),
+	(4, '4p', 'primaire'),
+	(5, '5p', 'primaire'),
+	(6, '1m', 'moyen'),
+	(7, '2m', 'moyen'),
+	(8, '3m', 'moyen'),
+	(9, '4m', 'moyen'),
+	(10, '1s', 'secondaire'),
+	(11, '2s', 'secondaire'),
+	(12, '3s', 'secondaire');
 /*!40000 ALTER TABLE `year` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

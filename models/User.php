@@ -11,7 +11,15 @@ class User extends Model{
     static function get($id){
         return parent::getM($id,'user');
     }
-    
+    static function getCycle($class){
+        $connection=DataBase::connect();
+        $query=$connection->prepare('SELECT class.name AS class_name,class.calendar AS calendar_id,class.year AS year_name,year.cycle
+        AS cycle_name FROM class,year WHERE (class.year=year.name && class.name=?);');
+        $query->bindParam(1,$class);
+        $query->execute();
+        return $query->fetch((\PDO::FETCH_ASSOC));
+
+    }
     static function getByEmail($email){
         $connection=DataBase::connect();
         $query=$connection->prepare('SELECT user.id,user.email,role.name AS role,user.first_name,user.last_name,user.password FROM user,role WHERE user.role=role.id && email=? ;');
