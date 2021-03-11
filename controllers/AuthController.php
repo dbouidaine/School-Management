@@ -7,7 +7,6 @@ use models\User;
 
 class AuthController extends Controller{
 
-
     public function login($url_data){
         $user = User::getByEmail($_POST['email']);
         $password = md5($_POST['password']);
@@ -28,7 +27,12 @@ class AuthController extends Controller{
             case 'admin':
                 header('Location: '. url('admin'));
                 break;
-            
+            case 'student':
+                header('Location: '. url('space/student'));
+                break;
+            case 'parent':
+                header('Location: '. url('space/parent'));
+                break;
             default:
                 header('Location: '.url('') );
                 break;

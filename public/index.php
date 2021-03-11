@@ -1,6 +1,7 @@
 <?php
 
 use app\Application;
+
 if(session_status()==1){
     session_start();
 };
@@ -39,6 +40,14 @@ $app->router->get("/article/show/{id_article}",[ArticleController::class,'show']
 $app->router->get("/ecole/presentation",[PresentationController::class,'index']);
 
 $app->router->get("/ecole/{cycle}",[CycleController::class,'index']);
+
+$app->router->get("/space/student",[SpaceController::class,'indexStudentSpace']);
+
+$app->router->get("/space/student/{page}",[SpaceController::class,'indexStudentSpace']);
+
+$app->router->get("/space/parent",[SpaceController::class,'indexParentSpace']);
+
+$app->router->get("/space/parent/{page}",[SpaceController::class,'indexParentSpace']);
 
 $app->router->get("/contact",[CycleController::class,'index']);
 

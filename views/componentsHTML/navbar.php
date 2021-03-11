@@ -23,10 +23,10 @@
               <a class="nav-link text-light" href="<?=url('ecole/cycle-secondaire');?>">Cycle Secondaire</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="<?=url('espace-eleves');?>">Espace Elèves</a>
+              <a class="nav-link text-light" href="<?=url('space/student');?>">Espace Elèves</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="<?=url('espace-parents');?>">Espace Parents</a>
+              <a class="nav-link text-light" href="<?=url('space/parent');?>">Espace Parents</a>
             </li>
           </ul>
         </div>

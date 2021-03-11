@@ -1,13 +1,18 @@
 <?php
 
 namespace controllers;
-use views\HomeView;
-use models\Article;
 
-class HomeController extends Controller{
-    public function index($url_data){
+use models\Access;
+use models\Article;
+use views\SpaceView;
+
+class SpaceController extends Controller{
+
+
+    public function indexStudentSpace($url_data){
+        Access::hasAccess('indexStudentSpace');
         $args=[];
-        $n_pages=Article::count();
+        $n_pages=Article::countByCategory("all");
         $args['page_count']=ceil($n_pages/8);
         if(!isset($url_data['page'])){
             $data=Article::getMany(0,8,"all");
@@ -24,18 +29,15 @@ class HomeController extends Controller{
             exit();
         }
         $args['articles']=$data;
-        $home=new HomeView();
-        $home->showHome($args);
-        $home->view();
+        $cycle=new SpaceView();
+        $cycle->studentSpace($args);
+        $cycle->view();
     }
 
-    public function indexLogin($url_data){
-        if(isset($_SESSION['user'])){
-            header('Location: '.url(''));
-        }
-        $args=[];
-        $loginPage=new HomeView();
-        $loginPage->showLogin($args);
-        $loginPage->view();
+    public function indexParentSpace($url_data){
+        Access::hasAccess('indexParentSpace');
+        $cycle=new SpaceView();
+        $cycle->parentSpace($url_data);
+        $cycle->view();
     }
 }
