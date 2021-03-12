@@ -5,7 +5,6 @@ namespace controllers;
 use Exception;
 use models\Access;
 use models\Presentation;
-use views\AdminPresentationView;
 
 class PresentationController extends Controller{
 
@@ -19,6 +18,15 @@ class PresentationController extends Controller{
         Access::hasAccess('updateOrderPresentation');
         Presentation::updateOrder($_POST);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
+    }
+
+    public function update(){
+        //Access::hasAccess('updateOrderPresentation');
+        if(!empty($_FILES)){
+            uploadImage('image');
+        }
+        Presentation::update($_POST,$_FILES);
+        header('Location: ' . url('admin/presentation'));
     }
 
     public function delete($url_data){

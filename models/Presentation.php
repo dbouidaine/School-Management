@@ -26,7 +26,19 @@ class Presentation extends Model{
     static function new($data){
         $connection=DataBase::connect();
         $query=$connection->prepare('INSERT INTO presentation (paragraph,image) VALUES (?,?);');
-        $query->execute([$data['paragraph'],$data['image']]);
+        $query->execute([htmlspecialchars($data['paragraph']),$data['image']]);
+    }
+
+    static function update($data,$files){
+        $connection=DataBase::connect();
+        if (empty($files)){
+            $query=$connection->prepare('UPDATE presentation SET paragraph=? WHERE id=?;');
+            $query->execute([htmlspecialchars($data['paragraph']),$data['id']]);
+        }
+        else{
+            $query=$connection->prepare('UPDATE presentation SET paragraph=?,image=? WHERE id=?;');
+            $query->execute([htmlspecialchars($data['paragraph']),$files['image']['name'],$data['id']]);
+        }
     }
 
     static function delete($id){

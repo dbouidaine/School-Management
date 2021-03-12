@@ -73,6 +73,8 @@ $app->router->get("/article/delete/{article_id}",[ArticleController::class,'dele
 
 $app->router->get("/article/add",[ArticleController::class,'add']);
 
+$app->router->get("/article/update",[ArticleController::class,'update']);
+
 
 /******************** Users ************************/
 
@@ -99,6 +101,8 @@ $app->router->get("/presentation/new",[AdminController::class,'newPresentation']
 $app->router->get("/presentation/add",[PresentationController::class,'add']);
 
 $app->router->get("/presentation/updateOrder",[PresentationController::class,'updateOrder']);
+
+$app->router->get("/presentation/update",[PresentationController::class,'update']);
 
 $app->router->get("/presentation/delete/{presentation_id}",[PresentationController::class,'delete']);
 

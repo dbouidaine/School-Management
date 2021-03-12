@@ -12,7 +12,7 @@
               <input class="w-100" name="title" type="text" placeholder="title" required>
               <textarea class="w-100" name="description" type="text" placeholder="description" required></textarea>
               <input class="w-100 file-input" name="image" type="file" accept="image/*" placeholder="image" required>
-              <button class="float-end my-btn my-btn-blue" type="submit" name="add_formation" id="form-btn">Add Article</button>
+              <button class="float-end my-btn my-btn-blue" type="submit" name="add_article" id="form-btn">Add Article</button>
             </form>
           </div>
         </div>

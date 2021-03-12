@@ -36,7 +36,7 @@
                                 </div>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownActions">
                                     <li><a class="dropdown-item" href="<?=url('article/show/'.$arg['id']);?>">Show</a></li>
-                                    <li><a class="dropdown-item">Edit</a></li>
+                                    <li><a class="dropdown-item" href="<?=url('article/edit/'.$arg['id']);?>">Edit</a></li>
                                     <li><a class="dropdown-item text-danger" href="<?=url('article/delete/'.$arg['id']);?>">Delete</a></li>
                                 </ul>
                             </div>

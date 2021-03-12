@@ -32,4 +32,12 @@ class ArticleController extends Controller{
         Article::new($_POST['title'],$_FILES['image']['name'],$_POST['description'],$_SESSION['user']['id']);
         header('Location: ' . url('admin/articles'));
     }
+
+    public function update(){
+        if(!empty($_FILES)){
+            uploadImage('image');
+        } 
+        Article::update($_POST,$_FILES);
+        header('Location: ' . url('admin/articles'));
+    }
 }

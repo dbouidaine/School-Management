@@ -52,6 +52,18 @@ class Article extends Model{
         $query->execute([htmlspecialchars($title),htmlspecialchars($description),$image,$author]);
     }
 
+    static function update($data,$files){
+        $connection=DataBase::connect();
+        if (empty($files)){
+            $query=$connection->prepare('UPDATE article SET title=?,description=?, WHERE id=?;');
+            $query->execute([htmlspecialchars($data['title']),htmlspecialchars($data['description']),$data['id']]);
+        }
+        else{
+            $query=$connection->prepare('UPDATE article SET title=?,description=?,image=? WHERE id=?;');
+            $query->execute([htmlspecialchars($data['title']),htmlspecialchars($data['description']),$files['image']['name'],$data['id']]);
+        }
+    }
+
     static function destroy($id){
         parent::destroyM($id,"article");
     }
