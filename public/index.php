@@ -47,6 +47,8 @@ $app->router->get("/space/student/{page}",[SpaceController::class,'indexStudentS
 
 $app->router->get("/space/parent",[SpaceController::class,'indexParentSpace']);
 
+$app->router->get("/space/parent/child/{id_child}",[SpaceController::class,'indexStudentSpaceByParent']);
+
 $app->router->get("/space/parent/{page}",[SpaceController::class,'indexParentSpace']);
 
 $app->router->get("/contact",[CycleController::class,'index']);

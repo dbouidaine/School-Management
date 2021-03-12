@@ -4,6 +4,7 @@ namespace views;
 
 use views\components\Layout;
 use views\components\StudentSpaceBody;
+use views\components\ParentSpaceBody;
 
 class SpaceView extends View{
     public function studentSpace($args)
@@ -25,11 +26,12 @@ class SpaceView extends View{
     {
         //expects [title,navbar,footer,card,pagination,body,layout]  
         $args['title']="Espace Parent";
-        $components=['TopNavbar','Footer','Navbar','Card','Pagination'];
+        $components=['TopNavbar','Articles','Footer','Navbar','Card','Pagination'];
+        $args['page_url']='space/parent/';
         $args=$this->load($components,$args);
         // HomeBody component defines how the other components are grouped in the home page
         // Every page must have it's body component
-        $body=new CycleBody($args);
+        $body=new ParentSpaceBody($args);
         $args['Body']=$body->get();
         $layout = new Layout($args);
         $this->view = $layout->get();

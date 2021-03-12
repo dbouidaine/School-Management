@@ -52,14 +52,14 @@
             </tr>
         </thead>
         <tbody>
-            <?php for ($i=intval($args['user']['calendar']['hours']['min']); $i<=intval($args['user']['calendar']['hours']['max']);$i++){ ?>
+            <?php for ($i=intval($args['user']['calendar']['hours']['min']); $i<intval($args['user']['calendar']['hours']['max']);$i++){ ?>
             <tr>
                 
                 <td><?= intval($i) . 'h - '. intval($i+1) .'h';?></td>
                 <?php for($j=1;$j<=7;$j++){?>
                     <?php $case=false;?>
                     <?php foreach($args['user']['calendar']['events'] as $event){?>
-                        <?php if ($event['day']==$j && ($event['start']==intval($i) || $event['finish']==intval($i+1))) {?>
+                        <?php if ($event['day']==$j && ($event['start']==intval($i) || $event['finish']==intval($i+1)) && !$case) {?>
                             <td><?=$event['module_name'];?></td>
                             <?php $case=true;?>
                         <?php }?>
@@ -68,6 +68,42 @@
                 <?php } ?>
             </tr>
             <?php } ?>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <h4 class="text-dark float-start">Notes</h4>
+    <br>
+    <hr>
+    <table class="table space-table">
+        <tbody>
+            <tr>
+                <th scope="row">Module:</th>
+                <?php foreach($args['user']['marks'] as $mark){?>
+                    <td><?=$mark['module_name'];?></td>
+                <?php }?>
+            </tr>
+            <tr scope="row">
+                <th scope="row">Note:</th>
+                <?php foreach($args['user']['marks'] as $mark){?>
+                    <td><?=$mark['mark'];?></td>
+                <?php }?>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <h4 class="text-dark float-start">Les activités extrascolaires</h4>
+    <br>
+    <hr>
+    <table class="table space-table">
+        <tbody>
+            <tr>
+                <th scope="row">Activité:</th>
+                <?php foreach($args['user']['activities'] as $activity){?>
+                    <td><?=$activity['activity'];?></td>
+                <?php }?>
+            </tr>
         </tbody>
     </table>
     <br>

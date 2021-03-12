@@ -33,6 +33,20 @@ class Access extends Model{
         else {return true;}
     }
 
+    static function parentOf($id_child){
+        $id_parent=$_SESSION['user']['id'];
+        $connection=DataBase::connect();
+        $query=$connection->prepare("SELECT * FROM parent_has_child WHERE (parent=? && child=?) ;");
+        $query->bindParam(1,$id_parent);
+        $query->bindParam(2,$id_child);
+        $query->execute();
+        if (empty($query->fetch(\PDO::FETCH_ASSOC))) {
+            Router::redirect("errors/403");
+            die();
+        }
+        else {return true;}
+    }
+
     static function delete($id){
         parent::destroyM($id,"role_has_permission");
     }
