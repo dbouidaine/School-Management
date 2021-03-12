@@ -47,14 +47,17 @@ class User extends Model{
     static function update($data){
         $connection=DataBase::connect();
         if (empty($data['password'])){
-            $query=$connection->prepare('UPDATE user SET email=?,first_name=?,last_name=?,role=? WHERE id=?;');
-            $query->execute([$data['email'],$data['first_name'],$data['last_name'],$data['role'],$data['id']]);
+            $query=$connection->prepare('UPDATE user SET email=?,first_name=?,last_name=?,
+            role=?,birth=?,class=?,category=?,address=?,phone_1=?,phone_2=?,phone_3=? WHERE id=?;');
+            $query->execute([$data['email'],$data['first_name'],$data['last_name'],$data['role'],$data['birth']
+            ,$data['class'],$data['category'],$data['address'],$data['phone_1'],$data['phone_2'],$data['phone_3'],$data['id']]);
         }
         else{
-            $query=$connection->prepare('UPDATE user SET email=?,first_name=?,last_name=?,password=?,role=? WHERE id=?;');
-            $query->execute([$data['email'],$data['first_name'],$data['last_name'],md5($data['password']),$data['role'],$data['id']]);
+            $query=$connection->prepare('UPDATE user SET email=?,first_name=?,last_name=?,password=?
+            role=?,birth=?,class=?,category=?,address=?,phone_1=?,phone_2=?,phone_3=? WHERE id=?;');
+            $query->execute([$data['email'],$data['first_name'],$data['last_name'],md4($data['password']),$data['role'],$data['birth']
+            ,$data['class'],$data['category'],$data['address'],$data['phone_1'],$data['phone_2'],$data['phone_3'],$data['id']]);
         }
-        
     }
 
     static function destroy($id){

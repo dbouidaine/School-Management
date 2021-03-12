@@ -91,13 +91,18 @@ INSERT INTO `article_concern_category` (`article`, `category`) VALUES
 -- Dumping structure for table tdw.calendar
 CREATE TABLE IF NOT EXISTS `calendar` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `class` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `class` (`class`),
+  CONSTRAINT `calendar_class` FOREIGN KEY (`class`) REFERENCES `class` (`name`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.calendar: ~0 rows (approximately)
+-- Dumping data for table tdw.calendar: ~3 rows (approximately)
 /*!40000 ALTER TABLE `calendar` DISABLE KEYS */;
-INSERT INTO `calendar` (`id`) VALUES
-	(1);
+INSERT INTO `calendar` (`id`, `class`) VALUES
+	(5, '3s1'),
+	(1, '3s2'),
+	(12, '3s3');
 /*!40000 ALTER TABLE `calendar` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.calendar_has_event
@@ -109,13 +114,14 @@ CREATE TABLE IF NOT EXISTS `calendar_has_event` (
   `start` int(11) NOT NULL,
   `finish` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `calendar_has_event_calendar` (`calendar`),
+  UNIQUE KEY `calendar_day_start` (`calendar`,`day`,`start`),
+  UNIQUE KEY `calendar_day_finish` (`calendar`,`day`,`finish`),
   KEY `calendar_has_event_event` (`event`),
   CONSTRAINT `calendar_has_event_calendar` FOREIGN KEY (`calendar`) REFERENCES `calendar` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `calendar_has_event_event` FOREIGN KEY (`event`) REFERENCES `module` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.calendar_has_event: ~6 rows (approximately)
+-- Dumping data for table tdw.calendar_has_event: ~21 rows (approximately)
 /*!40000 ALTER TABLE `calendar_has_event` DISABLE KEYS */;
 INSERT INTO `calendar_has_event` (`id`, `calendar`, `event`, `day`, `start`, `finish`) VALUES
 	(1, 1, 1, 1, 8, 9),
@@ -123,7 +129,31 @@ INSERT INTO `calendar_has_event` (`id`, `calendar`, `event`, `day`, `start`, `fi
 	(3, 1, 2, 1, 10, 11),
 	(4, 1, 3, 1, 13, 15),
 	(6, 1, 5, 1, 15, 17),
-	(7, 1, 3, 2, 15, 16);
+	(7, 1, 3, 2, 15, 16),
+	(9, 5, 8, 1, 7, 8),
+	(13, 5, 8, 2, 7, 8),
+	(14, 5, 8, 3, 7, 8),
+	(15, 5, 8, 4, 7, 8),
+	(16, 5, 8, 5, 7, 8),
+	(17, 5, 8, 6, 7, 8),
+	(18, 5, 8, 7, 7, 8),
+	(19, 5, 8, 1, 15, 16),
+	(20, 5, 8, 2, 15, 16),
+	(21, 5, 8, 3, 15, 16),
+	(22, 5, 8, 4, 15, 16),
+	(23, 5, 8, 5, 15, 16),
+	(24, 5, 8, 6, 15, 16),
+	(25, 5, 8, 7, 15, 16),
+	(26, 5, 8, 5, 8, 10),
+	(65, 12, 12, 1, 7, 8),
+	(66, 12, 12, 2, 7, 8),
+	(67, 12, 12, 3, 7, 8),
+	(68, 12, 12, 4, 7, 8),
+	(69, 12, 12, 5, 7, 8),
+	(70, 12, 12, 2, 15, 16),
+	(71, 12, 12, 4, 15, 16),
+	(72, 12, 12, 5, 15, 16),
+	(73, 12, 12, 6, 7, 8);
 /*!40000 ALTER TABLE `calendar_has_event` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.category
@@ -155,11 +185,11 @@ CREATE TABLE IF NOT EXISTS `class` (
   UNIQUE KEY `name` (`name`),
   KEY `year` (`year`),
   KEY `class_calendar` (`calendar`),
-  CONSTRAINT `class_calendar` FOREIGN KEY (`calendar`) REFERENCES `calendar` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `class_calendar` FOREIGN KEY (`calendar`) REFERENCES `calendar` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `year` FOREIGN KEY (`year`) REFERENCES `year` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.class: ~24 rows (approximately)
+-- Dumping data for table tdw.class: ~25 rows (approximately)
 /*!40000 ALTER TABLE `class` DISABLE KEYS */;
 INSERT INTO `class` (`id`, `name`, `year`, `calendar`) VALUES
 	(1, '1p1', '1p', NULL),
@@ -184,8 +214,9 @@ INSERT INTO `class` (`id`, `name`, `year`, `calendar`) VALUES
 	(20, '1s2', '1s', NULL),
 	(21, '2s1', '2s', NULL),
 	(22, '2s2', '2s', NULL),
-	(23, '3s1', '3s', NULL),
-	(24, '3s2', '3s', 1);
+	(23, '3s1', '3s', 5),
+	(24, '3s2', '3s', 1),
+	(52, '3s3', '3s', 12);
 /*!40000 ALTER TABLE `class` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.class_has_module
@@ -198,16 +229,20 @@ CREATE TABLE IF NOT EXISTS `class_has_module` (
   CONSTRAINT `class_has_module_module` FOREIGN KEY (`module`) REFERENCES `module` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.class_has_module: ~7 rows (approximately)
+-- Dumping data for table tdw.class_has_module: ~10 rows (approximately)
 /*!40000 ALTER TABLE `class_has_module` DISABLE KEYS */;
 INSERT INTO `class_has_module` (`class`, `module`) VALUES
+	('2s2', 9),
+	('3s1', 6),
+	('3s1', 8),
 	('3s2', 1),
 	('3s2', 2),
 	('3s2', 3),
 	('3s2', 4),
 	('3s2', 5),
 	('3s2', 6),
-	('3s2', 7);
+	('3s2', 7),
+	('3s3', 12);
 /*!40000 ALTER TABLE `class_has_module` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.cycle
@@ -232,19 +267,23 @@ CREATE TABLE IF NOT EXISTS `module` (
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
   `year` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT '0',
   PRIMARY KEY (`id`),
+  UNIQUE KEY `name_year` (`name`,`year`),
   KEY `module_year` (`year`),
   CONSTRAINT `module_year` FOREIGN KEY (`year`) REFERENCES `year` (`name`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.module: ~7 rows (approximately)
+-- Dumping data for table tdw.module: ~9 rows (approximately)
 /*!40000 ALTER TABLE `module` DISABLE KEYS */;
 INSERT INTO `module` (`id`, `name`, `year`) VALUES
 	(1, 'Algebre', '3s'),
-	(2, 'Analyse', '3s'),
-	(3, 'Archi', '3s'),
-	(4, 'Mecanique', '3s'),
-	(5, 'Compilation', '3s'),
 	(6, 'ANAD', '3s'),
+	(2, 'Analyse', '3s'),
+	(8, 'Analyse2', '3s'),
+	(3, 'Archi', '3s'),
+	(5, 'Compilation', '3s'),
+	(9, 'Donnees', '2s'),
+	(12, 'HPC', '3s'),
+	(4, 'Mecanique', '3s'),
 	(7, 'TPGO', '3s');
 /*!40000 ALTER TABLE `module` ENABLE KEYS */;
 
@@ -271,22 +310,26 @@ CREATE TABLE IF NOT EXISTS `permission` (
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.permission: ~20 rows (approximately)
+-- Dumping data for table tdw.permission: ~25 rows (approximately)
 /*!40000 ALTER TABLE `permission` DISABLE KEYS */;
 INSERT INTO `permission` (`id`, `name`) VALUES
 	(5, 'addArticle'),
+	(24, 'addClass'),
 	(15, 'addPresentation'),
 	(1, 'addUser'),
 	(6, 'deleteArticle'),
+	(25, 'deleteClass'),
 	(16, 'deletePresentation'),
 	(2, 'deleteUser'),
 	(8, 'editArticle'),
+	(23, 'editClass'),
 	(12, 'editPresentation'),
 	(4, 'editUser'),
 	(9, 'indexAdmin'),
 	(10, 'indexArticles'),
+	(22, 'indexClasses'),
 	(20, 'indexParentSpace'),
 	(14, 'indexPresentation'),
 	(19, 'indexStudentSpace'),
@@ -295,6 +338,7 @@ INSERT INTO `permission` (`id`, `name`) VALUES
 	(13, 'newPresentation'),
 	(7, 'showArticle'),
 	(3, 'showUser'),
+	(26, 'updateClass'),
 	(18, 'updateOrderPresentation');
 /*!40000 ALTER TABLE `permission` ENABLE KEYS */;
 
@@ -345,25 +389,30 @@ CREATE TABLE IF NOT EXISTS `role_has_permission` (
   KEY `permission_name` (`permission_name`),
   CONSTRAINT `permission_name` FOREIGN KEY (`permission_name`) REFERENCES `permission` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `role_name` FOREIGN KEY (`role_name`) REFERENCES `role` (`name`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.role_has_permission: ~17 rows (approximately)
+-- Dumping data for table tdw.role_has_permission: ~23 rows (approximately)
 /*!40000 ALTER TABLE `role_has_permission` DISABLE KEYS */;
 INSERT INTO `role_has_permission` (`id`, `role_name`, `permission_name`) VALUES
 	(1, 'admin', 'addArticle'),
+	(26, 'admin', 'addClass'),
 	(14, 'admin', 'addPresentation'),
 	(4, 'admin', 'addUser'),
 	(3, 'admin', 'deleteArticle'),
+	(27, 'admin', 'deleteClass'),
 	(16, 'admin', 'deletePresentation'),
 	(5, 'admin', 'deleteUser'),
 	(2, 'admin', 'editArticle'),
+	(23, 'admin', 'editClass'),
 	(18, 'admin', 'editPresentation'),
 	(6, 'admin', 'editUser'),
 	(9, 'admin', 'indexAdmin'),
 	(10, 'admin', 'indexArticles'),
+	(25, 'admin', 'indexClasses'),
 	(11, 'admin', 'indexPresentation'),
 	(12, 'admin', 'indexUsers'),
 	(13, 'admin', 'newPresentation'),
+	(28, 'admin', 'updateClass'),
 	(17, 'admin', 'updateOrderPresentation'),
 	(21, 'parent', 'indexParentSpace'),
 	(22, 'parent', 'indexStudentSpaceByParent'),
@@ -423,7 +472,7 @@ CREATE TABLE IF NOT EXISTS `student_has_remark` (
   CONSTRAINT `student_has_remark_teacher` FOREIGN KEY (`teacher`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.student_has_remark: ~0 rows (approximately)
+-- Dumping data for table tdw.student_has_remark: ~2 rows (approximately)
 /*!40000 ALTER TABLE `student_has_remark` DISABLE KEYS */;
 INSERT INTO `student_has_remark` (`id`, `student`, `teacher`, `remark`) VALUES
 	(1, 3, 2, 'Il est tres puissant cet étudiant'),
@@ -457,9 +506,9 @@ CREATE TABLE IF NOT EXISTS `user` (
   `class` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `category` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT 'all',
   `address` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone_1` smallint(10) DEFAULT NULL,
-  `phone_2` smallint(10) DEFAULT NULL,
-  `phone_3` smallint(10) DEFAULT NULL,
+  `phone_1` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone_2` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone_3` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`) USING BTREE,
@@ -476,7 +525,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`id`, `email`, `password`, `role`, `first_name`, `last_name`, `birth`, `class`, `category`, `address`, `phone_1`, `phone_2`, `phone_3`, `created_at`) VALUES
 	(1, 'admin@esi.dz', 'e10adc3949ba59abbe56e057f20f883e', 1, 'Diaeddin', 'BOUIDAINE', '2021-03-11', NULL, 'all', NULL, NULL, NULL, NULL, '2021-02-23 21:56:26'),
 	(2, 'teacher@esi.dz', 'e10adc3949ba59abbe56e057f20f883e', 2, 'Zineddine', 'BOUCHERIR', NULL, NULL, 'all', NULL, NULL, NULL, NULL, '2021-02-23 23:10:04'),
-	(3, 'student@esi.dz', 'e10adc3949ba59abbe56e057f20f883e', 3, 'Diaeddin', 'BOUIDAINE', '2021-03-11', '3s2', 'secondaire', NULL, NULL, NULL, NULL, '2021-02-23 23:13:03'),
+	(3, 'student@esi.dz', 'e10adc3949ba59abbe56e057f20f883e', 3, 'Diaeddin', 'BOUIDAINE', '1998-12-15', '3s2', 'secondaire', 'D78, CITE UNIVERSITAIRE BOURAOUI AMAR, Elharrach', '0599665252', '0599665255', '0599665256', '2021-02-23 23:13:03'),
 	(4, 'hd_bouidaine1@esi.dz', 'e10adc3949ba59abbe56e057f20f883e', 3, 'Diaeddin', 'BOUIDAINE', NULL, NULL, 'all', NULL, NULL, NULL, NULL, '2021-02-23 23:17:00'),
 	(5, 'admin@argon.com', 'dcddb75469b4b4875094e14561e573d8', 1, 'Manuel', 'Nuer', NULL, NULL, 'all', NULL, NULL, NULL, NULL, '2021-02-23 23:17:02'),
 	(6, 'parent@esi.dz', 'e10adc3949ba59abbe56e057f20f883e', 4, 'Diaeddin', 'BOUIDAINE', '2000-03-12', NULL, 'parent', NULL, NULL, NULL, NULL, '2021-02-24 20:50:42'),

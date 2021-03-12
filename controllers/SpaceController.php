@@ -24,14 +24,14 @@ class SpaceController extends Controller{
         $n_pages=Article::countByCategory($args['user']['category']);
         $args['page_count']=ceil($n_pages/8);
         if(!isset($url_data['page'])){
-            $data=Article::getMany(0,8,$args['user']['category']);
+            $data=Article::getManyWithCategory(0,8,$args['user']['category']);
             $args['page']=1;
         }
         else{
             $args['page']=$url_data['page'];
             $page=$url_data['page'];
             $from = ($page-1)*8;
-            $data=Article::getMany($from,8,$args['user']['category']);
+            $data=Article::getManyWithCategory($from,8,$args['user']['category']);
         }
         if(empty($data)){
             \app\Router::redirect('errors/404');
@@ -58,14 +58,14 @@ class SpaceController extends Controller{
         $n_pages=Article::countByCategory($args['user']['category']);
         $args['page_count']=ceil($n_pages/8);
         if(!isset($url_data['page'])){
-            $data=Article::getMany(0,8,$args['user']['category']);
+            $data=Article::getManyWithCategory(0,8,$args['user']['category']);
             $args['page']=1;
         }
         else{
             $args['page']=$url_data['page'];
             $page=$url_data['page'];
             $from = ($page-1)*8;
-            $data=Article::getMany($from,8,$args['user']['category']);
+            $data=Article::getManyWithCategory($from,8,$args['user']['category']);
         }
         if(empty($data)){
             \app\Router::redirect('errors/404');

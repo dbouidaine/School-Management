@@ -8,10 +8,10 @@
             <a href="<?=url('admin/presentation');?>">Presentation</a>
         </li>
         <li class="nav-item">
-            <a href="#">Emplois du temps</a>
+            <a href="<?=url('admin/classes');?>">Classes</a>
         </li>
         <li class="nav-item">
-            <a href="nav-link">Enseignants</a>
+            <a href="">Enseignants</a>
         </li>
         <li class="nav-item">
             <a href="<?=url('admin/users');?>">Utilisateurs</a>
@@ -27,7 +27,7 @@
         </li>
         <?php if(isset($_SESSION['user'])){?>
             <li class="nav-item bg-h-dark">
-              <a class="nav-link bg-dark text-light" href="/user/logout">Logout</a>
+              <a class="nav-link bg-dark text-light" href="<?=url('user/logout')?>">Logout</a>
             </li>
         <?php } ?>
     </ul>

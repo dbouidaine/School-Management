@@ -102,6 +102,38 @@ $app->router->get("/presentation/updateOrder",[PresentationController::class,'up
 
 $app->router->get("/presentation/delete/{presentation_id}",[PresentationController::class,'delete']);
 
+/******************** Classes ************************/
+
+$app->router->get("/admin/classes",[AdminController::class,'indexClasses']);
+
+$app->router->get("/class/add",[ClassController::class,'add']);
+
+$app->router->get("/class/update",[ClassController::class,'update']);
+
+$app->router->get("/calendar/delete/{calendar_id}",[CalendarController::class,'delete']);
+
+$app->router->get("/class/{class_name}/calendar",[AdminController::class,'showCalendar']);
+
+$app->router->get("/class/{class_name}/modules",[AdminController::class,'indexModules']);
+
+$app->router->get("/module/add",[ClassController::class,'addModule']);
+
+$app->router->get("/module/delete/{module_id}",[ClassController::class,'deleteModule']);
+
+$app->router->get("/calendar/addLine",[CalendarController::class,'addLine']);
+
+$app->router->get("/calendar/edit/{calendar_id}",[AdminController::class,'editCalendar']);
+
+$app->router->get("/class/edit/{class_id}",[AdminController::class,'editClass']);
+
+$app->router->get("/class/delete/{class_id}",[ClassController::class,'delete']);
+
+/******************** Calendar ************************/
+
+$app->router->get("/calendar/new",[AdminController::class,'newCalendar']);
+
+$app->router->get("/calendar/{calendar_id}/delete/line/{line_id}",[CalendarController::class,'deleteLine']);
+
 /******************** Authentication ************************/
 
 $app->router->get("/user/login",[AuthController::class,'login']);

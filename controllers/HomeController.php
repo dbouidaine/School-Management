@@ -10,14 +10,14 @@ class HomeController extends Controller{
         $n_pages=Article::count();
         $args['page_count']=ceil($n_pages/8);
         if(!isset($url_data['page'])){
-            $data=Article::getMany(0,8,"all");
+            $data=Article::getMany(0,8);
             $args['page']=1;
         }
         else{
             $args['page']=$url_data['page'];
             $page=$url_data['page'];
             $from = ($page-1)*8;
-            $data=Article::getMany($from,8,"all");
+            $data=Article::getMany($from,8);
         }
         if(empty($data)){
             \app\Router::redirect('errors/404');

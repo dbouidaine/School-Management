@@ -18,3 +18,4 @@ $('.content').click(function(){
 $(document).ready(function(){
     $('.side-navbar').hide();
 });
+

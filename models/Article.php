@@ -20,8 +20,19 @@ class Article extends Model{
     static function get($id){
         return parent::getM($id,'article');
     }
+
+    static function getMany($from,$count){
+        // get $count articles from the $from -th article
+        $connection=DataBase::connect();
+        $query=$connection->prepare('SELECT id, SUBSTRING(title,1,50) AS title,image,SUBSTRING(description,1,50) AS
+        description FROM article ORDER BY created_at DESC LIMIT ?,?;');
+        $query->bindParam(1,$from);
+        $query->bindParam(2,$count);
+        $query->execute();
+        return $query->fetchAll((\PDO::FETCH_ASSOC));
+    }
     
-    static function getMany($from,$count,$category){
+    static function getManyWithCategory($from,$count,$category){
         // get $count articles from the $from -th article
         $connection=DataBase::connect();
         $query=$connection->prepare('SELECT id, SUBSTRING(title,1,50) AS title,image,SUBSTRING(description,1,50) AS

@@ -11,6 +11,12 @@ use models\Presentation;
 use models\User;
 use models\Role;
 use models\Access;
+use models\Calendar;
+use models\Category;
+use models\ClassM;
+use models\Module;
+use models\Year;
+use views\AdminClassesView;
 
 class AdminController extends Controller{
 
@@ -103,8 +109,10 @@ class AdminController extends Controller{
     public function editUser($url_data){
         Access::hasAccess('editUser');
         $args['roles']=Role::getAll();
+        $args['classes']=ClassM::getAll();
+        $args['categories']=Category::getAll();
         $args['user']=User::get($url_data['user_id']);
-        $args['user']['password']=NULL;
+        unset($args['user']['password']);
         $view=new AdminUsersView();
         $view->editUser($args);
         $view->view();
@@ -123,5 +131,66 @@ class AdminController extends Controller{
         $view=new AdminArticlesView();
         $view->editArticle($args);
         $view->view();
+    }
+
+    public function indexClasses($url_data){
+        Access::hasAccess('indexClasses');
+        $args=[];
+        $args['calendars']=Calendar::getAll();
+        $args['years']=Year::getAll();
+        $data=ClassM::getAllWithCycle();
+        $args['classes']=$data;
+        $home=new AdminClassesView();
+        $home->showTable($args);
+        $home->view();
+    }
+
+    public function editClass($url_data){
+        Access::hasAccess('editClass');
+        $args=[];
+        $args['calendars']=Calendar::getAll();
+        $args['years']=Year::getAll();
+        $data=ClassM::get($url_data['class_id']);
+        $args['class']=$data;
+        $home=new AdminClassesView();
+        $home->editClass($args);
+        $home->view();
+    }
+
+    public function showCalendar($url_data){
+        //Access::hasAccess('editClass');
+        $args=[];
+        $calenadr_id=ClassM::getCalendarId($url_data['class_name'])['calendar'];
+        $args['calendar']['events']=Calendar::get($calenadr_id);
+        $args['calendar']['calendar_id']=$calenadr_id;
+        $args['calendar']['hours']=Calendar::countHours($calenadr_id);
+        $args['modules']=ClassM::getModules($url_data['class_name']);
+        $args['class_name']=$url_data['class_name'];
+        $home=new AdminClassesView();
+        $home->showCalendar($args);
+        $home->view();
+    }
+
+    public function editCalendar($url_data){
+        //Access::hasAccess('editClass');
+        $args=[];
+        $args['calendars']=Calendar::getAll();
+        $args['years']=Year::getAll();
+        $data=ClassM::get($url_data['class_id']);
+        $args['class']=$data;
+        $home=new AdminClassesView();
+        $home->editClass($args);
+        $home->view();
+    }
+
+    public function indexModules($url_data){
+        //Access::hasAccess('editClass');
+        $args=[];
+        $args['modules']=Module::getAllByClass($url_data['class_name']);
+        $args['class_name']=$url_data['class_name'];
+        $args['years']=Year::getAll();
+        $home=new AdminClassesView();
+        $home->showModules($args);
+        $home->view();
     }
 }
