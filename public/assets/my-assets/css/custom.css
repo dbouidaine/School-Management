@@ -328,6 +328,14 @@ footer.footer{
     display: block;
 
 }
+footer.footer a{
+    color: #323643!important;
+    text-decoration: none;
+}
+footer.footer a:hover{
+    opacity: 0.7;
+    transition: 0.3s ease;
+}
 p.card-paragraph{
     text-align: left;
     margin: 2%;
