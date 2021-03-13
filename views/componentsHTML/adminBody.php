@@ -2,20 +2,50 @@
     <?php if(isset($args['SideNavbar'])) {echo $args['SideNavbar'];} ?>
     <div class="content p-5">
         
-        <h1>A new page</h1>
-        <div class="card text-left">
-          <img class="card-img-top" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Title</h4>
-            <form class="php-add-formation" action="<?=url('article/add')?>" method="POST">
-                <input name="author" type="text" placeholder="author" required>
-                <input name="title" type="text" placeholder="title" required>
-                <input name="description" type="text" placeholder="description" required>
-                <input name="image" type="text" placeholder="image" required>
-                <button type="submit" name="add_formation" id="form-btn">Add Article</button>
-            </form>
-          </div>
-        </div>
-        
+        <h2 class="p-3">Dashboard Admin</h2>
+        <div class="row justify-content-center">
+            <div class="card m-2 p-0" style="width: 20rem;">
+              <img class="card-img-top" src="<?=img('undraw/articles.png');?>" alt="Card image cap">
+              <div class="card-body m-auto">
+                <a class="card-link" href="<?=url('admin/articles');?>" style="font-size: x-large;">Articles</a>
+              </div>
+            </div>
+            <div class="card m-2 p-0" style="width: 20rem;">
+              <img class="card-img-top" src="<?=img('undraw/presentation.png');?>" alt="Card image cap">
+              <div class="card-body m-auto">
+                <a class="card-link" href="<?=url('admin/presentation');?>" style="font-size: x-large;">Présentation</a>
+              </div>
+            </div>
+            <div class="card m-2 p-0" style="width: 20rem;">
+              <img class="card-img-top" src="<?=img('undraw/classes.png');?>" alt="Card image cap">
+              <div class="card-body m-auto">
+                <a class="card-link" href="<?=url('admin/classes');?>" style="font-size: x-large;">Classes</a>
+              </div>
+            </div>
+            <div class="card m-2 p-0" style="width: 20rem;">
+              <img class="card-img-top" src="<?=img('undraw/teachers.png');?>" alt="Card image cap">
+              <div class="card-body m-auto">
+                <a class="card-link" href="<?=url('admin/teachers');?>" style="font-size: x-large;">Enseigants</a>
+              </div>
+            </div>
+            <div class="card m-2 p-0" style="width: 20rem;">
+              <img class="card-img-top" src="<?=img('undraw/users.png');?>" alt="Card image cap">
+              <div class="card-body m-auto">
+                <a class="card-link" href="<?=url('admin/users');?>" style="font-size: x-large;">Utilisateurs</a>
+              </div>
+            </div>
+            <div class="card m-2 p-0" style="width: 20rem;">
+              <img class="card-img-top" src="<?=img('undraw/restauration.png');?>" alt="Card image cap">
+              <div class="card-body m-auto">
+                <a class="card-link" href="<?=url('admin/restauration');?>" style="font-size: x-large;">Restauration</a>
+              </div>
+            </div>
+            <div class="card m-2 p-0" style="width: 20rem;">
+              <img class="card-img-top" src="<?=img('undraw/settings.png');?>" alt="Card image cap">
+              <div class="card-body m-auto">
+                <a class="card-link" href="<?=url('admin/settings');?>" style="font-size: x-large;">Paramêtres</a>
+              </div>
+            </div>
+        </div>        
     </div>
 </div>

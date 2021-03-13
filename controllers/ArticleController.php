@@ -27,13 +27,21 @@ class ArticleController extends Controller{
     }
 
     public function add(){
-        Access::hasAccess('addArticle');
+        Access::hasAccess('addArticle');   
         uploadImage('image');
         Article::new($_POST['title'],$_FILES['image']['name'],$_POST['description'],$_SESSION['user']['id']);
+        $last_id=Article::getLast();
+        $tab=['all','teacher','parent','primaire','secondaire','moyen'];
+        foreach($tab as $element){
+            if(isset($_POST[$element])){
+                Article::newConcernCategory($last_id,$element);
+            }
+        }
         header('Location: ' . url('admin/articles'));
     }
 
     public function update(){
+        
         if(!empty($_FILES)){
             uploadImage('image');
         } 

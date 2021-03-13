@@ -33,9 +33,7 @@ CREATE TABLE IF NOT EXISTS `article` (
 -- Dumping data for table tdw.article: ~27 rows (approximately)
 /*!40000 ALTER TABLE `article` DISABLE KEYS */;
 INSERT INTO `article` (`id`, `author`, `title`, `description`, `image`, `created_at`) VALUES
-	(1, 1, 'Biden tells Munich Security Conference America is here', 'In his first big appearance on the global stage, President Joe Biden promised the Group of Seven (G7) leaders during the virtual Munich Security Conference that the United States was recommitted to multilateral engagement.Biden told US allies that they must stand firm against the challenges posed by China, Russia and Iran, saying Russia was seeking to weaken the transatlantic alliance and calling for a united front to counter what he called China’s abusive economic practices.', 'carousel2.jpg', '2021-03-10 22:47:26'),
 	(3, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(4, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
 	(5, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
 	(6, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
 	(7, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
@@ -59,7 +57,8 @@ INSERT INTO `article` (`id`, `author`, `title`, `description`, `image`, `created
 	(31, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', 'carousel2.jpg', '2021-03-10 22:47:26'),
 	(32, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', 'carousel2.jpg', '2021-03-10 22:47:26'),
 	(36, 2, 'New paragraphe', 'this is a new paragraphe', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(37, 2, 'Palette', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26');
+	(37, 2, 'Palette', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
+	(84, 1, 'Jibli - Palette', 'asdasdasdasdasdasdasdasdasdasdasd', 'جواز السفر الجزائري.png', '2021-03-13 02:27:20');
 /*!40000 ALTER TABLE `article` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.article_concern_category
@@ -72,11 +71,9 @@ CREATE TABLE IF NOT EXISTS `article_concern_category` (
   CONSTRAINT `category` FOREIGN KEY (`category`) REFERENCES `category` (`name`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.article_concern_category: ~9 rows (approximately)
+-- Dumping data for table tdw.article_concern_category: ~11 rows (approximately)
 /*!40000 ALTER TABLE `article_concern_category` DISABLE KEYS */;
 INSERT INTO `article_concern_category` (`article`, `category`) VALUES
-	(1, 'all'),
-	(4, 'all'),
 	(8, 'all'),
 	(10, 'secondaire'),
 	(12, 'all'),
@@ -85,7 +82,11 @@ INSERT INTO `article_concern_category` (`article`, `category`) VALUES
 	(28, 'all'),
 	(29, 'all'),
 	(30, 'all'),
-	(31, 'all');
+	(31, 'all'),
+	(84, 'moyen'),
+	(84, 'parent'),
+	(84, 'primaire'),
+	(84, 'teacher');
 /*!40000 ALTER TABLE `article_concern_category` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.calendar
@@ -121,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `calendar_has_event` (
   CONSTRAINT `calendar_has_event_event` FOREIGN KEY (`event`) REFERENCES `module` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.calendar_has_event: ~21 rows (approximately)
+-- Dumping data for table tdw.calendar_has_event: ~30 rows (approximately)
 /*!40000 ALTER TABLE `calendar_has_event` DISABLE KEYS */;
 INSERT INTO `calendar_has_event` (`id`, `calendar`, `event`, `day`, `start`, `finish`) VALUES
 	(1, 1, 1, 1, 8, 9),
@@ -164,7 +165,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.category: ~5 rows (approximately)
+-- Dumping data for table tdw.category: ~6 rows (approximately)
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` (`id`, `name`) VALUES
 	(1, 'all'),
@@ -229,7 +230,7 @@ CREATE TABLE IF NOT EXISTS `class_has_module` (
   CONSTRAINT `class_has_module_module` FOREIGN KEY (`module`) REFERENCES `module` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.class_has_module: ~10 rows (approximately)
+-- Dumping data for table tdw.class_has_module: ~11 rows (approximately)
 /*!40000 ALTER TABLE `class_has_module` DISABLE KEYS */;
 INSERT INTO `class_has_module` (`class`, `module`) VALUES
 	('2s2', 9),
@@ -272,7 +273,7 @@ CREATE TABLE IF NOT EXISTS `module` (
   CONSTRAINT `module_year` FOREIGN KEY (`year`) REFERENCES `year` (`name`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.module: ~9 rows (approximately)
+-- Dumping data for table tdw.module: ~10 rows (approximately)
 /*!40000 ALTER TABLE `module` DISABLE KEYS */;
 INSERT INTO `module` (`id`, `name`, `year`) VALUES
 	(1, 'Algebre', '3s'),
@@ -355,11 +356,8 @@ CREATE TABLE IF NOT EXISTS `presentation` (
 -- Dumping data for table tdw.presentation: ~5 rows (approximately)
 /*!40000 ALTER TABLE `presentation` DISABLE KEYS */;
 INSERT INTO `presentation` (`id`, `paragraph`, `image`, `order`, `created_at`) VALUES
-	(3, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 2, '2021-03-11 01:58:20'),
-	(4, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 3, '2021-03-11 01:58:20'),
-	(5, 'sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2', 5, '2021-03-06 15:56:49'),
-	(6, 'asdfasdsdf', '', 1, '2021-03-11 01:58:20'),
-	(9, 'this is a very new paragraph', '', 4, '2021-03-11 01:58:20');
+	(6, 'asdfasdsdf', '', 2, '2021-03-13 00:17:35'),
+	(12, '111new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph ', '', 1, '2021-03-13 00:17:35');
 /*!40000 ALTER TABLE `presentation` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.role
@@ -370,7 +368,7 @@ CREATE TABLE IF NOT EXISTS `role` (
   UNIQUE KEY `name` (`name`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.role: ~3 rows (approximately)
+-- Dumping data for table tdw.role: ~4 rows (approximately)
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
 INSERT INTO `role` (`id`, `name`) VALUES
 	(1, 'admin'),

@@ -21,6 +21,13 @@ class Article extends Model{
         return parent::getM($id,'article');
     }
 
+    static function getLast(){
+        $connection=DataBase::connect();
+        $query=$connection->prepare('SELECT * FROM article WHERE id=(SELECT max(id) FROM article);');
+        $query->execute();
+        return $query->fetch((\PDO::FETCH_ASSOC))['id'];
+    }
+
     static function getMany($from,$count){
         // get $count articles from the $from -th article
         $connection=DataBase::connect();
@@ -62,6 +69,12 @@ class Article extends Model{
             $query=$connection->prepare('UPDATE article SET title=?,description=?,image=? WHERE id=?;');
             $query->execute([htmlspecialchars($data['title']),htmlspecialchars($data['description']),$files['image']['name'],$data['id']]);
         }
+    }
+
+    static function newConcernCategory($article_id,$category_name){
+        $connection=DataBase::connect();
+        $query=$connection->prepare('INSERT INTO article_concern_category (article,category) VALUES (?,?);');
+        $query->execute([$article_id,$category_name]);
     }
 
     static function destroy($id){
