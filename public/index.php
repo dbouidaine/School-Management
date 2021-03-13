@@ -51,7 +51,7 @@ $app->router->get("/space/parent/child/{id_child}",[SpaceController::class,'inde
 
 $app->router->get("/space/parent/{page}",[SpaceController::class,'indexParentSpace']);
 
-$app->router->get("/contact",[CycleController::class,'index']);
+$app->router->get("/contact",[ContactController::class,'index']);
 
 $app->router->get("/login",[HomeController::class,'indexLogin']);
 

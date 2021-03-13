@@ -160,7 +160,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.category: ~5 rows (approximately)
+-- Dumping data for table tdw.category: ~6 rows (approximately)
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` (`id`, `name`) VALUES
 	(1, 'all'),
@@ -249,13 +249,16 @@ CREATE TABLE IF NOT EXISTS `contact` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.contact: ~1 rows (approximately)
+-- Dumping data for table tdw.contact: ~4 rows (approximately)
 /*!40000 ALTER TABLE `contact` DISABLE KEYS */;
 INSERT INTO `contact` (`id`, `contact`, `type`) VALUES
 	(1, '0599665255', 'telephone'),
 	(2, '0599665255', 'fax'),
 	(3, 'hd_bouidaine@esi.dz', 'email'),
-	(4, 'admin@esi.dz', 'email');
+	(4, 'admin@esi.dz', 'email'),
+	(7, '78, Cité universitaire Bouraoui Amar, Elharach', 'address'),
+	(8, '90D, Cité universitaire Bouraoui Amar, Elharach', 'address'),
+	(9, '0540818672', 'telephone');
 /*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.cycle
@@ -365,7 +368,7 @@ CREATE TABLE IF NOT EXISTS `presentation` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.presentation: ~2 rows (approximately)
+-- Dumping data for table tdw.presentation: ~3 rows (approximately)
 /*!40000 ALTER TABLE `presentation` DISABLE KEYS */;
 INSERT INTO `presentation` (`id`, `paragraph`, `image`, `order`, `created_at`) VALUES
 	(6, 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order.\r\n\r\n It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel2.jpg', 3, '2021-03-13 05:37:41'),
@@ -403,7 +406,7 @@ CREATE TABLE IF NOT EXISTS `role` (
   UNIQUE KEY `name` (`name`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.role: ~3 rows (approximately)
+-- Dumping data for table tdw.role: ~4 rows (approximately)
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
 INSERT INTO `role` (`id`, `name`) VALUES
 	(1, 'admin'),

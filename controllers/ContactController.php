@@ -3,12 +3,15 @@
 namespace controllers;
 
 use models\Contact;
+use views\ContactView;
 
 class ContactController extends Controller{
 
     public function index(){
         $args['contacts']=Contact::getAll();
-        
+        $home=new ContactView();
+        $home->index($args);
+        $home->view();
     }
 
     public function update(){
