@@ -5,12 +5,24 @@ namespace controllers;
 use Exception;
 use models\Access;
 use models\Presentation;
+use views\PresentationView;
 
 class PresentationController extends Controller{
 
+    public function index(){
+        $args=[];
+        $args['presentations']=Presentation::getAll();
+        $home=new PresentationView();
+        $home->index($args);
+        $home->view();
+    }
+
     public function add(){
         Access::hasAccess('addPresentation');
-        Presentation::new($_POST);
+        if(!empty($_FILES)){
+            uploadImage('image');
+        }
+        Presentation::new($_POST,$_FILES);
         header('Location: ' . url('admin/presentation'));
     }
 

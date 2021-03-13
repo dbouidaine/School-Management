@@ -41,6 +41,12 @@
               </div>
             </div>
             <div class="card m-2 p-0" style="width: 20rem;">
+              <img class="card-img-top" src="<?=img('undraw/contact.png');?>" alt="Card image cap">
+              <div class="card-body m-auto">
+                <a class="card-link" href="<?=url('admin/contacts');?>" style="font-size: x-large;">Contacts</a>
+              </div>
+            </div>
+            <div class="card m-2 p-0" style="width: 20rem;">
               <img class="card-img-top" src="<?=img('undraw/settings.png');?>" alt="Card image cap">
               <div class="card-body m-auto">
                 <a class="card-link" href="<?=url('admin/settings');?>" style="font-size: x-large;">Paramêtres</a>

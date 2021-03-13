@@ -349,6 +349,21 @@ hr{
 .space-table tr{
     padding: 3%!important;
 }
+
+.home-presentation{
+    font-size: large;
+}
+
+.home-presentation hr{
+    border: 1px solid #868fac;
+    color: #868fac;
+}
+
+.home-presentation img{
+    height: auto;
+    width: 80%!important;
+    align-self: center;
+}
 /*::-webkit-scrollbar {
     background-color: #f8f9fa;
     width: 1vw;

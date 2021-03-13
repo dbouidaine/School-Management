@@ -17,10 +17,10 @@
             <a href="<?=url('admin/users');?>">Utilisateurs</a>
         </li>
         <li class="nav-item">
-            <a href="nav-link">Restauration</a>
+            <a href="<?=url('admin/restauration');?>">Restauration</a>
         </li>
         <li class="nav-item">
-            <a href="nav-link">Contact</a>
+            <a href="<?=url('admin/contacts');?>">Contact</a>
         </li>
         <li class="nav-item">
             <a href="nav-link">Parametres</a>

@@ -14,9 +14,13 @@ use models\Access;
 use models\Calendar;
 use models\Category;
 use models\ClassM;
+use models\Contact;
 use models\Module;
+use models\Restauration;
 use models\Year;
 use views\AdminClassesView;
+use views\AdminContactsView;
+use views\AdminRestaurationView;
 
 class AdminController extends Controller{
 
@@ -191,6 +195,42 @@ class AdminController extends Controller{
         $args['years']=Year::getAll();
         $home=new AdminClassesView();
         $home->showModules($args);
+        $home->view();
+    }
+
+    public function indexRestauration($url_data){
+        //Access::hasAccess('editClass');
+        $args=[];
+        $args['meals']=Restauration::getAll();
+        $home=new AdminRestaurationView();
+        $home->index($args);
+        $home->view();
+    }
+
+    public function editRestauration($url_data){
+        //Access::hasAccess('editClass');
+        $args=[];
+        $args['meal']=Restauration::get($url_data['restauration_id']);
+        $home=new AdminRestaurationView();
+        $home->editRestauration($args);
+        $home->view();
+    }
+
+    public function indexContacts($url_data){
+        //Access::hasAccess('editClass');
+        $args=[];
+        $args['contacts']=Contact::getAll();
+        $home=new AdminContactsView();
+        $home->index($args);
+        $home->view();
+    }
+
+    public function editContact($url_data){
+        //Access::hasAccess('editClass');
+        $args=[];
+        $args['contact']=Contact::get($url_data['contact_id']);
+        $home=new AdminContactsView();
+        $home->editContact($args);
         $home->view();
     }
 }

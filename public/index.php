@@ -138,6 +138,26 @@ $app->router->get("/calendar/new",[AdminController::class,'newCalendar']);
 
 $app->router->get("/calendar/{calendar_id}/delete/line/{line_id}",[CalendarController::class,'deleteLine']);
 
+/******************** Restauration ************************/
+
+$app->router->get("/admin/restauration",[AdminController::class,'indexRestauration']);
+
+$app->router->get("/restauration/edit/{restauration_id}",[AdminController::class,'editRestauration']);
+
+$app->router->get("/restauration/update",[RestaurationController::class,'update']);
+
+/******************** Contact ************************/
+
+$app->router->get("/admin/contacts",[AdminController::class,'indexContacts']);
+
+$app->router->get("/contact/edit/{contact_id}",[AdminController::class,'editContact']);
+
+$app->router->get("/contact/update",[ContactController::class,'update']);
+
+$app->router->get("/contact/add",[ContactController::class,'add']);
+
+$app->router->get("/contact/delete/{contact_id}",[ContactController::class,'delete']);
+
 /******************** Authentication ************************/
 
 $app->router->get("/user/login",[AuthController::class,'login']);

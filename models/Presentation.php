@@ -23,10 +23,16 @@ class Presentation extends Model{
         }
     }
 
-    static function new($data){
+    static function new($data,$files){
         $connection=DataBase::connect();
-        $query=$connection->prepare('INSERT INTO presentation (paragraph,image) VALUES (?,?);');
-        $query->execute([htmlspecialchars($data['paragraph']),$data['image']]);
+        if (empty($files)){
+            $query=$connection->prepare('INSERT INTO presentation (paragraph) VALUES (?);');
+            $query->execute([htmlspecialchars($data['paragraph'])]);
+        }
+        else{
+            $query=$connection->prepare('INSERT INTO presentation (paragraph,image) VALUES (?,?);');
+            $query->execute([htmlspecialchars($data['paragraph']),$files['image']['name']]);
+        }
     }
 
     static function update($data,$files){

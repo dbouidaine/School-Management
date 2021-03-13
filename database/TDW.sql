@@ -28,9 +28,9 @@ CREATE TABLE IF NOT EXISTS `article` (
   PRIMARY KEY (`id`),
   KEY `author` (`author`),
   CONSTRAINT `author` FOREIGN KEY (`author`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.article: ~27 rows (approximately)
+-- Dumping data for table tdw.article: ~25 rows (approximately)
 /*!40000 ALTER TABLE `article` DISABLE KEYS */;
 INSERT INTO `article` (`id`, `author`, `title`, `description`, `image`, `created_at`) VALUES
 	(3, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
@@ -57,8 +57,7 @@ INSERT INTO `article` (`id`, `author`, `title`, `description`, `image`, `created
 	(31, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', 'carousel2.jpg', '2021-03-10 22:47:26'),
 	(32, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', 'carousel2.jpg', '2021-03-10 22:47:26'),
 	(36, 2, 'New paragraphe', 'this is a new paragraphe', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(37, 2, 'Palette', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(84, 1, 'Jibli - Palette', 'asdasdasdasdasdasdasdasdasdasdasd', 'جواز السفر الجزائري.png', '2021-03-13 02:27:20');
+	(37, 2, 'Palette', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26');
 /*!40000 ALTER TABLE `article` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.article_concern_category
@@ -71,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `article_concern_category` (
   CONSTRAINT `category` FOREIGN KEY (`category`) REFERENCES `category` (`name`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.article_concern_category: ~11 rows (approximately)
+-- Dumping data for table tdw.article_concern_category: ~9 rows (approximately)
 /*!40000 ALTER TABLE `article_concern_category` DISABLE KEYS */;
 INSERT INTO `article_concern_category` (`article`, `category`) VALUES
 	(8, 'all'),
@@ -82,11 +81,7 @@ INSERT INTO `article_concern_category` (`article`, `category`) VALUES
 	(28, 'all'),
 	(29, 'all'),
 	(30, 'all'),
-	(31, 'all'),
-	(84, 'moyen'),
-	(84, 'parent'),
-	(84, 'primaire'),
-	(84, 'teacher');
+	(31, 'all');
 /*!40000 ALTER TABLE `article_concern_category` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.calendar
@@ -165,7 +160,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.category: ~6 rows (approximately)
+-- Dumping data for table tdw.category: ~5 rows (approximately)
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` (`id`, `name`) VALUES
 	(1, 'all'),
@@ -245,6 +240,23 @@ INSERT INTO `class_has_module` (`class`, `module`) VALUES
 	('3s2', 7),
 	('3s3', 12);
 /*!40000 ALTER TABLE `class_has_module` ENABLE KEYS */;
+
+-- Dumping structure for table tdw.contact
+CREATE TABLE IF NOT EXISTS `contact` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `contact` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tdw.contact: ~1 rows (approximately)
+/*!40000 ALTER TABLE `contact` DISABLE KEYS */;
+INSERT INTO `contact` (`id`, `contact`, `type`) VALUES
+	(1, '0599665255', 'telephone'),
+	(2, '0599665255', 'fax'),
+	(3, 'hd_bouidaine@esi.dz', 'email'),
+	(4, 'admin@esi.dz', 'email');
+/*!40000 ALTER TABLE `contact` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.cycle
 CREATE TABLE IF NOT EXISTS `cycle` (
@@ -351,14 +363,37 @@ CREATE TABLE IF NOT EXISTS `presentation` (
   `order` int(11) DEFAULT 1,
   `created_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.presentation: ~5 rows (approximately)
+-- Dumping data for table tdw.presentation: ~2 rows (approximately)
 /*!40000 ALTER TABLE `presentation` DISABLE KEYS */;
 INSERT INTO `presentation` (`id`, `paragraph`, `image`, `order`, `created_at`) VALUES
-	(6, 'asdfasdsdf', '', 2, '2021-03-13 00:17:35'),
-	(12, '111new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph new paragraph ', '', 1, '2021-03-13 00:17:35');
+	(6, 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order.\r\n\r\n It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel2.jpg', 3, '2021-03-13 05:37:41'),
+	(12, 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges.\r\n\r\nAbout 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel1.jpg', 1, '2021-03-13 05:20:52'),
+	(14, 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.\r\n\r\nThey are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', '1.jpg', 1, '2021-03-13 05:41:27');
 /*!40000 ALTER TABLE `presentation` ENABLE KEYS */;
+
+-- Dumping structure for table tdw.restauration
+CREATE TABLE IF NOT EXISTS `restauration` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `day` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `starter` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `main` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `dessert` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tdw.restauration: ~7 rows (approximately)
+/*!40000 ALTER TABLE `restauration` DISABLE KEYS */;
+INSERT INTO `restauration` (`id`, `day`, `starter`, `main`, `dessert`) VALUES
+	(1, 'Dimanche', '', 'Loubia', ''),
+	(2, 'Lundi', '', 'Loubiaaa', 'Yaourte'),
+	(3, 'Mardi', '', '', ''),
+	(4, 'Mercredi', '', '', ''),
+	(5, 'Jeudi', '', '', ''),
+	(6, 'Vendredi', '', '', ''),
+	(7, 'Samedi', '', '', '');
+/*!40000 ALTER TABLE `restauration` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.role
 CREATE TABLE IF NOT EXISTS `role` (
@@ -368,7 +403,7 @@ CREATE TABLE IF NOT EXISTS `role` (
   UNIQUE KEY `name` (`name`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.role: ~4 rows (approximately)
+-- Dumping data for table tdw.role: ~3 rows (approximately)
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
 INSERT INTO `role` (`id`, `name`) VALUES
 	(1, 'admin'),
@@ -516,7 +551,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   CONSTRAINT `class_name` FOREIGN KEY (`class`) REFERENCES `class` (`name`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `role` FOREIGN KEY (`role`) REFERENCES `role` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT `user_category` FOREIGN KEY (`category`) REFERENCES `category` (`name`) ON DELETE NO ACTION ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table tdw.user: ~10 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;

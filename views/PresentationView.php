@@ -6,10 +6,9 @@ use views\components\PresentationBody;
 use views\components\Layout;
 
 class PresentationView extends View{
-    public function __construct()
+    public function index($args)
     {
         //expects [title,topnavbar,navbar,footer,presentationBody,layout]  
-        $args=[];
         $args['title']="Presentation";
         $components=['TopNavbar','Navbar','Footer'];
         $args=$this->load($components,$args);
