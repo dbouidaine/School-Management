@@ -12,7 +12,7 @@
             <div></div>
             <div class="card-body m-auto text-center">
                 <h4>Telephones</h4>
-                <div class="pt-4">
+                <div class="pt-4 card-footer">
                 <?php foreach($args['contacts'] as $contact){
                     if($contact['type']=='telephone') {?>
                         <p><?=$contact['contact'];?><br></p>
@@ -26,7 +26,7 @@
             <div></div>
             <div class="card-body m-auto text-center">
                 <h4>Emails</h4>
-                <div class="pt-4">
+                <div class="pt-4 card-footer">
                 <?php foreach($args['contacts'] as $contact){
                     if($contact['type']=='email') {?>
                         <p><?=$contact['contact'];?><br></p>
@@ -40,7 +40,7 @@
             <div></div>
             <div class="card-body m-auto text-center">
                 <h4>Adresses</h4>
-                <div class="pt-4">
+                <div class="pt-4 card-footer">
                 <?php foreach($args['contacts'] as $contact){
                     if($contact['type']=='address') {?>
                         <p><?=$contact['contact'];?><br></p>
@@ -54,7 +54,7 @@
             <div></div>
             <div class="card-body m-auto text-center">
                 <h4>Fax</h4>
-                <div class="pt-4">
+                <div class="pt-4 card-footer">
                 <?php foreach($args['contacts'] as $contact){
                     if($contact['type']=='fax') {?>
                         <p><?=$contact['contact'];?><br></p>

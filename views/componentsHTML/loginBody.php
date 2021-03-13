@@ -5,7 +5,7 @@
 <section class="container-xxl my-container">
 <center>
     <div class="p-3">
-        <div class="card col-6">
+        <div class="card card-profile col-6">
             <div class="card-header bg-light text-dark p-3" style="font-size:x-large ;">
                 Login
             </div>

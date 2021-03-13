@@ -9,8 +9,9 @@ class CycleView extends View{
     public function __construct($args)
     {
         //expects [title,navbar,footer,card,pagination,body,layout]  
-        $args['title']="new title";
-        $components=['TopNavbar','Carousel','Footer','Navbar','Card','Pagination'];
+        $args['title']="Cycle";
+        $components=['TopNavbar','Footer','Navbar','Articles','Pagination'];
+        $args['page_url']='ecole/cycle/';
         $args=$this->load($components,$args);
         // HomeBody component defines how the other components are grouped in the home page
         // Every page must have it's body component

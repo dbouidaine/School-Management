@@ -73,6 +73,7 @@ CREATE TABLE IF NOT EXISTS `article_concern_category` (
 -- Dumping data for table tdw.article_concern_category: ~9 rows (approximately)
 /*!40000 ALTER TABLE `article_concern_category` DISABLE KEYS */;
 INSERT INTO `article_concern_category` (`article`, `category`) VALUES
+	(5, 'moyen'),
 	(8, 'all'),
 	(10, 'secondaire'),
 	(12, 'all'),
@@ -80,7 +81,8 @@ INSERT INTO `article_concern_category` (`article`, `category`) VALUES
 	(24, 'parent'),
 	(28, 'all'),
 	(29, 'all'),
-	(30, 'all'),
+	(30, 'moyen'),
+	(30, 'parent'),
 	(31, 'all');
 /*!40000 ALTER TABLE `article_concern_category` ENABLE KEYS */;
 
@@ -149,7 +151,12 @@ INSERT INTO `calendar_has_event` (`id`, `calendar`, `event`, `day`, `start`, `fi
 	(70, 12, 12, 2, 15, 16),
 	(71, 12, 12, 4, 15, 16),
 	(72, 12, 12, 5, 15, 16),
-	(73, 12, 12, 6, 7, 8);
+	(73, 12, 12, 6, 7, 8),
+	(79, 1, 4, 2, 8, 9),
+	(80, 1, 6, 3, 8, 9),
+	(81, 1, 4, 4, 8, 9),
+	(82, 1, 7, 5, 8, 9),
+	(83, 1, 1, 6, 8, 9);
 /*!40000 ALTER TABLE `calendar_has_event` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.category
@@ -249,7 +256,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.contact: ~4 rows (approximately)
+-- Dumping data for table tdw.contact: ~7 rows (approximately)
 /*!40000 ALTER TABLE `contact` DISABLE KEYS */;
 INSERT INTO `contact` (`id`, `contact`, `type`) VALUES
 	(1, '0599665255', 'telephone'),
@@ -566,7 +573,7 @@ INSERT INTO `user` (`id`, `email`, `password`, `role`, `first_name`, `last_name`
 	(5, 'admin@argon.com', 'dcddb75469b4b4875094e14561e573d8', 1, 'Manuel', 'Nuer', NULL, NULL, 'all', NULL, NULL, NULL, NULL, '2021-02-23 23:17:02'),
 	(6, 'parent@esi.dz', 'e10adc3949ba59abbe56e057f20f883e', 4, 'Diaeddin', 'BOUIDAINE', '2000-03-12', NULL, 'parent', NULL, NULL, NULL, NULL, '2021-02-24 20:50:42'),
 	(7, 'dbouidaine2@esi.dz', '202cb962ac59075b964b07152d234b70', 2, 'Diaeddin', 'BOUIDAINE', NULL, NULL, 'all', NULL, NULL, NULL, NULL, '2021-02-24 20:51:02'),
-	(8, 'hd_bouidaine3@esi.dz', 'e10adc3949ba59abbe56e057f20f883e', 3, 'Diaeddin', 'BOUIDAINE', '2021-03-12', '1p1', 'all', NULL, NULL, NULL, NULL, '2021-02-25 11:36:53'),
+	(8, 'hd_bouidaine3@esi.dz', 'e10adc3949ba59abbe56e057f20f883e', 3, 'Diaeddin', 'BOUIDAINE', '2021-03-12', '1p1', 'primaire', NULL, NULL, NULL, NULL, '2021-02-25 11:36:53'),
 	(14, 'hd_bouidaine111@esi.dz', 'e10adc3949ba59abbe56e057f20f883e', 3, 'Diaeddin9', 'BOUIDAINE', NULL, NULL, 'all', NULL, NULL, NULL, NULL, '2021-02-25 12:11:08'),
 	(17, 'diaa@esi.dz', 'e10adc3949ba59abbe56e057f20f883e', 1, 'Diaeddin', 'BOUIDAINE', NULL, NULL, 'all', NULL, NULL, NULL, NULL, '2021-03-03 14:14:57');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;

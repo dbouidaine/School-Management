@@ -1,5 +1,7 @@
 <nav class="side-navbar bg-blue align-items-center" style="display:none;">
-    <h3 class="bg-dark text-white sidenav-header p-4 text-center zindex-1000">Ecotech school</h3>
+    <h3 class="bg-dark text-white sidenav-header p-4 text-center zindex-1000">
+        <a class="p-3 fs-4" href="<?=url('admin');?>">Ecotech School</a>
+    </h3>
     <ul class="list-unstyled align-items-center">
         <li class="nav-item">
             <a href="<?=url('admin/articles');?>">Articles</a>

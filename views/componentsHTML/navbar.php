@@ -14,13 +14,13 @@
               <a class="nav-link text-light" href="<?=url('ecole/presentation');?>">Présentation</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="<?=url('ecole/cycle-primaire');?>">Cycle Primaire</a>
+              <a class="nav-link text-light" href="<?=url('ecole/cycle/primaire');?>">Cycle Primaire</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="<?=url('ecole/cycle-moyen');?>">Cycle Moyen</a>
+              <a class="nav-link text-light" href="<?=url('ecole/cycle/moyen');?>">Cycle Moyen</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="<?=url('ecole/cycle-secondaire');?>">Cycle Secondaire</a>
+              <a class="nav-link text-light" href="<?=url('ecole/cycle/secondaire');?>">Cycle Secondaire</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-light" href="<?=url('space/student');?>">Espace Elèves</a>

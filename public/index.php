@@ -39,7 +39,9 @@ $app->router->get("/article/show/{id_article}",[ArticleController::class,'show']
 
 $app->router->get("/ecole/presentation",[PresentationController::class,'index']);
 
-$app->router->get("/ecole/{cycle}",[CycleController::class,'index']);
+$app->router->get("/ecole/cycle/{cycle}",[CycleController::class,'index']);
+
+$app->router->get("/ecole/cycle/{cycle}/{page}",[CycleController::class,'index']);
 
 $app->router->get("/space/student",[SpaceController::class,'indexStudentSpace']);
 

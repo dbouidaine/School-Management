@@ -15,10 +15,10 @@
             <a class="nav-link text-light my-btn" target="_blanc" href="https://www.facebook.com" class="text-light"><i class="fab fa-instagram"></i></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-light my-btn" target="_blanc" href="https://www.facebook.com" class="text-light"><i class="fab fa-instagram"></i></a>
+            <a class="nav-link text-light my-btn" target="_blanc" href="https://www.facebook.com" class="text-light"><i class="fab fa-linkedin"></i></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-light my-btn" target="_blanc" href="https://www.facebook.com" class="text-light"><i class="fab fa-instagram"></i></a>
+            <a class="nav-link text-light my-btn" target="_blanc" href="https://www.facebook.com" class="text-light"><i class="fab fa-youtube"></i></a>
         </li>
       </ul>
     </div>
