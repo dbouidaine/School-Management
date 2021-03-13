@@ -41,6 +41,10 @@ $app->router->get("/ecole/presentation",[PresentationController::class,'index'])
 
 $app->router->get("/ecole/cycle/{cycle}",[CycleController::class,'index']);
 
+$app->router->get("/cycle/{cycle}/calendars",[CycleController::class,'indexCalendars']);
+
+$app->router->get("/cycle/{cycle}/infoPract",[CycleController::class,'indexinfoPract']);
+
 $app->router->get("/ecole/cycle/{cycle}/{page}",[CycleController::class,'index']);
 
 $app->router->get("/space/student",[SpaceController::class,'indexStudentSpace']);
@@ -52,6 +56,8 @@ $app->router->get("/space/parent",[SpaceController::class,'indexParentSpace']);
 $app->router->get("/space/parent/child/{id_child}",[SpaceController::class,'indexStudentSpaceByParent']);
 
 $app->router->get("/space/parent/{page}",[SpaceController::class,'indexParentSpace']);
+
+$app->router->get("/ecole/restauration",[RestaurationController::class,'index']);
 
 $app->router->get("/contact",[ContactController::class,'index']);
 
@@ -159,6 +165,7 @@ $app->router->get("/contact/update",[ContactController::class,'update']);
 $app->router->get("/contact/add",[ContactController::class,'add']);
 
 $app->router->get("/contact/delete/{contact_id}",[ContactController::class,'delete']);
+
 
 /******************** Authentication ************************/
 

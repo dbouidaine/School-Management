@@ -50,7 +50,7 @@
                                     <li><a class="dropdown-item" href="<?=url('class/edit/'.$class['id']);?>">Edit</a></li>
                                     <li><a class="dropdown-item" href="<?=url('class/'.$class['name'].'/modules');?>">Modules</a></li>
                                     <li><a class="dropdown-item" href="<?=url('class/'.$class['name'].'/calendar');?>">Calendrier</a></li>
-                                    <li><a class="dropdown-item text-danger" href="<?=url('class/delete/'.$class['id']);?>">Delete</a></li>
+                                    <li><a onclick="return confirm('Vous etes sur de supprimer la ligne?')" class="dropdown-item text-danger" href="<?=url('class/delete/'.$class['id']);?>">Delete</a></li>
                                 </ul>
                             </div>
                         </td>

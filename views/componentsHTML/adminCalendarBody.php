@@ -75,7 +75,7 @@
             <br>
             <?php if(isset($args['calendar']['calendar_id'])) {?>
             <form class="new-user form" action="<?=url('calendar/delete/'.$args['calendar']['calendar_id']);?>">
-                <button class="my-btn my-btn-dark bg-danger float-end">Supprimer Calendrier</button>
+                <button onclick="return confirm('Vous etes sur de supprimer le calendrier?')" class="my-btn my-btn-dark bg-danger float-end">Supprimer Calendrier</button>
             </form>
             <?php }?>
             <h4 class="text-dark float-start">Emploi du temps</h4>
@@ -115,7 +115,7 @@
                                     <i class="fas fa-ellipsis-v" id="dropdownActions" aria-expanded="false"></i>
                                 </div>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownActions">
-                                    <li><a class="dropdown-item text-danger" href="<?=url('calendar/'.$args['calendar']['calendar_id'].'/delete/line/'.$i);?>">Delete</a></li>
+                                    <li><a onclick="return confirm('Vous etes sur de supprimer la ligne?')" class="dropdown-item text-danger" href="<?=url('calendar/'.$args['calendar']['calendar_id'].'/delete/line/'.$i);?>">Delete</a></li>
                                 </ul>
                             </div>
                         </td>

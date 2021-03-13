@@ -345,6 +345,11 @@ hr{
     border: 1px solid #868fac;
     color: #868fac;
 }
+
+.calendars-for-cycle hr{
+    border: 4px solid #868fac;
+    color: #868fac;
+}
 .card hr{
     border: 4px solid #868fac;
     color: #868fac;

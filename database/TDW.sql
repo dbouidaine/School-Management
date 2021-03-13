@@ -30,34 +30,33 @@ CREATE TABLE IF NOT EXISTS `article` (
   CONSTRAINT `author` FOREIGN KEY (`author`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.article: ~25 rows (approximately)
+-- Dumping data for table tdw.article: ~24 rows (approximately)
 /*!40000 ALTER TABLE `article` DISABLE KEYS */;
 INSERT INTO `article` (`id`, `author`, `title`, `description`, `image`, `created_at`) VALUES
-	(3, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(5, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(6, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(7, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(8, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(10, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(12, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(13, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(14, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(16, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(17, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(19, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(20, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(21, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(22, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(23, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(24, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(25, 1, 'new article', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(28, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(29, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(30, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(31, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(32, 2, 'diaeddin bouidaine', 'asjd laskdj lkasjd lkasjd lkasdj lkasdj lkasdj ', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(36, 2, 'New paragraphe', 'this is a new paragraphe', 'carousel2.jpg', '2021-03-10 22:47:26'),
-	(37, 2, 'Palette', 'new article new article new article new article new article new article new article new article new article new article new article new article ', 'carousel2.jpg', '2021-03-10 22:47:26');
+	(3, 1, 'new article', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel2.jpg', '2021-03-13 09:05:54'),
+	(5, 1, 'new article', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel3.jpg', '2021-03-13 09:07:22'),
+	(6, 1, 'new article', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel2.jpg', '2021-03-13 09:05:59'),
+	(7, 1, 'new article', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel1.jpg', '2021-03-13 09:07:16'),
+	(8, 1, 'new article', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel3.jpg', '2021-03-13 09:07:14'),
+	(10, 1, 'new article', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel2.jpg', '2021-03-13 09:06:02'),
+	(12, 1, 'new article', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel1.jpg', '2021-03-13 09:07:10'),
+	(13, 1, 'new article', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel3.jpg', '2021-03-13 09:07:25'),
+	(14, 1, 'new article', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel2.jpg', '2021-03-13 09:06:05'),
+	(16, 1, 'new article', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel1.jpg', '2021-03-13 09:07:28'),
+	(17, 1, 'new article', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel3.jpg', '2021-03-13 09:07:31'),
+	(19, 1, 'new article', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel2.jpg', '2021-03-13 09:06:09'),
+	(20, 1, 'new article', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel1.jpg', '2021-03-13 09:07:38'),
+	(21, 1, 'new article', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel3.jpg', '2021-03-13 09:07:44'),
+	(22, 1, 'new article', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel2.jpg', '2021-03-13 09:06:12'),
+	(23, 1, 'new article', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel1.jpg', '2021-03-13 09:07:48'),
+	(24, 1, 'new article', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.\r\n\r\n', 'carousel2.jpg', '2021-03-13 09:06:21'),
+	(25, 1, 'new article', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel3.jpg', '2021-03-13 09:07:51'),
+	(28, 2, 'diaeddin bouidaine', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel1.jpg', '2021-03-13 09:07:57'),
+	(29, 2, 'diaeddin bouidaine', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel2.jpg', '2021-03-13 09:06:25'),
+	(30, 2, 'diaeddin bouidaine', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel3.jpg', '2021-03-13 09:08:01'),
+	(31, 2, 'diaeddin bouidaine', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel2.jpg', '2021-03-13 09:06:28'),
+	(32, 2, 'diaeddin bouidaine', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', '', '2021-03-13 22:08:05'),
+	(36, 2, 'New paragraphe', 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order. It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel2.jpg', '2021-03-13 09:06:31');
 /*!40000 ALTER TABLE `article` ENABLE KEYS */;
 
 -- Dumping structure for table tdw.article_concern_category
@@ -70,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `article_concern_category` (
   CONSTRAINT `category` FOREIGN KEY (`category`) REFERENCES `category` (`name`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.article_concern_category: ~9 rows (approximately)
+-- Dumping data for table tdw.article_concern_category: ~11 rows (approximately)
 /*!40000 ALTER TABLE `article_concern_category` DISABLE KEYS */;
 INSERT INTO `article_concern_category` (`article`, `category`) VALUES
 	(5, 'moyen'),
@@ -117,17 +116,14 @@ CREATE TABLE IF NOT EXISTS `calendar_has_event` (
   KEY `calendar_has_event_event` (`event`),
   CONSTRAINT `calendar_has_event_calendar` FOREIGN KEY (`calendar`) REFERENCES `calendar` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `calendar_has_event_event` FOREIGN KEY (`event`) REFERENCES `module` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.calendar_has_event: ~30 rows (approximately)
+-- Dumping data for table tdw.calendar_has_event: ~32 rows (approximately)
 /*!40000 ALTER TABLE `calendar_has_event` DISABLE KEYS */;
 INSERT INTO `calendar_has_event` (`id`, `calendar`, `event`, `day`, `start`, `finish`) VALUES
 	(1, 1, 1, 1, 8, 9),
 	(2, 1, 6, 1, 9, 10),
 	(3, 1, 2, 1, 10, 11),
-	(4, 1, 3, 1, 13, 15),
-	(6, 1, 5, 1, 15, 17),
-	(7, 1, 3, 2, 15, 16),
 	(9, 5, 8, 1, 7, 8),
 	(13, 5, 8, 2, 7, 8),
 	(14, 5, 8, 3, 7, 8),
@@ -167,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.category: ~6 rows (approximately)
+-- Dumping data for table tdw.category: ~5 rows (approximately)
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` (`id`, `name`) VALUES
 	(1, 'all'),
@@ -254,7 +250,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `contact` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table tdw.contact: ~7 rows (approximately)
 /*!40000 ALTER TABLE `contact` DISABLE KEYS */;
@@ -284,6 +280,42 @@ INSERT INTO `cycle` (`id`, `name`) VALUES
 	(3, 'secondaire');
 /*!40000 ALTER TABLE `cycle` ENABLE KEYS */;
 
+-- Dumping structure for table tdw.info_pract
+CREATE TABLE IF NOT EXISTS `info_pract` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `info` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cycle` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  KEY `info_pract_cycle` (`cycle`),
+  CONSTRAINT `info_pract_cycle` FOREIGN KEY (`cycle`) REFERENCES `cycle` (`name`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table tdw.info_pract: ~4 rows (approximately)
+/*!40000 ALTER TABLE `info_pract` DISABLE KEYS */;
+INSERT INTO `info_pract` (`id`, `title`, `info`, `cycle`, `created_at`) VALUES
+	(1, 'Fermeture', 'L\'ecole sera fermé le 2 octobre', 'moyen', '2021-03-14 00:10:00'),
+	(2, 'Fermeture', 'L\'ecole sera fermé le 2 octobre', 'moyen', '2021-03-14 00:10:02'),
+	(3, 'Fermeture', 'L\'ecole sera fermé le 2 octobre', 'primaire', '2021-03-14 00:15:30'),
+	(4, 'Vacances', 'Les vacances commencent le 9 mars', 'moyen', '2021-03-14 00:10:06'),
+	(5, 'Vacances', 'Les vacances commencent le 9 mars', 'moyen', '2021-03-14 00:10:06'),
+	(6, 'Vacances', 'Les vacances commencent le 9 mars', 'primaire', '2021-03-14 00:15:33'),
+	(7, 'Vacances', 'Les vacances commencent le 9 mars', 'moyen', '2021-03-14 00:10:06'),
+	(8, 'Vacances', 'Les vacances commencent le 9 mars', 'secondaire', '2021-03-14 00:15:36'),
+	(9, 'Vacances', 'Les vacances commencent le 9 mars', 'moyen', '2021-03-14 00:10:06'),
+	(10, 'Fermeture', 'L\'ecole sera fermé le 2 octobre', 'moyen', '2021-03-14 00:10:03'),
+	(11, 'Fermeture', 'L\'ecole sera fermé le 2 octobre', 'secondaire', '2021-03-14 00:15:38'),
+	(12, 'Vacances', 'Les vacances commencent le 9 mars', 'secondaire', '2021-03-14 00:15:36'),
+	(13, 'Vacances', 'Les vacances commencent le 9 mars', 'secondaire', '2021-03-14 00:15:36'),
+	(14, 'Fermeture', 'L\'ecole sera fermé le 2 octobre', 'secondaire', '2021-03-14 00:15:38'),
+	(15, 'Fermeture', 'L\'ecole sera fermé le 2 octobre', 'secondaire', '2021-03-14 00:15:38'),
+	(16, 'Fermeture', 'L\'ecole sera fermé le 2 octobre', 'primaire', '2021-03-14 00:15:30'),
+	(17, 'Fermeture', 'L\'ecole sera fermé le 2 octobre', 'primaire', '2021-03-14 00:15:30'),
+	(18, 'Vacances', 'Les vacances commencent le 9 mars', 'primaire', '2021-03-14 00:15:33'),
+	(19, 'Vacances', 'Les vacances commencent le 9 mars', 'primaire', '2021-03-14 00:15:33');
+/*!40000 ALTER TABLE `info_pract` ENABLE KEYS */;
+
 -- Dumping structure for table tdw.module
 CREATE TABLE IF NOT EXISTS `module` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -295,7 +327,7 @@ CREATE TABLE IF NOT EXISTS `module` (
   CONSTRAINT `module_year` FOREIGN KEY (`year`) REFERENCES `year` (`name`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.module: ~10 rows (approximately)
+-- Dumping data for table tdw.module: ~9 rows (approximately)
 /*!40000 ALTER TABLE `module` DISABLE KEYS */;
 INSERT INTO `module` (`id`, `name`, `year`) VALUES
 	(1, 'Algebre', '3s'),
@@ -335,7 +367,7 @@ CREATE TABLE IF NOT EXISTS `permission` (
   UNIQUE KEY `name` (`name`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.permission: ~25 rows (approximately)
+-- Dumping data for table tdw.permission: ~23 rows (approximately)
 /*!40000 ALTER TABLE `permission` DISABLE KEYS */;
 INSERT INTO `permission` (`id`, `name`) VALUES
 	(5, 'addArticle'),
@@ -375,7 +407,7 @@ CREATE TABLE IF NOT EXISTS `presentation` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.presentation: ~3 rows (approximately)
+-- Dumping data for table tdw.presentation: ~2 rows (approximately)
 /*!40000 ALTER TABLE `presentation` DISABLE KEYS */;
 INSERT INTO `presentation` (`id`, `paragraph`, `image`, `order`, `created_at`) VALUES
 	(6, 'St. Francis Xavier\'s Girls\' High School is a Bengali Medium school in Old Dhaka, Bangladesh operated by the Sisters of Our Lady of the Missions, a Roman Catholic religious order.\r\n\r\n It is a very good school. It was started in the year 1912. It was started by the education minister. This renowned school is situated near the famous Bahadur Shah Park. Around this school there are many other schools and colleges. About 2500 students are studying in our school. Number of class room in my school is to 45. We like our school because the school is our second home. School is our life. It is very beautiful. We have wonderful teachers. They are qualified , talented, helpful, kind and friendly. I am really happy to become a student of St. Francis Xavier’s Girls High School. Students of this school are widely known as “The Xaverians”.', 'carousel2.jpg', 3, '2021-03-13 05:37:41'),
@@ -393,11 +425,11 @@ CREATE TABLE IF NOT EXISTS `restauration` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.restauration: ~7 rows (approximately)
+-- Dumping data for table tdw.restauration: ~6 rows (approximately)
 /*!40000 ALTER TABLE `restauration` DISABLE KEYS */;
 INSERT INTO `restauration` (`id`, `day`, `starter`, `main`, `dessert`) VALUES
-	(1, 'Dimanche', '', 'Loubia', ''),
-	(2, 'Lundi', '', 'Loubiaaa', 'Yaourte'),
+	(1, 'Dimanche', 'Chourba', 'Loubia', 'Banane'),
+	(2, 'Lundi', 'Hrira', 'Couscous', 'Yaourte'),
 	(3, 'Mardi', '', '', ''),
 	(4, 'Mercredi', '', '', ''),
 	(5, 'Jeudi', '', '', ''),
@@ -413,7 +445,7 @@ CREATE TABLE IF NOT EXISTS `role` (
   UNIQUE KEY `name` (`name`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.role: ~4 rows (approximately)
+-- Dumping data for table tdw.role: ~3 rows (approximately)
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
 INSERT INTO `role` (`id`, `name`) VALUES
 	(1, 'admin'),
@@ -434,7 +466,7 @@ CREATE TABLE IF NOT EXISTS `role_has_permission` (
   CONSTRAINT `role_name` FOREIGN KEY (`role_name`) REFERENCES `role` (`name`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table tdw.role_has_permission: ~23 rows (approximately)
+-- Dumping data for table tdw.role_has_permission: ~22 rows (approximately)
 /*!40000 ALTER TABLE `role_has_permission` DISABLE KEYS */;
 INSERT INTO `role_has_permission` (`id`, `role_name`, `permission_name`) VALUES
 	(1, 'admin', 'addArticle'),

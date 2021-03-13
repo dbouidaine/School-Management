@@ -46,7 +46,7 @@
                                 </div>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownActions">
                                     <li><a class="dropdown-item" href="<?=url('contact/edit/'.$contact['id']);?>">Edit</a></li>
-                                    <li><a class="dropdown-item text-danger" href="<?=url('contact/delete/'.$contact['id']);?>">Delete</a></li>
+                                    <li><a onclick="return confirm('Vous etes sur de supprimer la ligne?')" class="dropdown-item text-danger" href="<?=url('contact/delete/'.$contact['id']);?>">Delete</a></li>
                                 </ul>
                             </div>
                         </td>

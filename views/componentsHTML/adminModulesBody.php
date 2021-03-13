@@ -44,7 +44,7 @@
                                     <i class="fas fa-ellipsis-v" id="dropdownActions" aria-expanded="false"></i>
                                 </div>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownActions">
-                                    <li><a class="dropdown-item text-danger" href="<?=url('module/delete/'.$module['id']);?>">Delete</a></li>
+                                    <li><a onclick="return confirm('Vous etes sur de supprimer la ligne?')" class="dropdown-item text-danger" href="<?=url('module/delete/'.$module['id']);?>">Delete</a></li>
                                 </ul>
                             </div>
                         </td>

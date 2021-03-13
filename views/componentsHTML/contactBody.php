@@ -6,7 +6,7 @@
     <center>
     <h1>Contacts:</h1>
     </center>
-    <div class="card-profile p-5 row justify-content-center">
+    <div class="card-profile p-5 row justify-content-around">
         <div class="card m-2 p-0" style="width: 20rem;">
             <img class="card-img-top" src="<?=img('undraw/telephone.png');?>" alt="Card image cap">
             <div></div>

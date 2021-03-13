@@ -3,6 +3,8 @@
 namespace controllers;
 
 use models\Article;
+use models\Calendar;
+use models\Cycle;
 use views\CycleView;
 
 class CycleController extends Controller{
@@ -24,7 +26,29 @@ class CycleController extends Controller{
             $data=Article::getManyWithCategory($from,8,$url_data['cycle']);
         }
         $args['articles']=$data;
-        $cycle=new CycleView($args);
+        $cycle=new CycleView();
+        $cycle->index($args);
+        $cycle->view();
+    }
+
+    public function indexCalendars($url_data){
+        $cycle=new CycleView();
+        $args=[];
+        $args['cycle']=$url_data['cycle'];
+        $args['classes']=Cycle::getClasses($args['cycle']);
+        foreach($args['classes'] as $class){
+            $args['calendars'][$class['name']]['hours']=Calendar::countHours($class['calendar']);
+            $args['calendars'][$class['name']]['events']=Calendar::get($class['calendar']);
+        }
+        $cycle->calendars($args);
+        $cycle->view();
+    }
+
+    public function indexInfoPract($url_data){
+        $cycle=new CycleView();
+        $args=[];
+        $args['info_pract']=Cycle::getInfoPract($url_data['cycle']);
+        $cycle->infoPract($args);
         $cycle->view();
     }
 }

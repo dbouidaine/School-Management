@@ -1,5 +1,5 @@
 <div class="p-2 mb-3 article">
-    <div class="card">
+    <div class="card card-profile">
         <div class="card-img-top to-zoom">
             <img src="<?= img($args['article']['image']) ; ?>" class="card-img-top" alt="...">
         </div>

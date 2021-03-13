@@ -117,7 +117,7 @@
 
 <section class="container-xxl my-container">
     <center>
-    <h2 class="p-3 text-dark">Articles intéressant</h2>
+    <h2 class="p-3 text-dark">Articles intéressants</h2>
     <br>
     <div class="row">
         <?php 
