@@ -8,7 +8,7 @@ use views\components\Layout;
 class ArticleView extends View{
     public function __construct($args)
     {
-        $args['title']="new title";
+        $args['title']="Article";
         $components=['TopNavbar','Footer','Navbar','Article'];
         $args=$this->load($components,$args);
         $body=new HomeArticleBody($args);
