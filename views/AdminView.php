@@ -9,7 +9,7 @@ class AdminView extends View{
     public function __construct($args)
     {
         //expects [title,navbar,footer,card,pagination,body,layout]  
-        $args['title']="new page";
+        $args['title']="Dashboard";
         $components=['SideNavbar','Footer'];
         $args=$this->load($components,$args);
         // HomeBody component defines how the other components are grouped in the home page

@@ -37,7 +37,7 @@ class Presentation extends Model{
 
     static function update($data,$files){
         $connection=DataBase::connect();
-        if (empty($files)){
+        if (empty($files['image']['name'])){
             $query=$connection->prepare('UPDATE presentation SET paragraph=? WHERE id=?;');
             $query->execute([htmlspecialchars($data['paragraph']),$data['id']]);
         }

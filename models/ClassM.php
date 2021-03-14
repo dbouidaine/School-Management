@@ -8,6 +8,13 @@ class ClassM extends Model{
         return parent::getM($id,'class');
     }
 
+    static function getByName($class_name){
+        $connection=DataBase::connect();
+        $query=$connection->prepare('SELECT class.year FROM class WHERE class.name=?;');
+        $query->execute([$class_name]);
+        return $query->fetch((\PDO::FETCH_ASSOC));
+    }
+
     static function getCalendarId($class_name){
         $connection=DataBase::connect();
         $query=$connection->prepare('SELECT class.calendar FROM class WHERE class.name=?;');

@@ -16,7 +16,7 @@ class ClassController extends Controller{
     }
 
     public function addModule(){
-        //Access::hasAccess('addClass');
+        Access::hasAccess('addModule');
         Module::new($_POST);
         header('Location: '  . $_SERVER['HTTP_REFERER']);
     }
@@ -34,7 +34,7 @@ class ClassController extends Controller{
     }
 
     public function deleteModule($url_data){
-        //Access::hasAccess('deleteClass');
+        Access::hasAccess('deleteModule');
         Module::destroy($url_data['module_id']);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }

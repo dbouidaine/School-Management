@@ -61,8 +61,10 @@ class Article extends Model{
 
     static function update($data,$files){
         $connection=DataBase::connect();
-        if (empty($files)){
-            $query=$connection->prepare('UPDATE article SET title=?,description=?, WHERE id=?;');
+        if (empty($files['image']['name'])){
+            print_r($data);
+            print("here");
+            $query=$connection->prepare('UPDATE article SET title=?,description=? WHERE id=?;');
             $query->execute([htmlspecialchars($data['title']),htmlspecialchars($data['description']),$data['id']]);
         }
         else{

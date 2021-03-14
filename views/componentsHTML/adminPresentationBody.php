@@ -28,7 +28,6 @@
                                     <i class="fas fa-ellipsis-v" id="dropdownActions" aria-expanded="false"></i>
                                 </div>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownActions">
-                                    <li><a class="dropdown-item" href="<?=url('presentation/edit/'.$arg['id']);?>">Show</a></li>
                                     <li><a class="dropdown-item" href="<?=url('presentation/edit/'.$arg['id']);?>">Edit</a></li>
                                     <li><a onclick="return confirm('Vous etes sur de supprimer la ligne?')" class="dropdown-item text-danger" href="<?=url('presentation/delete/'.$arg['id']);?>">Delete</a></li>
                                 </ul>

@@ -162,7 +162,7 @@ class AdminController extends Controller{
     }
 
     public function showCalendar($url_data){
-        //Access::hasAccess('editClass');
+        Access::hasAccess('showCalendar');
         $args=[];
         $calenadr_id=ClassM::getCalendarId($url_data['class_name'])['calendar'];
         $args['calendar']['events']=Calendar::get($calenadr_id);
@@ -176,7 +176,7 @@ class AdminController extends Controller{
     }
 
     public function editCalendar($url_data){
-        //Access::hasAccess('editClass');
+        Access::hasAccess('editCalendar');
         $args=[];
         $args['calendars']=Calendar::getAll();
         $args['years']=Year::getAll();
@@ -188,18 +188,18 @@ class AdminController extends Controller{
     }
 
     public function indexModules($url_data){
-        //Access::hasAccess('editClass');
+        Access::hasAccess('indexModules');
         $args=[];
         $args['modules']=Module::getAllByClass($url_data['class_name']);
         $args['class_name']=$url_data['class_name'];
-        $args['years']=Year::getAll();
+        $args['year']=ClassM::getByName($url_data['class_name'])['year'];
         $home=new AdminClassesView();
         $home->showModules($args);
         $home->view();
     }
 
     public function indexRestauration($url_data){
-        //Access::hasAccess('editClass');
+        Access::hasAccess('indexRestauration');
         $args=[];
         $args['meals']=Restauration::getAll();
         $home=new AdminRestaurationView();
@@ -208,7 +208,7 @@ class AdminController extends Controller{
     }
 
     public function editRestauration($url_data){
-        //Access::hasAccess('editClass');
+        Access::hasAccess('editRestauration');
         $args=[];
         $args['meal']=Restauration::get($url_data['restauration_id']);
         $home=new AdminRestaurationView();
@@ -217,7 +217,7 @@ class AdminController extends Controller{
     }
 
     public function indexContacts($url_data){
-        //Access::hasAccess('editClass');
+        Access::hasAccess('indexContacts');
         $args=[];
         $args['contacts']=Contact::getAll();
         $home=new AdminContactsView();
@@ -226,7 +226,7 @@ class AdminController extends Controller{
     }
 
     public function editContact($url_data){
-        //Access::hasAccess('editClass');
+        Access::hasAccess('editContact');
         $args=[];
         $args['contact']=Contact::get($url_data['contact_id']);
         $home=new AdminContactsView();

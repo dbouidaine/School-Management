@@ -41,8 +41,8 @@ class ArticleController extends Controller{
     }
 
     public function update(){
-        
-        if(!empty($_FILES)){
+        Access::hasAccess('updateArticle');   
+        if(!empty($_FILES['image']['name'])){
             uploadImage('image');
         } 
         Article::update($_POST,$_FILES);

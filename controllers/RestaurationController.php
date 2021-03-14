@@ -2,6 +2,7 @@
 
 namespace controllers;
 
+use models\Access;
 use models\Restauration;
 use views\RestaurationView;
 
@@ -15,7 +16,7 @@ class RestaurationController extends Controller{
     }
 
     public function update(){
-        //Access::hasAccess('updateClass');
+        Access::hasAccess('updateRestauration');
         Restauration::update($_POST);
         header('Location: ' . url('admin/restauration'));
     }

@@ -19,7 +19,7 @@ class PresentationController extends Controller{
 
     public function add(){
         Access::hasAccess('addPresentation');
-        if(!empty($_FILES)){
+        if(!empty($_FILES['image']['name'])){
             uploadImage('image');
         }
         Presentation::new($_POST,$_FILES);
@@ -33,8 +33,8 @@ class PresentationController extends Controller{
     }
 
     public function update(){
-        //Access::hasAccess('updateOrderPresentation');
-        if(!empty($_FILES)){
+        Access::hasAccess('updatePresentation');
+        if(!empty($_FILES['image']['name'])){
             uploadImage('image');
         }
         Presentation::update($_POST,$_FILES);

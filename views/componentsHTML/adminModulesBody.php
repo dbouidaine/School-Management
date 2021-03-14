@@ -10,14 +10,7 @@
                 <form class="new-user form" action="<?=url('module/add')?>" method="POST">
                     <input name="class" type="text" placeholder="name" required hidden value="<?=$args['class_name'];?>" >
                     <input name="name" type="text" placeholder="name" required>
-                    <select name="year" id="" placeholde="year" required>
-                        <option value="" selected disabled hidden>Année</option>
-                        <?php
-                            foreach($args['years'] as $year){
-                                echo "<option value=\"". $year['name']."\">" . $year['name'] . "</option>";
-                            }
-                        ?>
-                    </select>
+                    <input type="text" name="year" value="<?=$args['year'];?>" hidden>
                     <button class="my-btn my-btn-blue" type="submit" name="add_formation" id="form-btn">Ajouter Module</button>
                 </form>
             </div>

@@ -11,7 +11,7 @@ class HomeView extends View{
     public function showHome($args)
     {
         //expects [title,navbar,footer,card,pagination,body,layout]  
-        $args['title']="new title";
+        $args['title']="Accueil";
         $components=['TopNavbar','Carousel','Footer','Navbar','Articles','Pagination'];
         $args['page_url']='home/';
         $args=$this->load($components,$args);
@@ -26,7 +26,7 @@ class HomeView extends View{
     public function showLogin($args)
     {
         //expects [title,navbar,footer,card,pagination,body,layout]  
-        $args['title']="new title";
+        $args['title']="Login";
         $components=['TopNavbar','Footer','Navbar'];
         $args['page_url']='login';
         $args=$this->load($components,$args);

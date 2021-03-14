@@ -2,6 +2,7 @@
 
 namespace controllers;
 
+use models\Access;
 use models\Calendar;
 use models\ClassM;
 
@@ -9,7 +10,7 @@ class CalendarController extends Controller{
 
 
     public function addLine($url_data){
-        //Access::hasAccess('addUser');
+        Access::hasAccess('addLineToCalendar');
         if(empty($_POST['calendar_id'])){
             Calendar::newCalendar($_POST['class_name']);
             $_POST['calendar_id']=Calendar::getByClassName($_POST['class_name'])['id'];
@@ -30,13 +31,14 @@ class CalendarController extends Controller{
     }
 
     public function delete($url_data){
-        //Access::hasAccess('deleteUser');
+        Access::hasAccess('deleteCalendar');
         $id=$url_data['calendar_id'];
         Calendar::destroy($id);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 
     public function deleteLine($url_data){
+        Access::hasAccess('deleteLineFromCalendar');
         $calendar_id=$url_data['calendar_id'];
         $line_id=$url_data['line_id'];
         Calendar::destroyLine($calendar_id,$line_id);

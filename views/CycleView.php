@@ -11,7 +11,7 @@ class CycleView extends View{
     public function index($args)
     {
         //expects [title,navbar,footer,card,pagination,body,layout]  
-        $args['title']="Cycle";
+        $args['title']="Cycle ".$args['cycle'];
         $components=['TopNavbar','Footer','Navbar','Articles','Pagination'];
         $args['page_url']='ecole/cycle/';
         $args=$this->load($components,$args);

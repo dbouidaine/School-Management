@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <div class="card m-2 p-0" style="width: 16rem;">
+        <div class="card m-2 p-0" style="width: 16rem;" disabled>
             <img class="card-img-top" src="<?=img('undraw/teacher_home.png');?>" alt="Card image cap">
             <div class="card-body m-auto text-center d-flex align-content-end flex-wrap">
                 <a class="card-link" href="#" style="font-size: x-large;">Enseignants</a>
@@ -50,7 +50,7 @@
 
 <section class="container-xxl my-container">
     <center>
-    <h2 class="p-3 text-dark">Articles intéressant</h2>
+    <h2 class="p-3 text-dark">Articles intéressants</h2>
     <br>
     <div class="row">
         <?php 
