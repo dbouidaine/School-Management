@@ -19,8 +19,6 @@ class AdminPresentationView extends View{
         $args['page_url']='admin/presentation/';
         $components=['SideNavbar','Footer'];
         $args=$this->load($components,$args);
-        // HomeBody component defines how the other components are grouped in the home page
-        // Every page must have it's body component
         $body=new AdminPresentationBody($args);
         $args['Body']=$body->get();
         $layout = new Layout($args);
@@ -33,8 +31,6 @@ class AdminPresentationView extends View{
         $args['title']="Ajouter Paragraph";
         $components=['SideNavbar','Footer'];
         $args=$this->load($components,$args);
-        // HomeBody component defines how the other components are grouped in the home page
-        // Every page must have it's body component
         $body=new AdminNewPresentationBody($args);
         $args['Body']=$body->get();
         $layout = new Layout($args);
@@ -47,8 +43,6 @@ class AdminPresentationView extends View{
         $args['title']="Modifier Paragraph";
         $components=['SideNavbar','Footer'];
         $args=$this->load($components,$args);
-        // HomeBody component defines how the other components are grouped in the home page
-        // Every page must have it's body component
         $body=new AdminEditPresentationBody($args);
         $args['Body']=$body->get();
         $layout = new Layout($args);

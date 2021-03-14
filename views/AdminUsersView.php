@@ -13,13 +13,10 @@ class AdminUsersView extends View{
     }
     public function showTable($args)
     {
-        //expects [title,navbar,footer,card,pagination,body,layout]  
         $args['title']="Gestion des utilisateurs";
         $args['page_url']='admin/users/';
         $components=['SideNavbar','Footer','Pagination'];
         $args=$this->load($components,$args);
-        // HomeBody component defines how the other components are grouped in the home page
-        // Every page must have it's body component
         $body=new AdminUsersBody($args);
         $args['Body']=$body->get();
         $layout = new Layout($args);
@@ -28,12 +25,9 @@ class AdminUsersView extends View{
 
     public function editUser($args)
     {
-        //expects [title,navbar,footer,card,pagination,body,layout]  
         $args['title']="Modifier Utilisateur";
         $components=['SideNavbar','Footer'];
         $args=$this->load($components,$args);
-        // HomeBody component defines how the other components are grouped in the home page
-        // Every page must have it's body component
         $body=new AdminEditUserBody($args);
         $args['Body']=$body->get();
         $layout = new Layout($args);

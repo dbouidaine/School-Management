@@ -20,5 +20,4 @@ class RestaurationController extends Controller{
         Restauration::update($_POST);
         header('Location: ' . url('admin/restauration'));
     }
-
 }
